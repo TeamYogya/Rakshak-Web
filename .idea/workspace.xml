@@ -6,13 +6,29 @@
   <component name="ChangeListManager">
     <list default="true" id="3dc52eb3-4e45-43a9-aee2-6fd97161fa87" name="Changes" comment="Added Tailwind, Dockerfile and Jenkinsfile">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -23,6 +39,7 @@
   &quot;associatedIndex&quot;: 7
 }</component>
   <component name="ProjectId" id="2VyxA0Ayihgu6vKtSflaLcC4ISg" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -32,8 +49,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "D:/SIH/dev/Repo/frontend/src",
+    "git-widget-placeholder": "develop",
+    "last_opened_file_path": "D:/SIH/Rakshak/frontend/src/pages/Landing/Images",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -44,6 +61,9 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\SIH\Rakshak\frontend\src\pages\Landing\Images" />
+      <recent name="D:\SIH\Rakshak\frontend\src\pages\Landing" />
+      <recent name="D:\SIH\Rakshak\frontend\src\pages\Landing\Video" />
       <recent name="D:\SIH\dev\Repo" />
     </key>
   </component>
@@ -84,6 +104,7 @@
       <workItem from="1695830182332" duration="206000" />
       <workItem from="1695830923169" duration="2544000" />
       <workItem from="1695837820509" duration="573000" />
+      <workItem from="1695894699696" duration="10549000" />
     </task>
     <task id="LOCAL-00001" summary="Added Tailwind, Dockerfile and Jenkinsfile">
       <option name="closed" value="true" />
@@ -103,6 +124,9 @@
     </task>
     <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added Tailwind, Dockerfile and Jenkinsfile" />
