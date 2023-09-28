@@ -13,10 +13,10 @@ export default function Landing() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <div>
-        <div className="absolute inset-0 z-0" style={{height: '750px',background: 'linear-gradient(180deg, rgba(193, 189, 189, 0.50) 108.19%, rgba(176, 170, 170, 0.00) 124.43%)',backdropFilter: 'blur(15px)',}}>
+    <div className={"font-sans"}>
+        <div className="absolute inset-0 z-0 h-full bg-gradient-to-b from-opacity-50 via-opacity-50 from-[#C1BDBD]/50 to-[#C1BDBD]/50 backdrop-blur-[15px]">
           </div>
-      <div className="absolute inset-0 z-[-1]" style={{height: '750px'}}>
+      <div className="absolute inset-0 z-[-1] h-full">
         <video
           className="w-full h-full object-cover"
           autoPlay
@@ -36,7 +36,7 @@ export default function Landing() {
       src={rakshak}
       alt="Rakshak"
     />
-    <span className="text-bold ml-2" style={{fontSize: '30px',fontStyle: 'italic'}}>Rakshak</span>
+    <span className="text-bold ml-2 text-2xl italic max-md:text-xl">Rakshak</span>
   </a>
 </div>
 
@@ -59,40 +59,15 @@ export default function Landing() {
             ))}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-              <button className="font-bold" style={{borderRadius: '105px',border: '5px solid #000',background: 'rgba(217, 217, 217, 0.00)',display: 'inline-flex',
-    padding: '12px 34px',
-    justifyContent: 'center',
-    alignItems: 'center',
-    gap: '10px'}}>Login</button>
+              <button className="font-bold bg-transparent hover:bg-black hover:text-white max-md:[32px] text-lg rounded-full border-2 border-black inline-flex px-[34px] py-[12px] content-center items-center gap-[10px]">Login</button>
           </div>
         </nav>
-          <div style={{
-    left: '188px',
-    top: '143px',
-    position: 'absolute',
-    color: 'black',
-    fontSize: '64px',
-    fontFamily: 'Inter',
-    fontWeight: 400,
-    wordWrap: 'break-word', textAlign: 'left',
-  }}>
+          <div className={"top-[143px] w-full pl-20 absolute text-black text-[64px] font-bold break-words text-left max-md:text-left max-md:text-[32px] max-md:pl-10"}>
             Knowledge is Your<br/>
 Best Defense, Explore<br/>
 Disaster Preparedness<br/>
 Today.<br/>
-              <button className="font-bold" style={{borderRadius: '105px',
-    border: '5px solid #000',
-    background: '#000',
-    padding: '12px 68px',
-    display: 'inline-flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    gap: '10px', position: 'absolute',
-    color: '#FFFBFB',
-    fontSize: '32px',
-    fontFamily: 'Inter',
-    fontWeight: 400,
-    wordWrap: 'break-word',}}>Register</button>
+              <button className="font-bold rounded-full border-5 px-14 py-6 bg-black inline-flex content-center items-center gap-3 absolute text-white text-2xl font-semibold max-md:text-lg max-md:px-12 max-md:py-4">Register</button>
           </div>
       </header>
     </div>
