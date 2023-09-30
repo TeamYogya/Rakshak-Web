@@ -1,6 +1,7 @@
 import {useState} from 'react'
 import sih from "./Video/sih.webm"
 import rakshak from "./Images/rakshak.png"
+import ashoka from "./Images/ashoka.png"
 
 const navigation = [
     {name: 'Home', href: '#'},
@@ -21,6 +22,7 @@ export default function Landing() {
             <div className="absolute inset-0 z-[-1] h-full">
                 <video
                     className="w-full h-full object-cover"
+                    style={{borderBottom: '100px solid #827F81'}}
                     autoPlay
                     loop
                     muted
@@ -73,9 +75,17 @@ export default function Landing() {
                     Disaster Preparedness<br/>
                     Today.<br/>
                     <button
-                        className="font-bold rounded-full border-5 px-14 py-6 bg-black inline-flex content-center items-center gap-3 absolute text-white text-2xl font-semibold max-md:text-lg max-md:px-12 max-md:py-4">Register
+                        className="top-[400px] font-bold rounded-full border-5 px-14 py-6 bg-black inline-flex content-center items-center gap-3 absolute text-white text-2xl font-semibold max-md:text-lg max-md:px-12 max-md:py-4 max-md:top-52">Register
                     </button>
                 </div>
+                <div className="flex justify-center w-screen max-md:scale-50">
+                <div className="w-[1063px] h-[250px] top-[615px] absolute max-md:top-[750px]">
+      <div className="w-[1063px] h-[250px] absolute bg-[#afafaf]-700 bg-opacity-35 rounded-[71px] border-[5px] border-[#676767]" ></div>
+      <div className="absolute left-[265px] top-[25px] text-white text-[64px] whitespace-normal">Government of India</div>
+      <div className="absolute left-[206px] top-[125px] text-black text-[64px] whitespace-normal">Ministry of Home Affairs</div>
+      <img src={ashoka} className="w-[139px] h-[187px] left-[39px] top-[32px] absolute"></img>
+    </div>
+                    </div>
             </header>
         </div>
     )
