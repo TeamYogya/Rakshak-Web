@@ -4,16 +4,16 @@ import TopBar from "./components/TopBar";
 
 const Dashboard = () => {
     return (
-        <div className={"flex font-sans"}>
-            <div className={"w-1/5 max-md:w-1/12"}>
+        <div className="flex font-sans h-screen">
+            <div className="w-1/5 max-md:w-24">
                 <Sidebar />
             </div>
-            <div className={"w-4/5 max-md:w-11/12"}>
+            <div className="w-4/5 max-md:w-full">
                 <TopBar />
                 <ProneAreas />
             </div>
         </div>
-    )
-}
+        );
+};
 
-export default Dashboard
+export default Dashboard;
