@@ -3,6 +3,7 @@ import sih from "./Video/sih.webm"
 import rakshak from "./Images/rakshak.png"
 import ashoka from "./Images/ashoka.png"
 import geofencing from "./Images/geofencing.jpg"
+import mock from "./Images/mock.jpg"
 
 const navigation = [
     {name: 'Home', href: '#'},
@@ -88,8 +89,8 @@ export default function Landing() {
                 </video>
                 <div className="h-40 bg-gradient-to-b from-[#606060] to-white"></div>
                 <div className="flex justify-center w-screen">
-      <h className="mt-20 absolute text-black text-5xl font-normal break-word">Your Path to Resilience Explore What Our Site Offers</h>
-      <div className="mt-40 grid grid-cols-2 gap-4 w-[1063px] h-[394px] bg-[#1A222C] absolute rounded-3xl hover:bg-gradient-to-br from-[#07C557] via-[#1A222C] to-transparent">
+      <div className="grid absolute text-black text-5xl font-normal break-word">Your Path to Resilience Explore What Our Site Offers</div>
+      <div className="grid grid-cols-2 gap-4 w-[1063px] h-[394px] bg-[#1A222C] absolute rounded-3xl hover:bg-gradient-to-br from-[#07C557] via-[#1A222C] to-transparent">
           <div className="h-full w-full flex justify-center">
             <h className="pt-10 absolute text-white text-3xl font-bold break-word">Geofencing</h>
               <h className="pt-[114px] absolute text-center text-[#C9C9C9] text-3xl font-normal break-word">Our geofencing feature<br/>uses cutting-edge technology<br/>to create virtual boundaries<br/>around specific geographical<br/>areas.</h>
@@ -97,14 +98,16 @@ export default function Landing() {
           <div className="h-full w-full flex items-center justify-center">
               <img className="w-[469px] h-[274px] absolute rounded-[88px]" src={geofencing} />
           </div>
-
       </div>
-      {/*<div className="width: 1063px; height: 394px; left: 52px; top: 1834px; position: absolute">*/}
-      {/*  <div className="width: 1063px; height: 394px; left: 0px; top: 0px; position: absolute; background: linear-gradient(72deg, #1A222C 64%, #0BA74F 100%); border-radius: 26px"></div>*/}
-      {/*  <img className="width: 469px; height: 274px; left: 32px; top: 60px; position: absolute; border-radius: 88px" src="https://via.placeholder.com/469x274" />*/}
-      {/*  <div className="left: 535px; top: 131px; position: absolute; text-align: center; color: #C9C9C9; font-size: 36px; font-family: Inter; font-style: italic; font-weight: 400; word-wrap: break-word">Practice makes perfect,<br/>especially when it<br/>comes to disaster readiness.</div>*/}
-      {/*  <div className="left: 515px; top: 60px; position: absolute; color: white; font-size: 36px; font-family: Inter; font-weight: 700; word-wrap: break-word">Mock Exercises and Programs</div>*/}
-      {/*</div>*/}
+                    <div className="mt-40 grid grid-cols-2 gap-4 w-[1063px] h-[394px] bg-[#1A222C] absolute rounded-3xl hover:bg-gradient-to-tl from-[#07C557] via-[#1A222C] to-transparent">
+          <div className="h-full w-full flex items-center justify-center">
+              <img className="w-[469px] h-[274px] absolute rounded-[88px]" src={mock} />
+          </div>
+                        <div className="h-full w-full flex justify-center">
+            <h className="pt-10 absolute text-white text-3xl font-bold break-word">Mock Exercises and Programs</h>
+              <h className="pt-[114px] absolute text-center text-[#C9C9C9] text-3xl font-normal break-word">Practice makes perfect,<br/>especially when it<br/>comes to disaster readiness.</h>
+          </div>
+      </div>
       {/*<div className="width: 525px; height: 764px; left: 53px; top: 511px; position: absolute">*/}
       {/*  <div className="width: 525px; height: 764px; left: 0px; top: 0px; position: absolute; background: linear-gradient(244deg, #1A222C 66%, #FEA800 100%); border-radius: 26px"></div>*/}
       {/*  <img className="width: 287px; height: 402px; left: 0px; top: 362px; position: absolute; border-radius: 40px" src="https://via.placeholder.com/287x402" />*/}
