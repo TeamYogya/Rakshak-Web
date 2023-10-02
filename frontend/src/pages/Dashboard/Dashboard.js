@@ -1,6 +1,7 @@
 import Sidebar from "./components/Sidebar";
 import ProneAreas from "./components/ProneAreas";
 import TopBar from "./components/TopBar";
+import DisasterSurvivorStories from "./components/DisasterSurvivorStories";
 
 const Dashboard = () => {
     return (
@@ -10,7 +11,8 @@ const Dashboard = () => {
             </div>
             <div className="w-4/5 max-md:w-full">
                 <TopBar />
-                <ProneAreas />
+                {/*<ProneAreas />*/}
+                <DisasterSurvivorStories/>
             </div>
         </div>
         );
