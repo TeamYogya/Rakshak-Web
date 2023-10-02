@@ -258,14 +258,14 @@ const DisasterSurvivorStories = () => {
                     {category.map((item, index) => (
                         <div key={index}
                              className='flex flex-col rounded-3xl my-2 mx-2 shadow-2xl transition-all ease-in-out hover:scale-105'>
-                            <Link to={`/CategorisedStory/${item.id}`}>
+                            <Link to={`/CategorisedStory/${item.type}`}>
                                 <div className='relative'>
                                     <img src={item.image} className='rounded-3xl brightness-75' alt=''/>
                                     <div className='absolute bottom-0 left-0 right-0 bg-black bg-opacity-0 p-2'>
                                         <div className='flex-col text-white'>
                                             <div className='font-bold flex justify-between items-end'>
                                                 <h2 className='text-start mx-2 text-m'>{item.title}</h2>
-                                                <h3 className='text-end text-sm'>{item.number}</h3>
+                                                <h3 className='text-end text-sm'>{item.number} stories</h3>
                                             </div>
                                             <div>
                                                 <h3 className='text-xs text-slate-400'>{item.link}</h3>

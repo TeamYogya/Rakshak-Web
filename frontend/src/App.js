@@ -4,6 +4,7 @@ import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Landing from "./pages/Landing/Landing";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Story from "./pages/Dashboard/components/Story";
+import CategorisedStory from "./pages/Dashboard/components/CategorisedStory";
 
 function App() {
     return (
@@ -13,6 +14,7 @@ function App() {
                     <Route exact path="/" element={<Landing/>}/>
                     <Route exact path="/dashboard" element={<Dashboard/>}/>
                     <Route exact path="/Story/:storyId" element={<Story/>}/>
+                    <Route exact path="/CategorisedStory/:storyId" element={<CategorisedStory/>}/>
                 </Routes>
             </Router>
         </div>

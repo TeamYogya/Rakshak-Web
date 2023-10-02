@@ -71,7 +71,16 @@ export const Storydetail=[
     }
 ]
 
-
+export const categoryStory=[
+    {
+        id:1,
+        image:earthquake,
+        title:'Earthquake in China',
+        date:'12-09-2016',
+        type:'Earthquake',
+        link:''
+    },
+]
 
 export const Story=[
     {
@@ -116,66 +125,77 @@ export const category=[
         id:1,
         image:earthquake1,
         title:'Earthquake',
-        number:'28 stories',
+        type:'Earthquake',
+        number:28,
     },
     {
         id:2,
         image:flood1,
         title:'Floods',
-        number:'39 stories',
+        type:'Floods',
+        number:39,
     },
     {
         id:3,
         image:tsunami,
         title:'Tsunami',
-        number:'18 stories',
+        type:'Tsunami',
+        number:18,
     },
     {
         id:4,
         image:drought1,
         title:'Drought',
-        number:'11 stories',
+        type:'Drought',
+        number:11,
     },
     {
         id:5,
         image:wildfires,
         title:'Wildfires',
-        number:'13 stories',
+        type:'Wildfires',
+        number:13,
     },
     {
         id:6,
         image:cyclone,
         title:'Cyclone',
-        number:'15 stories',
+        type:'Cyclone',
+        number:15,
     },
     {
         id:7,
         image:landslide,
         title:'Land Slide',
-        number:'19 stories',
+        type:'Land Slide',
+        number:19,
     },
     {
         id:8,
         image:avalanche,
         title:'Avalanche',
-        number:'21 stories',
+        type:'Avalanche',
+        number:21,
     },
     {
         id:9,
         image:pandemic,
         title:'Pandemic',
-        number:'3 stories',
+        type:'Pandemic',
+        number:3,
     },
     {
         id:10,
         image:hurricane,
         title:'Hurricane',
-        number:'6 stories',
+        type:'Hurricane',
+        number:6,
     },
     {
         id:11,
         image:manmade,
         title:'Manmade Disaster',
-        number:'79 stories',
+        type:'Manmade Disaster',
+        number:79,
     }
 ]
