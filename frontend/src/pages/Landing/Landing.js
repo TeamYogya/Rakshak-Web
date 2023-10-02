@@ -88,24 +88,24 @@ export default function Landing() {
                     <source src={sih} type="video/webm"/>
                 </video>
                 <div className="h-40 bg-gradient-to-b from-[#606060] to-white"></div>
-                <div className="flex justify-center w-screen">
-      <div className="grid absolute text-black text-5xl font-normal break-word">Your Path to Resilience Explore What Our Site Offers</div>
-      <div className="grid grid-cols-2 gap-4 w-[1063px] h-[394px] bg-[#1A222C] absolute rounded-3xl hover:bg-gradient-to-br from-[#07C557] via-[#1A222C] to-transparent">
+                <div className="pt-40 pb-10 text-black text-5xl font-normal break-word"><h>Your Path to Resilience Explore What Our Site Offers</h></div>
+                <div className="justify-center h-screen w-full grid grid-rows-2 gap-y-[100px]">
+      <div className="grid grid-cols-2 gap-4 w-[1063px] h-[394px] bg-[#1A222C] rounded-3xl hover:bg-gradient-to-br from-[#07C557] via-[#1A222C] to-transparent">
           <div className="h-full w-full flex justify-center">
-            <h className="pt-10 absolute text-white text-3xl font-bold break-word">Geofencing</h>
-              <h className="pt-[114px] absolute text-center text-[#C9C9C9] text-3xl font-normal break-word">Our geofencing feature<br/>uses cutting-edge technology<br/>to create virtual boundaries<br/>around specific geographical<br/>areas.</h>
+              <h className="absolute pt-10 text-white text-3xl font-bold break-word">Geofencing</h>
+              <h className="absolute pt-[114px] text-center text-[#C9C9C9] text-3xl font-normal break-word">Our geofencing feature<br/>uses cutting-edge technology<br/>to create virtual boundaries<br/>around specific geographical<br/>areas.</h>
           </div>
           <div className="h-full w-full flex items-center justify-center">
-              <img className="w-[469px] h-[274px] absolute rounded-[88px]" src={geofencing} />
+              <img className="absolute w-[469px] h-[274px] rounded-[88px]" src={geofencing} />
           </div>
       </div>
-                    <div className="mt-40 grid grid-cols-2 gap-4 w-[1063px] h-[394px] bg-[#1A222C] absolute rounded-3xl hover:bg-gradient-to-tl from-[#07C557] via-[#1A222C] to-transparent">
+                    <div className="grid grid-cols-2 gap-4 w-[1063px] h-[394px] bg-[#1A222C] rounded-3xl hover:bg-gradient-to-tl from-[#07C557] via-[#1A222C] to-transparent">
           <div className="h-full w-full flex items-center justify-center">
-              <img className="w-[469px] h-[274px] absolute rounded-[88px]" src={mock} />
+              <img className="absolute w-[469px] h-[274px] rounded-[88px]" src={mock} />
           </div>
                         <div className="h-full w-full flex justify-center">
-            <h className="pt-10 absolute text-white text-3xl font-bold break-word">Mock Exercises and Programs</h>
-              <h className="pt-[114px] absolute text-center text-[#C9C9C9] text-3xl font-normal break-word">Practice makes perfect,<br/>especially when it<br/>comes to disaster readiness.</h>
+                            <h className="absolute pt-10 text-white text-3xl font-bold break-word">Mock Exercises and Programs</h>
+              <h className="absolute pt-[114px] text-center text-[#C9C9C9] text-3xl font-normal break-word">Practice makes perfect,<br/>especially when it<br/>comes to disaster readiness.</h>
           </div>
       </div>
       {/*<div className="width: 525px; height: 764px; left: 53px; top: 511px; position: absolute">*/}
