@@ -90,11 +90,11 @@ const Story = () => {
                     }}>
                         {/*<img src={storywave2} className='w-full h-48' alt=''*/}
                         {/*     style={{position: 'absolute', top: 0, left: 0}}/>*/}
-                        <div className={'w-24 my-4 h-32 mx-2 z-10'} style={{position: 'absolute', top: 0, left: 0}}>
+                        <div className={'w-24 my-4 h-32 max-md:w-16 max-md:h-24 mx-2 z-10'} style={{position: 'absolute', top: 0, left: 0}}>
                             <p className='z-10 text-center text-sm'>Story No.</p>
                             <p className='z-10 my-2 text-center text-l'>{selectedStory.id}</p>
                         </div>
-                        <img src={bookmark} className='w-24 h-32 mx-2 z-3' alt=''
+                        <img src={bookmark} className='w-24 h-32 max-md:w-16 max-md:h-20 mx-2 z-3' alt=''
                              style={{position: 'absolute', top: 0, left: 0}}/>
                         <div className="mx-2 mr-4 mb-5 font-sans text-4xl text-white font-black"
                              style={{alignSelf: 'flex-end'}}>

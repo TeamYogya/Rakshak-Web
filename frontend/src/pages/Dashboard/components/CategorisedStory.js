@@ -9,8 +9,14 @@ import {MdChevronLeft, MdChevronRight} from "react-icons/md";
 const CategorisedStory = () => {
 
     const {storyType} = useParams();
-    const selectedStory = categoryStory.find(story => story.type === storyType);
-    const selectedStory1 = Storydetail.filter(story => story.type === storyType);
+    const selectedType = category.filter(story => story.type === storyType);
+    // const selectedType = category.reduce((acc, item) => (item.type === storyType ? [...acc, item] : acc), []);
+    const selectedStory1 = Storydetail.reduce((acc, item) => (item.type === storyType ? [...acc, item] : acc), []);
+
+    const storyId = selectedType.id;
+
+    //
+    console.log('Id is:', storyId, selectedType.number);
 
     const slideLeft = () => {
         var slider = document.getElementById('slider');
@@ -40,7 +46,7 @@ const CategorisedStory = () => {
         return () => clearInterval(interval);
     }, []);
 
-    if (selectedStory1.number === 0) {
+    if (selectedType.number === 0) {
         return (
             <div className={"flex font-sans"}>
                 <div className={"w-1/5 max-md:w-1/12"}>
@@ -65,13 +71,14 @@ const CategorisedStory = () => {
     }
 
     return (
-        <div>hello
+        <div>
             <div className={"flex font-sans"}>
                 <div className={"w-1/5 max-md:w-1/12"}>
                     <Sidebar/>
                 </div>
                 <div className={"w-4/5 max-md:w-11/12"}>
                     <TopBar/>
+                    {/*<p className={'text-2xl'}>{selectedType.number} {selectedType.id} {selectedType.type}</p>*/}
                     {/*<ProneAreas />*/}
 
                     {/*<div className="grid grid-cols-5 grid-rows-2">*/}
@@ -139,83 +146,33 @@ const CategorisedStory = () => {
                     {/*</div>*/}
                     {/*<p className={'mr-6 mx-3 my-2 text-start'}>{selectedStory.para2}</p>*/}
 
-                    {/*<div className='relative my-2 flex gap-2 items-center '>*/}
-                    {/*    <MdChevronLeft*/}
-                    {/*        className='opacity-50 cursor-pointer hover:opacity-100 bg-stone-300 rounded-2xl '*/}
-                    {/*        onClick={slideLeft}*/}
-                    {/*        size={40}*/}
-                    {/*    />*/}
-                    {/*    <div id='slider'*/}
-                    {/*         className='w-screen h-[250px] overflow-hidden whitespace-nowrap scroll-smooth scrollbar-hide'>*/}
-                    {/*        /!* Duplicate the slides to create a loop *!/*/}
-                    {/*        {selectedStory1.map((item, index) => (*/}
-                    {/*            <Link to={`/Storydetail/${item.id}`}>*/}
-                    {/*                <img*/}
-                    {/*                key={index}*/}
-                    {/*                className='w-[250px] inline-block mx-1 my-auto p-2 cursor-pointer rounded-2xl hover:scale-105 ease-in-out duration-300'*/}
-                    {/*                src={item}*/}
-                    {/*                alt='/'*/}
-                    {/*            />*/}
-                    {/*            </Link>*/}
-                    {/*        ))}*/}
-                    {/*        {selectedStory.map((item, index) => (*/}
-                    {/*            <Link to={`/Storydetail/${item.id}`}>*/}
-                    {/*                <img*/}
-                    {/*                    key={index + selectedStory.length}*/}
-                    {/*                    className='w-[250px] inline-block mx-1 my-auto p-2 cursor-pointer rounded-2xl hover:scale-105 ease-in-out duration-300'*/}
-                    {/*                    src={item}*/}
-                    {/*                    alt='/'*/}
-                    {/*                />*/}
-                    {/*            </Link>*/}
-                    {/*        ))}*/}
-                    {/*    </div>*/}
-                    {/*    <MdChevronRight*/}
-                    {/*        className='opacity-50 cursor-pointer hover:opacity-100 bg-stone-300 rounded-2xl '*/}
-                    {/*        onClick={slideRight}*/}
-                    {/*        size={40}*/}
-                    {/*    />*/}
-                    {/*</div>*/}
+                    <p className={'text-2xl'}>{selectedStory1.title} {selectedStory1.type}</p>
 
-                    <div className='relative my-2 flex gap-2 items-center '>
+                    <div className='relative my-2 mx-1 flex gap-2 items-center '>
                         <MdChevronLeft
                             className='opacity-50 cursor-pointer hover:opacity-100 bg-stone-300 rounded-2xl '
                             onClick={slideLeft}
                             size={40}
                         />
-
                         <div id='slider'
                              className='w-screen h-[250px] overflow-hidden whitespace-nowrap scroll-smooth scrollbar-hide'>
                             {/* Duplicate the slides to create a loop */}
-                            {selectedStory1.map((item, index) => (
-                                <Link key={index} to={`/Story/${item.id}`}>
+                            {selectedStory1 && selectedStory1.map((item, index) => (
+                                <Link to={`/Story/${item.id}`}>
                                     <img
-                                        // key={index}
+                                        key={index}
                                         className='w-[250px] inline-block mx-1 my-auto p-2 cursor-pointer rounded-2xl hover:scale-105 ease-in-out duration-300'
-                                        src={item}
+                                        src={item.mainimage}
                                         alt='/'
                                     />
                                 </Link>
                             ))}
-                            {selectedStory1.map((item, index) => (
-                                <Link key={index + selectedStory1.length} to={`/Story/${item.id}`}>
+                            {selectedStory1 && selectedStory1.map((item, index) => (
+                                <Link to={`/Story/${item.id}`}>
                                     <img
-                                        // key={index + selectedStory1.length}
+                                        key={index + (selectedStory1.length || 0)}
                                         className='w-[250px] inline-block mx-1 my-auto p-2 cursor-pointer rounded-2xl hover:scale-105 ease-in-out duration-300'
-                                        src={item}
-                                        alt='/'
-                                    />
-                                </Link>
-                            ))}
-                        </div>
-
-                        <div id='slider'
-                             className='w-screen h-[250px] overflow-hidden whitespace-nowrap scroll-smooth scrollbar-hide'>
-                            {/* Duplicate the slides to create a loop */}
-                            {selectedStory1.map((item, index) => (
-                                <Link key={index} to={`/Story/${item.id}`}>
-                                    <img
-                                        className='w-[250px] inline-block mx-1 my-auto p-2 cursor-pointer rounded-2xl hover:scale-105 ease-in-out duration-300'
-                                        src={item.mainimage}  // Assuming mainimage is the correct property
+                                        src={item.mainimage}
                                         alt='/'
                                     />
                                 </Link>
@@ -227,6 +184,82 @@ const CategorisedStory = () => {
                             size={40}
                         />
                     </div>
+
+                    {/*<div className='relative my-2 flex gap-2 items-center '>
+                        <MdChevronLeft
+                            className='opacity-50 cursor-pointer hover:opacity-100 bg-stone-300 rounded-2xl '
+                            onClick={slideLeft}
+                            size={40}
+                        />*/}
+
+                        {/*<div id='slider'*/}
+                        {/*     className='w-screen h-[250px] overflow-hidden whitespace-nowrap scroll-smooth scrollbar-hide'>*/}
+                        {/*    /!* Duplicate the slides to create a loop *!/*/}
+                        {/*    {selectedStory1.mainimage && selectedStory1.mainimage.map((item, index) => (*/}
+                        {/*        <Link to={`/Story/${item.id}`}>*/}
+                        {/*            <img*/}
+                        {/*                key={index}*/}
+                        {/*                className='w-[250px] inline-block mx-1 my-auto p-2 cursor-pointer rounded-2xl hover:scale-105 ease-in-out duration-300'*/}
+                        {/*                src={item}*/}
+                        {/*                alt='/'*/}
+                        {/*            />*/}
+                        {/*        </Link>*/}
+                        {/*    ))}*/}
+                        {/*    {selectedStory1.mainimage && selectedStory1.mainimage.map((item, index) => (*/}
+                        {/*        <Link to={`/Story/${item.id}`}>*/}
+                        {/*            <img*/}
+                        {/*                key={index + (selectedStory1.length || 0)}*/}
+                        {/*                className='w-[250px] inline-block mx-1 my-auto p-2 cursor-pointer rounded-2xl hover:scale-105 ease-in-out duration-300'*/}
+                        {/*                src={item}*/}
+                        {/*                alt='/'*/}
+                        {/*            />*/}
+                        {/*        </Link>*/}
+                        {/*    ))}*/}
+                        {/*</div>*/}
+
+                        {/*<div id='slider'*/}
+                        {/*     className='w-screen h-[250px] overflow-hidden whitespace-nowrap scroll-smooth scrollbar-hide'>*/}
+                        {/*    /!* Duplicate the slides to create a loop *!/*/}
+                        {/*    {selectedStory1 && selectedStory1.map((item, index) => (*/}
+                        {/*        <Link key={index} to={`/Story/${item.id}`}>*/}
+                        {/*            <img*/}
+                        {/*                className='w-[250px] inline-block mx-1 my-auto p-2 cursor-pointer rounded-2xl hover:scale-105 ease-in-out duration-300'*/}
+                        {/*                src={item.mainimage}*/}
+                        {/*                alt='/'*/}
+                        {/*            />*/}
+                        {/*        </Link>*/}
+                        {/*    ))}*/}
+                        {/*    {selectedStory1 && selectedStory1.map((item, index) => (*/}
+                        {/*        <Link key={index + (selectedStory1.length || 0)} to={`/Story/${item.id}`}>*/}
+                        {/*            <img*/}
+                        {/*                className='w-[250px] inline-block mx-1 my-auto p-2 cursor-pointer rounded-2xl hover:scale-105 ease-in-out duration-300'*/}
+                        {/*                src={item.mainimage}*/}
+                        {/*                alt='/'*/}
+                        {/*            />*/}
+                        {/*        </Link>*/}
+                        {/*    ))}*/}
+                        {/*</div>*/}
+
+                        {/*<div id='slider'*/}
+                        {/*     className='w-screen h-[250px] overflow-hidden whitespace-nowrap scroll-smooth scrollbar-hide'>*/}
+                        {/*    /!* Duplicate the slides to create a loop *!/*/}
+                        {/*    {selectedStory1.map((item, index) => (*/}
+                        {/*        <Link key={index} to={`/Story/${item.id}`}>*/}
+                        {/*            <img*/}
+                        {/*                className='w-[250px] inline-block mx-1 my-auto p-2 cursor-pointer rounded-2xl hover:scale-105 ease-in-out duration-300'*/}
+                        {/*                src={item.mainimage}  // Assuming mainimage is the correct property*/}
+                        {/*                alt='/'*/}
+                        {/*            />*/}
+                        {/*        </Link>*/}
+                        {/*    ))}*/}
+                        {/*</div>*/}
+
+                    {/*    <MdChevronRight*/}
+                    {/*        className='opacity-50 cursor-pointer hover:opacity-100 bg-stone-300 rounded-2xl '*/}
+                    {/*        onClick={slideRight}*/}
+                    {/*        size={40}*/}
+                    {/*    />*/}
+                    {/*</div>*/}
 
                 </div>
             </div>
