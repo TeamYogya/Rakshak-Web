@@ -68,6 +68,86 @@ export const Storydetail=[
         para2:'Beyond national borders, China participates in global collaborations, contributing expertise to international efforts in disaster risk reduction.\n' +
             '\n' +
             'This commitment to seismic resilience reflects a nation dedicated to protecting its citizens. As earthquakes persist as a formidable force, China\'s proactive measures and collaborative spirit exemplify a model for mitigating risks and enhancing societal resilience in the face of natural disasters.'
+    },
+    {
+        id:6,
+        type:'Earthquake',
+        place:'India',
+        author:'Gulati',
+        mainimage:earthquake3,
+        images: [earthquake1, earthquake, earthquake2, earthquake3, earthquake4],
+        title:'Earthquake in India',
+        date:'11-10-2016',
+        para1:'India, situated in a seismically active region, has undergone a transformative journey in earthquake preparedness. The 2008 Bhuj earthquake, a tragic turning point, prompted significant advancements. The India Earthquake Administration (IEA) established a comprehensive monitoring system, utilizing cutting-edge technology to detect seismic activities promptly. Rigorous building codes were enforced, emphasizing earthquake-resistant structures to minimize damage and casualties.\n' +
+            '\n' +
+            'Communities actively engage in emergency drills, fostering a culture of preparedness. The resilience of the Indian people shines through their united response to seismic challenges. ',
+        para2:'Beyond national borders, India participates in global collaborations, contributing expertise to international efforts in disaster risk reduction.\n' +
+            '\n' +
+            'This commitment to seismic resilience reflects a nation dedicated to protecting its citizens. As earthquakes persist as a formidable force, India\'s proactive measures and collaborative spirit exemplify a model for mitigating risks and enhancing societal resilience in the face of natural disasters.'
+    },
+    {
+        id:7,
+        type:'Earthquake',
+        place:'India',
+        author:'Gulati',
+        mainimage:earthquake3,
+        images: [earthquake1, earthquake, earthquake2, earthquake3, earthquake4],
+        title:'Earthquake in India',
+        date:'11-10-2016',
+        para1:'India, situated in a seismically active region, has undergone a transformative journey in earthquake preparedness. The 2008 Bhuj earthquake, a tragic turning point, prompted significant advancements. The India Earthquake Administration (IEA) established a comprehensive monitoring system, utilizing cutting-edge technology to detect seismic activities promptly. Rigorous building codes were enforced, emphasizing earthquake-resistant structures to minimize damage and casualties.\n' +
+            '\n' +
+            'Communities actively engage in emergency drills, fostering a culture of preparedness. The resilience of the Indian people shines through their united response to seismic challenges. ',
+        para2:'Beyond national borders, India participates in global collaborations, contributing expertise to international efforts in disaster risk reduction.\n' +
+            '\n' +
+            'This commitment to seismic resilience reflects a nation dedicated to protecting its citizens. As earthquakes persist as a formidable force, India\'s proactive measures and collaborative spirit exemplify a model for mitigating risks and enhancing societal resilience in the face of natural disasters.'
+    },
+    {
+        id:8,
+        type:'Earthquake',
+        place:'India',
+        author:'Gulati',
+        mainimage:earthquake3,
+        images: [earthquake1, earthquake, earthquake2, earthquake3, earthquake4],
+        title:'Earthquake in India',
+        date:'11-10-2016',
+        para1:'India, situated in a seismically active region, has undergone a transformative journey in earthquake preparedness. The 2008 Bhuj earthquake, a tragic turning point, prompted significant advancements. The India Earthquake Administration (IEA) established a comprehensive monitoring system, utilizing cutting-edge technology to detect seismic activities promptly. Rigorous building codes were enforced, emphasizing earthquake-resistant structures to minimize damage and casualties.\n' +
+            '\n' +
+            'Communities actively engage in emergency drills, fostering a culture of preparedness. The resilience of the Indian people shines through their united response to seismic challenges. ',
+        para2:'Beyond national borders, India participates in global collaborations, contributing expertise to international efforts in disaster risk reduction.\n' +
+            '\n' +
+            'This commitment to seismic resilience reflects a nation dedicated to protecting its citizens. As earthquakes persist as a formidable force, India\'s proactive measures and collaborative spirit exemplify a model for mitigating risks and enhancing societal resilience in the face of natural disasters.'
+    },
+    {
+        id:9,
+        type:'Earthquake',
+        place:'India',
+        author:'Gulati',
+        mainimage:earthquake3,
+        images: [earthquake1, earthquake, earthquake2, earthquake3, earthquake4],
+        title:'Earthquake in India',
+        date:'11-10-2016',
+        para1:'India, situated in a seismically active region, has undergone a transformative journey in earthquake preparedness. The 2008 Bhuj earthquake, a tragic turning point, prompted significant advancements. The India Earthquake Administration (IEA) established a comprehensive monitoring system, utilizing cutting-edge technology to detect seismic activities promptly. Rigorous building codes were enforced, emphasizing earthquake-resistant structures to minimize damage and casualties.\n' +
+            '\n' +
+            'Communities actively engage in emergency drills, fostering a culture of preparedness. The resilience of the Indian people shines through their united response to seismic challenges. ',
+        para2:'Beyond national borders, India participates in global collaborations, contributing expertise to international efforts in disaster risk reduction.\n' +
+            '\n' +
+            'This commitment to seismic resilience reflects a nation dedicated to protecting its citizens. As earthquakes persist as a formidable force, India\'s proactive measures and collaborative spirit exemplify a model for mitigating risks and enhancing societal resilience in the face of natural disasters.'
+    },
+    {
+        id:10,
+        type:'Earthquake',
+        place:'India',
+        author:'Gulati',
+        mainimage:earthquake3,
+        images: [earthquake1, earthquake, earthquake2, earthquake3, earthquake4],
+        title:'Earthquake in India',
+        date:'11-10-2016',
+        para1:'India, situated in a seismically active region, has undergone a transformative journey in earthquake preparedness. The 2008 Bhuj earthquake, a tragic turning point, prompted significant advancements. The India Earthquake Administration (IEA) established a comprehensive monitoring system, utilizing cutting-edge technology to detect seismic activities promptly. Rigorous building codes were enforced, emphasizing earthquake-resistant structures to minimize damage and casualties.\n' +
+            '\n' +
+            'Communities actively engage in emergency drills, fostering a culture of preparedness. The resilience of the Indian people shines through their united response to seismic challenges. ',
+        para2:'Beyond national borders, India participates in global collaborations, contributing expertise to international efforts in disaster risk reduction.\n' +
+            '\n' +
+            'This commitment to seismic resilience reflects a nation dedicated to protecting its citizens. As earthquakes persist as a formidable force, India\'s proactive measures and collaborative spirit exemplify a model for mitigating risks and enhancing societal resilience in the face of natural disasters.'
     }
 ]
 
@@ -75,8 +155,7 @@ export const categoryStory=[
     {
         id:1,
         image:earthquake,
-        title:'Earthquake in China',
-        date:'12-09-2016',
+        title:'Earthquake',
         type:'Earthquake',
         link:''
     },
@@ -87,37 +166,62 @@ export const Story=[
         id:1,
         image:earthquake,
         title:'Earthquake in China',
-        date:'12-09-2016',
-        link:''
+        date:'12-09-2016'
     },
     {
         id:2,
         image:forestfire,
         title:'Floods in Mumbai',
-        date:'15-10-2019',
-        link:''
+        date:'15-10-2019'
     },
     {
         id:3,
         image:cloud,
         title:'Floods in kedarnath',
-        date:'01-01-2023',
-        link:''
+        date:'01-01-2023'
     },
     {
         id:4,
         image:flood,
         title:'Earthquake in Japan',
-        date:'30-11-2020',
-        link:''
+        date:'30-11-2020'
     },
     {
         id:5,
         image:kalesh,
         title:'Cyclone in Vizag',
-        date:'30-09-2014',
-        link:''
+        date:'30-09-2014'
     },
+    {
+        id:6,
+        image:earthquake3,
+        title:'Earthquake in India',
+        date:'11-10-2016'
+    },
+    {
+        id:7,
+        image:earthquake3,
+        title:'Earthquake in India',
+        date:'11-10-2016'
+    },
+    {
+        id:8,
+        image:earthquake3,
+        title:'Earthquake in India',
+        date:'11-10-2016'
+    },
+    {
+        id:9,
+        image:earthquake3,
+        title:'Earthquake in India',
+        date:'11-10-2016'
+    },
+    {
+        id:10,
+        image:earthquake3,
+        title:'Earthquake in India',
+        date:'11-10-2016'
+    }
 ]
 
 export const category=[
@@ -133,7 +237,7 @@ export const category=[
         image:flood1,
         title:'Floods',
         type:'Floods',
-        number:39,
+        number:0,
     },
     {
         id:3,
