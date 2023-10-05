@@ -178,6 +178,73 @@ export default function Landing() {
                     </div>
 
     </div>
+                <footer className="h-full w-full bottom-0 mt-20">
+                    <div className="w-full h-0 transform rotate-180 origin-top border border-solid border-[#EFF0F6]"></div>
+                    <div className="grid grid-cols-2">
+                        <div className="w-full py-20 flex text-[#170F49] text-3xl font-dm-sans font-bold break-words pl-20"><h>Rakshak</h></div>
+                        <div className="w-full py-20 text-[#6F6C90] text-2xl font-dm-sans font-normal break-words text-left"><h>Government of India, Ministry of Home Affairs</h></div>
+                    </div>
+                    <div className="w-full h-0 transform rotate-180 origin-top border border-solid border-[#EFF0F6]"></div>
+                    <div className="grid grid-cols-6 h-96">
+                        <div className="w-full py-20 text-[#6F6C90] text-sm font-dm-sans font-bold break-words">
+                            <ul className="list-none list-outside">
+                                <li className="text-[#170F49] text-xl pb-5">Products</li>
+                                <li className="pb-2">Features</li>
+                                <li className="pb-2">Price</li>
+                                <li className="pb-2">Case Studies</li>
+                                <li className="pb-2">Reviews</li>
+                                <li className="pb-2">Updates</li>
+                            </ul>
+                        </div>
+                        <div className="w-full py-20 text-[#6F6C90] text-sm font-dm-sans font-bold break-words">
+                            <ul className="list-none list-outside">
+                                <li className="text-[#170F49] text-xl pb-5">Companys</li>
+                                <li className="pb-2">About</li>
+                                <li className="pb-2">Contact Us</li>
+                                <li className="pb-2">Careers</li>
+                                <li className="pb-2">Culture</li>
+                                <li className="pb-2">Blog</li>
+                            </ul>
+                        </div>
+                        <div className="w-full py-20 text-[#6F6C90] text-sm font-dm-sans font-bold break-words">
+                            <ul className="list-none list-outside">
+                                <li className="text-[#170F49] text-xl pb-5">Support</li>
+                                <li className="pb-2">Help Center</li>
+                                <li className="pb-2">Getting Started</li>
+                                <li className="pb-2">Server Status</li>
+                                <li className="pb-2">Report a Bug</li>
+                                <li className="pb-2">Chat Support</li>
+                            </ul>
+                        </div>
+                        <div className="w-full py-20 text-[#6F6C90] text-sm font-dm-sans font-bold break-words">
+                            <ul className="list-none list-outside">
+                                <li className="text-[#170F49] text-xl pb-5">Downloads</li>
+                                <li className="pb-2">iOS</li>
+                                <li className="pb-2">Android</li>
+                                <li className="pb-2">Mac</li>
+                                <li className="pb-2">Windows</li>
+                                <li className="pb-2">Chrome</li>
+                            </ul>
+                        </div>
+                        <div className="col-span-2 flex w-full py-20 text-[#6F6C90] text-sm font-dm-sans font-bold break-words">
+                            <ul className="list-none list-outside">
+                                <li className="text-[#170F49] text-xl pb-5">Subscribe to your Newsletter</li>
+                                <li className="pb-2">Bol Baby Bol</li>
+                                <li className="pb-2">Rock and Roll</li>
+                                <li className="pb-2"><form action="submit">
+                                    <input className="pl-5 w-[359px] h-[68px] bg-white shadow-[0px 2px 12px rgba(20.11, 19.66, 42.50, 0.08)] rounded-[108px] border border-solid border-[#D9DBE9]" placeholder="Enter Your Email" type="email"/>
+                                    <br/>
+                                    <input className="mt-5 bg-[#4A3AFF] rounded-[76px] justify-center items-center gap-4 text-center text-white text-16 font-dm-sans font-medium break-words py-[18px] px-[24px] flex" value="Subscribe" type="submit"/>
+                                </form></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div className="w-full h-0 transform rotate-180 origin-top border border-solid border-[#EFF0F6]"></div>
+                    <div className="grid grid-cols-2">
+                        <div className="w-full pt-10 pl-20 text-[#6F6C90] text-sm font-dm-sans font-normal break-words text-left"><h>Copyright © 2022 BRIX Templates | All Rights Reserved </h></div>
+                        <div className="w-full pt-10 flex text-[#170F49] text-3xl font-dm-sans font-bold break-words pl-20"><h>Rakshak</h></div>
+                    </div>
+                </footer>
             </div>
         </div>
     )
