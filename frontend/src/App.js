@@ -19,7 +19,6 @@ function App() {
                     <Route exact path="/Story/:storyId" element={<Story/>}/>
                     <Route exact path="/CategorisedStory/:storyId" element={<CategorisedStory/>}/>
                     <Route exact path="/Help" element={<Help/>}/>
-=======
                     <Route exact path="/CategorisedStory/:storyType" element={<CategorisedStory/>}/>
                     <Route exact path="/login" element={<Login/>}></Route>
                     <Route exact path="/signup" element={<Signup/>}></Route>
