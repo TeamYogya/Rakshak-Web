@@ -27,7 +27,7 @@ export default function Landing() {
         element2.style.backgroundImage = `url('${phone2}')`;
         }, []);
     return (
-        <div className={"font-sans"}>
+        <div className="font-sans">
             <header className="absolute inset-x-0 z-[2] top-0">
                 <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
                     <div className="flex lg:flex-1 items-center">
@@ -75,7 +75,7 @@ export default function Landing() {
                         className="top-[400px] font-bold rounded-full border-5 px-14 py-6 bg-black inline-flex content-center items-center gap-3 absolute text-white text-2xl font-semibold max-md:text-lg max-md:px-12 max-md:py-4 max-md:top-52">Register
                     </button>
                 </div>
-                <div className="flex justify-center w-screen max-md:scale-50">
+                <div className="flex justify-center w-full max-md:scale-50">
                 <div className="w-[1063px] h-[250px] top-[615px] absolute max-md:top-[750px]">
       <div className="w-[1063px] h-[250px] absolute bg-[#afafaf]-700 bg-opacity-35 rounded-[71px] border-[5px] border-[#676767]" ></div>
       <div className="absolute left-[265px] top-[25px] text-white text-[64px] whitespace-normal">Government of India</div>
@@ -178,7 +178,7 @@ export default function Landing() {
                     </div>
 
     </div>
-                <footer className="h-full w-full bottom-0 mt-20">
+                <footer className="h-full w-full bottom-0 mt-20 max-md:scale-50">
                     <div className="w-full h-0 transform rotate-180 origin-top border border-solid border-[#EFF0F6]"></div>
                     <div className="grid grid-cols-2">
                         <div className="w-full py-20 flex text-[#170F49] text-3xl font-dm-sans font-bold break-words pl-20"><h>Rakshak</h></div>
