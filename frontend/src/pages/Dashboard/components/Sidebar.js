@@ -86,7 +86,7 @@ const submenu = [
     },
     ];
 
-const Sidebar = () => {
+const Sidebar = ({ onSubMenuClick } ) => {
   const [openMenu, setOpenMenu] = useState(Array(submenu.length).fill(true));
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
@@ -98,6 +98,11 @@ const Sidebar = () => {
 
   const handleSidebarToggle = () => {
       setIsSidebarOpen(!isSidebarOpen);
+  };
+
+  const handleSubMenuItemClick = (option) => {
+        // Pass the selected submenu item to the parent component
+        onSubMenuClick(option);
   };
 
 return (
@@ -143,7 +148,8 @@ return (
                             {openMenu[index] && (
                                 <ul className="pt-4 max-md:pt-0 px-4 space-y-1">
                                     {item.options.map((option, optionIndex) => (
-                                        <li key={optionIndex} className="flex items-center text-dark_gray text-left text-sm transition duration-75 gap-2 cursor-pointer max-md:justify-center group">
+                                        <li key={optionIndex} className="flex items-center text-dark_gray text-left text-sm transition duration-75 gap-2 cursor-pointer max-md:justify-center group"
+                                        onClick={() => handleSubMenuItemClick(option)}>
                                             {item.optionIcons[optionIndex]}{/* Add optionIcons if available */}
                                             <span className="max-md:hidden">{option}</span>
                                         </li>
