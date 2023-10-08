@@ -157,7 +157,6 @@ export const categoryStory=[
         image:earthquake,
         title:'Earthquake',
         type:'Earthquake',
-        link:''
     },
 ]
 
