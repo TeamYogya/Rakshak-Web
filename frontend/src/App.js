@@ -5,7 +5,6 @@ import Landing from "./pages/Landing/Landing";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Story from "./pages/Dashboard/components/Story";
 import CategorisedStory from "./pages/Dashboard/components/CategorisedStory";
-import Help from './pages/Help/Help';
 import Signup from "./pages/Signup/Signup"
 import Login from "./pages/Login/Login"
 
@@ -18,7 +17,7 @@ function App() {
                     <Route exact path="/dashboard" element={<Dashboard/>}/>
                     <Route exact path="/Story/:storyId" element={<Story/>}/>
                     <Route exact path="/CategorisedStory/:storyId" element={<CategorisedStory/>}/>
-                    <Route exact path="/Help" element={<Help/>}/>
+                    {/*<Route exact path="/dashboard/Help" element={<PingForHelp/>}/>*/}
                     <Route exact path="/CategorisedStory/:storyType" element={<CategorisedStory/>}/>
                     <Route exact path="/login" element={<Login/>}></Route>
                     <Route exact path="/signup" element={<Signup/>}></Route>

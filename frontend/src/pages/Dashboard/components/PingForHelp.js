@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import man from "../Help/images/emergency_man.png";
+import man from "../TrialJSON/images/emergency_man.png";
 
-const App = () => {
+const PingForHelp = () => {
   const [priority, setPriority] = useState('low'); 
   const [customTime, setCustomTime] = useState('');
   const [showCustomTime, setShowCustomTime] = useState(true); 
@@ -170,4 +170,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default PingForHelp;
