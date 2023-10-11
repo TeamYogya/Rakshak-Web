@@ -15,9 +15,14 @@ app.config_from_object('django.conf:settings', namespace='CELERY')
 
 app.conf.beat_schedule = {
     'fetch-twitter-data': {
-        'task': 'celery_tasks.tasks.fetch_twitter_data',  # Path to your Celery task
+        'task': 'test1.tasks.fetch_twitter_data',  # Path to your Celery task
         'schedule': 30000,  # Task runs every 5 minutes (300 seconds)
     },
+}
+
+# Celery Beat Settings
+app.conf.beat_schedule = {
+
 }
 
 app.autodiscover_tasks()

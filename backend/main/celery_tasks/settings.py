@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'test1',
     'celery_tasks',
+    'django_celery_beat',
+    'django_celery_results',
 ]
 
 MIDDLEWARE = [
@@ -97,14 +99,16 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-CELERY_BROKER_URL = ('amqps://root:root%40123456789@b-b9917494-0565-41fe-8bea-fcb2a50744cf.mq.ap-south-1.amazonaws.com'
-                     ':5671')
-CELERY_RESULT_BACKEND = 'rpc://'
-
+CELERY_BROKER_URL = ('amqps://root:root%40123456789@b-69a03690-5d84-4364-89db-25c1bc674fa6.mq.ap-south-1.amazonaws'
+                     '.com:5671')
+CELERY_RESULT_BACKEND = 'django-db'
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_TIMEZONE = 'Asia/Kolkata'
+
+# CELERY BEAT SETTINGS
+CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
