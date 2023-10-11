@@ -4,15 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3dc52eb3-4e45-43a9-aee2-6fd97161fa87" name="Changes" comment="Added Tab Switching">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="3dc52eb3-4e45-43a9-aee2-6fd97161fa87" name="Changes" comment="Fixed Microservices Architecture">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/backend/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/backend/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/main/celery_tasks/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main/celery_tasks/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/main/celery_tasks/celery.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main/celery_tasks/celery.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/main/celery_tasks/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main/celery_tasks/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/main/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/main/test1/tasks.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main/test1/tasks.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,8 +69,17 @@
       <workItem from="1696926598968" duration="23000" />
       <workItem from="1696937015023" duration="4501000" />
       <workItem from="1697018709252" duration="1253000" />
-      <workItem from="1697033641635" duration="3653000" />
+      <workItem from="1697033641635" duration="5330000" />
     </task>
+    <task id="LOCAL-00001" summary="Fixed Microservices Architecture">
+      <option name="closed" value="true" />
+      <created>1697043830452</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1697043830452</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -99,6 +101,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added Microservices setup with Amazon MQ" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Microservices setup with Amazon MQ" />
+    <MESSAGE value="Fixed Microservices Architecture" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed Microservices Architecture" />
   </component>
 </project>
