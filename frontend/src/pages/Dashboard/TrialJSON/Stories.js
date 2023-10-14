@@ -160,68 +160,71 @@ export const categoryStory=[
     },
 ]
 
-export const Story=[
-    {
-        id:1,
-        image:earthquake,
-        title:'Earthquake in China',
-        date:'12-09-2016'
-    },
-    {
-        id:2,
-        image:forestfire,
-        title:'Floods in Mumbai',
-        date:'15-10-2019'
-    },
-    {
-        id:3,
-        image:cloud,
-        title:'Floods in kedarnath',
-        date:'01-01-2023'
-    },
-    {
-        id:4,
-        image:flood,
-        title:'Earthquake in Japan',
-        date:'30-11-2020'
-    },
-    {
-        id:5,
-        image:kalesh,
-        title:'Cyclone in Vizag',
-        date:'30-09-2014'
-    },
-    {
-        id:6,
-        image:earthquake3,
-        title:'Earthquake in India',
-        date:'11-10-2016'
-    },
-    {
-        id:7,
-        image:earthquake3,
-        title:'Earthquake in India',
-        date:'11-10-2016'
-    },
-    {
-        id:8,
-        image:earthquake3,
-        title:'Earthquake in India',
-        date:'11-10-2016'
-    },
-    {
-        id:9,
-        image:earthquake3,
-        title:'Earthquake in India',
-        date:'11-10-2016'
-    },
-    {
-        id:10,
-        image:earthquake3,
-        title:'Earthquake in India',
-        date:'11-10-2016'
-    }
-]
+    export const Story=[
+        {
+            id:1,
+            image:earthquake,
+            type:'Earthquake',
+            title:'Earthquake in China',
+            date:'12-09-2016'
+        },
+        {
+            id:2,
+            image:forestfire,
+            type:'Wildfire',
+            title:'Floods in Mumbai',
+            date:'15-10-2019'
+        },
+        {
+            id:3,
+            image:cloud,
+            type:'Earthquake',
+            title:'Floods in kedarnath',
+            date:'01-01-2023'
+        },
+        {
+            id:4,
+            image:flood,
+            title:'Earthquake in Japan',
+            date:'30-11-2020'
+        },
+        {
+            id:5,
+            image:kalesh,
+            title:'Cyclone in Vizag',
+            date:'30-09-2014'
+        },
+        {
+            id:6,
+            image:earthquake3,
+            title:'Earthquake in India',
+            date:'11-10-2016'
+        },
+        {
+            id:7,
+            image:earthquake3,
+            title:'Earthquake in India',
+            date:'11-10-2016'
+        },
+        {
+            id:8,
+            image:earthquake3,
+            title:'Earthquake in India',
+            date:'11-10-2016'
+        },
+        {
+            id:9,
+            image:earthquake3,
+            title:'Earthquake in India',
+            date:'11-10-2016'
+        },
+        {
+            id:10,
+            image:earthquake3,
+            title:'Earthquake in India',
+            date:'11-10-2016'
+        }
+    ]
 
 export const category=[
     {
