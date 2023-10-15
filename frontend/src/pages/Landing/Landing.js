@@ -9,16 +9,49 @@ import phone2 from "./Images/phone2.jpg"
 import aware from "./Images/aware.jpg"
 import alert from "./Images/alert.png"
 import navi from "./Images/navi.jpg"
+import flood from "./Images/flood.jpg"
+import cyclone from "./Images/cyclone.jpg"
+import tsunami from "./Images/tsunami.jpeg"
+import wildfire from "./Images/wildfire.jpg"
+import earthquake from "./Images/earthquake.jpg"
 
 const navigation = [
-    {name: 'Home', href: '#'},
+    {name: 'Home', href: '#home'},
     {name: 'Why us', href: '#'},
-    {name: 'Programs', href: '#'},
+    {name: 'Programs', href: '#cards'},
     {name: 'Donate', href: '#'},
-    {name: 'Safety Tips', href: '#'},
-    {name: 'Contact us', href: '#'},
+    {name: 'Settings', href: '#'},
+    {name: 'Contact us', href: '#footer'},
 ]
 export default function Landing() {
+    useEffect(() => {
+        // Select the navigation bar
+        const navbar = document.getElementById('navbar');
+
+        // Get the initial offset of the navigation bar
+
+        // Function to update the navigation bar's position
+        function updateNavbarPosition() {
+            if (window.scrollY >= 10) {
+                navbar.style.position = 'fixed';
+                navbar.style.top = '0';
+                navbar.style.left = '0';
+                navbar.style.width = '100%';
+                navbar.style.background = 'rgba(255, 255, 255, 0.2)'; // Adjust the alpha (0.2) for the desired level of frosted glass effect
+                navbar.style.backdropFilter = 'blur(10px)';
+            } else {
+                navbar.style.position = 'relative';
+                navbar.style.background = 'transparent'; // Change to your initial background color
+            }
+        }
+
+
+        // Listen for scroll events and update the navigation bar position
+        window.addEventListener('scroll', updateNavbarPosition);
+
+        // Call the function initially in case the page loads already scrolled
+        updateNavbarPosition();
+        }, []);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
     useEffect(() => {
         const element1 = document.getElementById("phone1Id");
@@ -28,8 +61,8 @@ export default function Landing() {
         }, []);
     return (
         <div className="font-sans">
-            <header className="absolute inset-x-0 z-[2] top-0">
-                <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+            <header id="home" className="absolute inset-x-0 z-[2] top-0">
+                <nav id="navbar" className="z-[10] flex items-center justify-between p-6 lg:px-8" aria-label="Global">
                     <div className="flex lg:flex-1 items-center">
                         <a href="#" className="-m-1.5 p-1.5 flex items-center">
                             <img
@@ -40,8 +73,6 @@ export default function Landing() {
                             {/*<span className="text-bold ml-2 text-2xl italic max-md:text-xl">Rakshak</span>*/}
                         </a>
                     </div>
-
-
                     <div className="flex lg:hidden">
                         <button
                             type="button"
@@ -98,7 +129,31 @@ export default function Landing() {
                     <source src={sih} type="video/webm"/>
                 </video>
                 <div className="h-40 w-full bg-gradient-to-b from-[#606060] to-white"></div>
-                <div className="pt-40 pb-10 text-black text-5xl font-normal break-word"><h>Your Path to Resilience Explore What Our Site Offers</h></div>
+
+                <div className="w-full h-[1200px] left: 53px; top: 110px; flex justify-center item-center">
+        <div className="w-[1187px] h-[1200px] flex">
+            <h className="flex top: 0px; text-black text-8xl font-thin break-words absolute text-left mt-[100px] ml-[40px]">Natural<br/>Disasters</h>
+            <h className="ml-[694px] mt-[925px] flex absolute text-right text-black text-4xl font-thin break-words">A natural disaster<br/>is the highly harmful <br/>impact on a society<br/>or community following<br/>a natural hazard event</h>
+            <div className="mt-[100px] ml-[50px]">
+            <div className="w-[525px] h-[400px] pl-[540px] top: 0px; absolute">
+                <img className="w-[525px] h-[400px] left: 0px; top: 0px; absolute" src={flood} />
+            </div>
+            <div className="w-[525px] h-[400px] pl-[538px] pt-[415px] absolute">
+                <img className="w-[525px] h-[400px] left: 0px; top: 0px; absolute" src={cyclone} />
+            </div>
+            <div className="w-[525px] h-[400px] left: 0px; pt-[615px] absolute">
+                <img className="w-[525px] h-[400px] left: 0px; top: 0px; absolute" src={earthquake} />
+            </div>
+            <div className="w-[525px] h-[400px] left: 0px; pt-[200px] absolute">
+                <img className="w-[525px] h-[400px] left: 0px; top: 0px; absolute" src={tsunami} />
+            </div>
+            <div className="w-[345px] h-[400px] pl-[360px] pt-[319px] absolute">
+                <img className="w-[345px] h-[400px] left: 0px; top: 0px; absolute border-[20px] border-white border-solid" src={wildfire}/>
+            </div>
+            </div>
+        </div>
+    </div>
+                <div id="cards" className="pt-40 pb-10 text-black text-5xl font-normal break-word"><h>Your Path to Resilience Explore What Our Site Offers</h></div>
                 <div className="justify-center w-full grid grid-rows-12 gap-4 max-md:scale-50">
                         <div className="grid grid-cols-2 w-[1063px] h-[394px] bg-[#1A222C] rounded-3xl hover:bg-gradient-to-br from-[#07C557] via-[#1A222C] to-transparent">
                             <div className="h-full w-full flex items-center justify-center">
@@ -178,7 +233,7 @@ export default function Landing() {
                     </div>
 
     </div>
-                <footer className="h-full w-full bottom-0 mt-20 max-md:scale-50">
+                <footer id="footer" className="h-full w-full bottom-0 mt-20 max-md:scale-50">
                     <div className="w-full h-0 transform rotate-180 origin-top border border-solid border-[#EFF0F6]"></div>
                     <div className="grid grid-cols-2">
                         <div className="w-full py-20 flex text-[#170F49] text-3xl font-dm-sans font-bold break-words pl-20"><h>Rakshak</h></div>
