@@ -152,7 +152,7 @@ const Login = () => {
                         <button
                             className="flex p-4 w-96 my-2 justify-center shadow-xl font-black rounded-3xl items-center">
                             <img src={google} alt="Google Logo" className="h-5 w-5 mr-2"/>
-                            Sign inx with Google
+                            Sign in with Google
                         </button>
                     </div>
                     <p className={'text-md my-2 text-dark_gray font-black'}>Or</p>
