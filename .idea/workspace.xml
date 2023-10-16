@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3dc52eb3-4e45-43a9-aee2-6fd97161fa87" name="Changes" comment="Fixed Microservices Architecture">
+    <list default="true" id="3dc52eb3-4e45-43a9-aee2-6fd97161fa87" name="Changes" comment="Added in sidebar">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Dashboard/components/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Dashboard/components/Sidebar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Login/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/MockDrills/Registrations/Registrations.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/MockDrills/Registrations/Registrations.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +79,8 @@
       <workItem from="1696937015023" duration="4501000" />
       <workItem from="1697018709252" duration="1253000" />
       <workItem from="1697033641635" duration="5330000" />
-      <workItem from="1697440145223" duration="1616000" />
+      <workItem from="1697440145223" duration="2728000" />
+      <workItem from="1697443784339" duration="693000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed Microservices Architecture">
       <option name="closed" value="true" />
@@ -89,7 +90,23 @@
       <option name="project" value="LOCAL" />
       <updated>1697043830452</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Fixed Microservices Architecture">
+      <option name="closed" value="true" />
+      <created>1697441841680</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1697441841680</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added in sidebar">
+      <option name="closed" value="true" />
+      <created>1697441932969</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1697441932969</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -112,6 +129,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added Microservices setup with Amazon MQ" />
     <MESSAGE value="Fixed Microservices Architecture" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed Microservices Architecture" />
+    <MESSAGE value="Added in sidebar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added in sidebar" />
   </component>
 </project>

@@ -7,7 +7,7 @@ import Story from "./pages/Dashboard/components/Story";
 import CategorisedStory from "./pages/Dashboard/components/CategorisedStory";
 import Signup from "./pages/Signup/Signup"
 import Login from "./pages/Login/Login"
-
+import Registrations from "./pages/MockDrills/Registrations/Registrations";
 function App() {
     return (
         <div className="App">
@@ -21,6 +21,7 @@ function App() {
                     <Route exact path="/CategorisedStory/:storyType" element={<CategorisedStory/>}/>
                     <Route exact path="/login" element={<Login/>}></Route>
                     <Route exact path="/signup" element={<Signup/>}></Route>
+                    <Route exact path="/registrations" element={<Registrations/>}></Route>
                 </Routes>
             </Router>
         </div>
