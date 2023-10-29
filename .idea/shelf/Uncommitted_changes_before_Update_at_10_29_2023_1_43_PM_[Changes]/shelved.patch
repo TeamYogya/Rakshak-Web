@@ -1,0 +1,100 @@
+Index: frontend/src/pages/Dashboard/Dashboard.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import Sidebar from \"./components/Sidebar\";\r\nimport ProneAreas from \"./components/ProneAreas\";\r\nimport TopBar from \"./components/TopBar\";\r\nimport DisasterSurvivorStories from \"./components/DisasterSurvivorStories\";\r\nimport {useState} from \"react\";\r\nimport SaferExits from \"./components/SaferExits\";\r\nimport AccessFeasibility from \"./components/AccessFeasibility\";\r\nimport ObjectRecognition from \"./components/ObjectRecognition\";\r\nimport Information from \"./components/Information\";\r\nimport AlternativeRoutes from \"./components/AlternativeRoutes\";\r\nimport NaturalHazardAlerts from \"./components/NaturalHazardAlerts\";\r\nimport ContinuousAlerts from \"./components/ContinuousAlerts\";\r\nimport LocalBusinessIncentives from \"./components/LocalBusinessIncentives\";\r\nimport ReliefTokens from \"./components/ReliefTokens\";\r\nimport PingForHelp from \"./components/PingForHelp\";\r\n\r\nconst Dashboard = () => {\r\n    const [selectedSubMenu, setSelectedSubMenu] = useState(null);\r\n\r\n    const handleSubMenuClick = (selectedSubMenu) => {\r\n        setSelectedSubMenu(selectedSubMenu);\r\n    };\r\n\r\n    return (\r\n        <div className=\"flex font-sans h-screen\">\r\n            <div className=\"w-1/5 max-md:w-24\">\r\n                <Sidebar onSubMenuClick={handleSubMenuClick} />\r\n            </div>\r\n            <div className=\"w-4/5 max-md:w-full\">\r\n                <TopBar />\r\n                {/*<ProneAreas />*/}\r\n                {/*<DisasterSurvivorStories/>*/}\r\n                {selectedSubMenu === 'Prone Area Alerts' && <ProneAreas />}\r\n                {selectedSubMenu === 'Safer Exits' && <SaferExits />}\r\n                {selectedSubMenu === 'Access Feasibility' && <AccessFeasibility />}\r\n                {selectedSubMenu === 'Object Recognition' && <ObjectRecognition />}\r\n                {selectedSubMenu === 'Disaster Survivor Stories' && <DisasterSurvivorStories />}\r\n                {selectedSubMenu === 'Information' && <Information />}\r\n                {selectedSubMenu === 'Alternative Routes' && <AlternativeRoutes />}\r\n                {selectedSubMenu === 'Natural Hazard Alerts' && <NaturalHazardAlerts />}\r\n                {selectedSubMenu === 'Continuous Alerts' && <ContinuousAlerts />}\r\n                {selectedSubMenu === 'Local Business Incentives' && <LocalBusinessIncentives />}\r\n                {selectedSubMenu === 'Relief Tokens' && <ReliefTokens />}\r\n                {selectedSubMenu === 'Ping For Help' && <PingForHelp />}\r\n            </div>\r\n        </div>\r\n        );\r\n};\r\n\r\nexport default Dashboard;
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/frontend/src/pages/Dashboard/Dashboard.js b/frontend/src/pages/Dashboard/Dashboard.js
+--- a/frontend/src/pages/Dashboard/Dashboard.js	(revision 8f5d9605ac6679ed8ebf9b9a402c7583b688c017)
++++ b/frontend/src/pages/Dashboard/Dashboard.js	(date 1698566971288)
+@@ -41,7 +41,7 @@
+                 {selectedSubMenu === 'Continuous Alerts' && <ContinuousAlerts />}
+                 {selectedSubMenu === 'Local Business Incentives' && <LocalBusinessIncentives />}
+                 {selectedSubMenu === 'Relief Tokens' && <ReliefTokens />}
+-                {selectedSubMenu === 'Ping For Help' && <PingForHelp />}
++                {selectedSubMenu === 'Ping for Help' && <PingForHelp />}
+             </div>
+         </div>
+         );
+Index: frontend/src/App.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import logo from './logo.svg';\r\nimport './App.css';\r\nimport {BrowserRouter as Router, Routes, Route} from \"react-router-dom\";\r\nimport Landing from \"./pages/Landing/Landing\";\r\nimport Dashboard from \"./pages/Dashboard/Dashboard\";\r\nimport Story from \"./pages/Dashboard/components/Story\";\r\nimport CategorisedStory from \"./pages/Dashboard/components/CategorisedStory\";\r\nimport Signup from \"./pages/Signup/Signup\"\r\nimport Login from \"./pages/Login/Login\"\r\n\r\nfunction App() {\r\n    return (\r\n        <div className=\"App\">\r\n            <Router>\r\n                <Routes>\r\n                    <Route exact path=\"/\" element={<Landing/>}/>\r\n                    <Route exact path=\"/dashboard\" element={<Dashboard/>}/>\r\n                    <Route exact path=\"/Story/:storyId\" element={<Story/>}/>\r\n                    <Route exact path=\"/CategorisedStory/:storyId\" element={<CategorisedStory/>}/>\r\n                    {/*<Route exact path=\"/dashboard/Help\" element={<PingForHelp/>}/>*/}\r\n                    <Route exact path=\"/CategorisedStory/:storyType\" element={<CategorisedStory/>}/>\r\n                    <Route exact path=\"/login\" element={<Login/>}></Route>\r\n                    <Route exact path=\"/signup\" element={<Signup/>}></Route>\r\n                </Routes>\r\n            </Router>\r\n        </div>\r\n    );\r\n}\r\n\r\nexport default App;\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/frontend/src/App.js b/frontend/src/App.js
+--- a/frontend/src/App.js	(revision 8f5d9605ac6679ed8ebf9b9a402c7583b688c017)
++++ b/frontend/src/App.js	(date 1698567062671)
+@@ -1,4 +1,3 @@
+-import logo from './logo.svg';
+ import './App.css';
+ import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+ import Landing from "./pages/Landing/Landing";
+@@ -17,7 +16,6 @@
+                     <Route exact path="/dashboard" element={<Dashboard/>}/>
+                     <Route exact path="/Story/:storyId" element={<Story/>}/>
+                     <Route exact path="/CategorisedStory/:storyId" element={<CategorisedStory/>}/>
+-                    {/*<Route exact path="/dashboard/Help" element={<PingForHelp/>}/>*/}
+                     <Route exact path="/CategorisedStory/:storyType" element={<CategorisedStory/>}/>
+                     <Route exact path="/login" element={<Login/>}></Route>
+                     <Route exact path="/signup" element={<Signup/>}></Route>
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"3dc52eb3-4e45-43a9-aee2-6fd97161fa87\" name=\"Changes\" comment=\"Fixed Microservices Architecture\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"master\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;customColor&quot;: &quot;&quot;,\r\n  &quot;associatedIndex&quot;: 7\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2VyxA0Ayihgu6vKtSflaLcC4ISg\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;D:/SIH/dev/Repo/frontend/src&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\Rakshak-Web\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\SIH\\Rakshak-Web\\frontend\\src\\pages\\Dashboard\\components\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"3dc52eb3-4e45-43a9-aee2-6fd97161fa87\" name=\"Changes\" comment=\"Added Tailwind, Dockerfile and Jenkinsfile\" />\r\n      <created>1696780270620</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1696780270620</updated>\r\n      <workItem from=\"1696780271920\" duration=\"1006000\" />\r\n      <workItem from=\"1696821638877\" duration=\"2868000\" />\r\n      <workItem from=\"1696852533652\" duration=\"3422000\" />\r\n      <workItem from=\"1696926598968\" duration=\"23000\" />\r\n      <workItem from=\"1696937015023\" duration=\"4501000\" />\r\n      <workItem from=\"1697018709252\" duration=\"1253000\" />\r\n      <workItem from=\"1697033641635\" duration=\"5330000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Fixed Microservices Architecture\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1697043830452</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1697043830452</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"2\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"UnknownFeatures\">\r\n    <option featureType=\"com.intellij.fileTypeFactory\" implementationName=\".env\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Added Microservices setup with Amazon MQ\" />\r\n    <MESSAGE value=\"Fixed Microservices Architecture\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Fixed Microservices Architecture\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 8f5d9605ac6679ed8ebf9b9a402c7583b688c017)
++++ b/.idea/workspace.xml	(date 1698567062843)
+@@ -4,8 +4,10 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="3dc52eb3-4e45-43a9-aee2-6fd97161fa87" name="Changes" comment="Fixed Microservices Architecture">
++    <list default="true" id="3dc52eb3-4e45-43a9-aee2-6fd97161fa87" name="Changes" comment="Added Aadhaar text image identification code for static page">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Dashboard/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Dashboard/Dashboard.js" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -70,6 +72,8 @@
+       <workItem from="1696937015023" duration="4501000" />
+       <workItem from="1697018709252" duration="1253000" />
+       <workItem from="1697033641635" duration="5330000" />
++      <workItem from="1697354103447" duration="389000" />
++      <workItem from="1698565154306" duration="1881000" />
+     </task>
+     <task id="LOCAL-00001" summary="Fixed Microservices Architecture">
+       <option name="closed" value="true" />
+@@ -79,7 +83,15 @@
+       <option name="project" value="LOCAL" />
+       <updated>1697043830452</updated>
+     </task>
+-    <option name="localTasksCounter" value="2" />
++    <task id="LOCAL-00002" summary="Added Aadhaar text image identification code for static page">
++      <option name="closed" value="true" />
++      <created>1697263871648</created>
++      <option name="number" value="00002" />
++      <option name="presentableId" value="LOCAL-00002" />
++      <option name="project" value="LOCAL" />
++      <updated>1697263871648</updated>
++    </task>
++    <option name="localTasksCounter" value="3" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -102,6 +114,7 @@
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="Added Microservices setup with Amazon MQ" />
+     <MESSAGE value="Fixed Microservices Architecture" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Fixed Microservices Architecture" />
++    <MESSAGE value="Added Aadhaar text image identification code for static page" />
++    <option name="LAST_COMMIT_MESSAGE" value="Added Aadhaar text image identification code for static page" />
+   </component>
+ </project>
+\ No newline at end of file

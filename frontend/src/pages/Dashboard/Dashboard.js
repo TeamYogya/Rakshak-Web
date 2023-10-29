@@ -41,7 +41,7 @@ const Dashboard = () => {
                 {selectedSubMenu === 'Continuous Alerts' && <ContinuousAlerts />}
                 {selectedSubMenu === 'Local Business Incentives' && <LocalBusinessIncentives />}
                 {selectedSubMenu === 'Relief Tokens' && <ReliefTokens />}
-                {selectedSubMenu === 'Ping For Help' && <PingForHelp />}
+                {selectedSubMenu === 'Ping for Help' && <PingForHelp />}
             </div>
         </div>
         );

@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Landing from "./pages/Landing/Landing";
@@ -17,7 +16,6 @@ function App() {
                     <Route exact path="/dashboard" element={<Dashboard/>}/>
                     <Route exact path="/Story/:storyId" element={<Story/>}/>
                     <Route exact path="/CategorisedStory/:storyId" element={<CategorisedStory/>}/>
-                    {/*<Route exact path="/dashboard/Help" element={<PingForHelp/>}/>*/}
                     <Route exact path="/CategorisedStory/:storyType" element={<CategorisedStory/>}/>
                     <Route exact path="/login" element={<Login/>}></Route>
                     <Route exact path="/signup" element={<Signup/>}></Route>
