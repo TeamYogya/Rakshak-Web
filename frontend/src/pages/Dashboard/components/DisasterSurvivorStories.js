@@ -9,6 +9,7 @@ import {Link} from "react-router-dom";
 const DisasterSurvivorStories = () => {
 
     const [isOpen, setIsOpen] = useState(false);
+    const [isOpen1, setIsOpen1] = useState(false);
 
     const [selectedCity, setSelectedCity] = useState('');
     const [selectedDisaster, setSelectedDisaster] = useState('');
@@ -41,6 +42,16 @@ const DisasterSurvivorStories = () => {
 
     const closeModal = () => {
         setIsOpen(false);
+    };
+
+    const [isOpenAddStoryModal, setIsOpenAddStoryModal] = useState(false);
+
+    const openAddStoryModal = () => {
+        setIsOpenAddStoryModal(true);
+    };
+
+    const closeAddStoryModal = () => {
+        setIsOpenAddStoryModal(false);
     };
 
     const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -203,8 +214,131 @@ const DisasterSurvivorStories = () => {
                 </div>
             </div>
 
-            <div className={"border-neutral-950 border-4 max-w-full h-40"}>
-                <h3 className='text-start text-purple_primary text-sm'>Add a story</h3>
+            <Transition appear show={isOpenAddStoryModal} as={Dialog} onClose={closeAddStoryModal}>
+                <div className="fixed inset-0 z-10 overflow-y-auto">
+                    <Dialog.Overlay className="fixed inset-0 bg-black opacity-30"/>
+
+                    <div className="flex items-start justify-end mx-4 min-h-screen my-4">
+                        <div className="bg-white rounded-2xl p-4 w-[974px] relative">
+                            <button className="absolute text-xl text-dark_gray font-bold top-0 right-0 p-2"
+                                    onClick={closeAddStoryModal}>
+                                <AiOutlineClose className="text-gray-600"/>
+                            </button>
+
+                            <div className="flex flex-wrap my-2">
+                                <div className="flex flex-col mr-4">
+                                    <Dialog.Title
+                                        className="text-lg mt-0 font-semibold text-left text-purple_primary my-2">
+                                        Title
+                                    </Dialog.Title>
+                                    <input
+                                        className={`p-2 flex my-1 shadow-xl w-48 bg-light-gray placeholder-dark_gray placeholder:font-black rounded-lg 'placeholder:font-black'`}
+                                        type="text"
+                                        name="title"
+                                        placeholder=""
+                                        // value={aadhaar}
+                                        // onChange={handleInputChange}
+                                    />
+                                </div>
+
+                                <div className="flex flex-col mr-4">
+                                    <Dialog.Title
+                                        className="text-lg mt-0 font-semibold text-left text-purple_primary my-2">
+                                        City
+                                    </Dialog.Title>
+                                    <div className="flex items-center">
+                                        <select
+                                            id="cityDropdown"
+                                            className="p-2 border-0 rounded"
+                                            onChange={handleCityChange}
+                                            value={selectedCity}>
+                                            <option value="" disabled>
+                                                None
+                                            </option>
+                                            {cities.map((option) => (
+                                                <option key={option} value={option}>
+                                                    {option}
+                                                </option>
+                                            ))}
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div className="flex flex-col mr-4">
+                                    <Dialog.Title
+                                        className="text-lg mt-0 font-semibold text-left text-purple_primary my-2">
+                                        Disaster Type
+                                    </Dialog.Title>
+                                    <div className="flex items-center">
+                                        <select
+                                            id="disasterDropdown"
+                                            className="p-2 border-0 rounded"
+                                            onChange={handleDisasterChange}
+                                            value={selectedDisaster}>
+                                            <option value="" disabled>
+                                                None
+                                            </option>
+                                            {disasters.map((option) => (
+                                                <option className={"my-2"} key={option} value={option}>
+                                                    {option}
+                                                </option>
+                                            ))}
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div className="flex flex-col">
+                                    <Dialog.Title
+                                        className="text-lg mt-0 font-semibold text-left text-purple_primary my-2">
+                                        Author
+                                    </Dialog.Title>
+                                    <input
+                                        className={`p-2 flex my-1 shadow-xl w-48 bg-light-gray placeholder-dark_gray placeholder:font-black rounded-lg 'placeholder:font-black'`}
+                                        type="text"
+                                        name="author"
+                                        placeholder=""
+                                        // value={aadhaar}
+                                        // onChange={handleInputChange}
+                                    />
+                                </div>
+                            </div>
+
+
+                            <textarea
+                                id="description"
+                                name="description" rows="4"
+                                className="w-full px-4 py-2 border rounded-lg focus:out focus:border-black-200 text-black h-[250px]"
+                                placeholder="Give in your story"
+                            />
+
+                            <Dialog.Title className="text-lg font-semibold text-left text-purple_primary my-2">
+                                <label htmlFor="photoInput" className="cursor-pointer">
+                                    Upload pics
+                                </label>&nbsp;
+                                <label htmlFor="photoInput" className="cursor-pointer text-neutral-950 text-sm">
+                                    (The first picture chosen would be the faceof your story)
+                                </label>
+                                <input
+                                    type="file"
+                                    id="photoInput"
+                                    name="photos"
+                                    accept="image/*"
+                                    multiple
+                                    className="mt-4 bg-purple_primary hidden"
+                                />
+                            </Dialog.Title>
+
+
+                        </div>
+                    </div>
+                </div>
+            </Transition>
+
+            <div className={'flex justify-end mx-3 my-2'}>
+                <button type={'button'} onClick={openAddStoryModal}
+                        className="flex p-3 my-4 drop-shadow-lg w-40 text-white bg-purple_primary justify-center font-black rounded-3xl items-center">
+                    Add a story
+                </button>
             </div>
 
         </div>
