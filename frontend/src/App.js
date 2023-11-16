@@ -8,6 +8,8 @@ import CategorisedStory from "./pages/Dashboard/components/CategorisedStory";
 import Signup from "./pages/Signup/Signup"
 import Login from "./pages/Login/Login"
 import Registrations from "./pages/MockDrills/Registrations/Registrations";
+import ReliefTokens from "./pages/Dashboard/components/ReliefTokens";
+import Donate from "./pages/Dashboard/components/Donate";
 function App() {
     return (
         <div className="App">
@@ -21,6 +23,8 @@ function App() {
                     <Route exact path="/CategorisedStory/:storyType" element={<CategorisedStory/>}/>
                     <Route exact path="/login" element={<Login/>}></Route>
                     <Route exact path="/signup" element={<Signup/>}></Route>
+                    <Route exact path="/relieftokens" element={<ReliefTokens/>}></Route>
+                    <Route exact path="/donate" element={<Donate/>}></Route>
                     <Route exact path="/registrations" element={<Registrations/>}></Route>
                 </Routes>
             </Router>

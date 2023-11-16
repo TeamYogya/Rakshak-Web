@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import {useNavigate} from 'react-router-dom'
 import sih from "./Video/sih.webm"
 import rakshak from "./Images/rakshak.png"
 import ashoka from "./Images/ashoka.png"
@@ -18,6 +19,7 @@ import earthquake from "./Images/earthquake.jpg"
 
 export default function Landing() {
     const [modal, setModal] = useState(false);
+    const navigate = useNavigate();
     const toggleModal = () => {
     setModal(!modal);
   };
@@ -28,7 +30,7 @@ export default function Landing() {
         // bg-[#4A3ABA] bg-[#4A3AFF]
       return 'bg-[#4A3ABA]';
     } else {
-      return 'bg-gray-200';
+      return 'bg-gray';
     }
   };
   const handleButtonClick = (e) => {
@@ -48,7 +50,7 @@ export default function Landing() {
     { name: 'Home', id: 'home' }, // Remove href and add id
     { name: 'Why us', href: '#about' },
     { name: 'Programs', id: 'cards' }, // Remove href and add id
-    { name: 'Donate', href: '#donate' },
+    { name: 'Donate', href: '/donate' }, // Change href to '/donate'
     { name: 'Settings', onClick: toggleModal }, // Keep this for your modal
     { name: 'Contact us', href: '#footer' }
 ];
@@ -105,23 +107,37 @@ function scrollToSection(sectionId) {
             <h2 className="text-[#170F49] text-3xl font-dm-sans font-bold break-words py-4">Settings</h2>
               <form>
                   <div className="grid grid-rows-6 h-[500px] w-[500px]">
-                    <div className="w-full bg-red-950 h-20"></div>
-                      <div className="w-full bg-red-950 h-20"></div>
-                      <div className="w-full bg-red-950 h-20"></div>
-                      <div className="w-full bg-red-950 h-20"></div>
+                    <div className="w-full h-20">
+                          <h2 className="flex items-center pl-10 text-[#170F49] text-2xl font-dm-sans font-bold break-words py-4">Edit Profile</h2>
+                          <hr/>
+                      </div>
+                      <div className="w-full h-20">
+                          <h2 className="flex items-center pl-10 text-[#170F49] text-2xl font-dm-sans font-bold break-words py-4">Feedback</h2>
+                          <hr/>
+                      </div>
+                      <div className="w-full h-20">
+                          <h2 className="flex items-center pl-10 text-[#170F49] text-2xl font-dm-sans font-bold break-words py-4">Report</h2>
+                          <hr/>
+                      </div>
+                      <div className="w-full h-20">
+                          <h2 className="flex items-center pl-10 text-[#170F49] text-2xl font-dm-sans font-bold break-words py-4">Remove Account</h2>
+                          <hr/>
+                      </div>
                       <div className="grid grid-cols-12 w-full h-20">
-                          <div className="col-span-10 w-full h-full bg-green-950"></div>
+                          <div className="grid col-span-10 w-full h-full">
+                              <h2 className="flex items-center pl-10 text-[#170F49] text-2xl font-dm-sans font-bold break-words py-4">Notifications</h2>
+                          </div>
                           <div className="flex justify-center items-center col-span-2 w-full h-full">
                               <button
       className={
-        'transition ease-in-out duration-300 w-12 rounded-full focus:outline-none ' +
+        'transition ease-in-out duration-300 w-12 rounded-full focus:outline-none border-[#4A3ABA] border-2 border-solid ' +
         getButtonClass()
       }
       onClick={handleButtonClick}
     >
       <div
         className={
-          'transition ease-in-out duration-300 rounded-full h-6 w-6 bg-white shadow ' +
+          'transition ease-in-out duration-300 rounded-full h-6 w-6 bg-white shadow' +
           (toggle ? 'transform translate-x-full' : '')
         }
       ></div>
@@ -167,6 +183,8 @@ function scrollToSection(sectionId) {
         onClick={() => {
             if (item.id) {
                 scrollToSection(item.id);
+            } else if (item.href) {
+                navigate(item.href);
             } else if (item.onClick) {
                 item.onClick();
             }
@@ -175,12 +193,12 @@ function scrollToSection(sectionId) {
     >
         {item.name}
     </button>
-))}
+    ))}
 
 </div>
                     <div className="hidden lg:flex lg:flex-1 lg:justify-end">
                         <button
-                            className="font-bold bg-transparent hover:bg-black hover:text-white max-md:[32px] text-lg rounded-full border-2 border-black inline-flex px-[34px] py-[12px] content-center items-center gap-[10px]">Login
+                            className="duration-1000 font-bold bg-transparent hover:bg-black hover:text-white max-md:[32px] text-lg rounded-full border-2 border-black inline-flex px-[34px] py-[12px] content-center items-center gap-[10px]">Login
                         </button>
                     </div>
                 </nav>
