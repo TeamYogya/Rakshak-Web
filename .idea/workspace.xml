@@ -5,49 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3dc52eb3-4e45-43a9-aee2-6fd97161fa87" name="Changes" comment="ping for help routing issue solved">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/main_server/db.sqlite3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/main_server/test1/tasks.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/primary_backend/primary_backend/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_29_2023_1_43_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_29_2023_1_43_PM__Changes_.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Dashboard/TrialJSON/images/fire.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Dashboard/TrialJSON/images/health.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Dashboard/TrialJSON/images/security-officer.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Dashboard/TrialJSON/images/soldier.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Dashboard/TrialJSON/images/solidarity.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/backend/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main_server/test1/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/backend/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/primary_backend/primary_backend/asgi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/backend/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/primary_backend/primary_backend/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/backend/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/backend/wsgi.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/machine_learning/text_detector/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/machine_learning/text_detector/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/main/celery_tasks/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main_server/celery_tasks/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/main/celery_tasks/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main_server/celery_tasks/asgi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/main/celery_tasks/celery.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main_server/celery_tasks/celery.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/main/celery_tasks/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main_server/celery_tasks/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/main/celery_tasks/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main_server/celery_tasks/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/main/celery_tasks/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main_server/celery_tasks/wsgi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/main/db.sqlite3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/main/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main_server/manage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/main/test1/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main_server/test1/migrations/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/main/test1/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main_server/test1/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/main/test1/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main_server/test1/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/main/test1/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/primary_backend/primary_backend/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/main/test1/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main_server/test1/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/main/test1/tasks.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/main/test1/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main_server/test1/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/main/test1/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main_server/test1/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/main/test1/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main_server/test1/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/manage.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/users/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/primary_backend/manage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/users/users/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/users/users/asgi.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/users/users/settings.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/users/users/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/users/users/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/primary_backend/primary_backend/wsgi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Landing/Landing.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Landing/Landing.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Signup/Signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Signup/Signup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Signup/SignupScreen.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Dashboard/components/PingForHelp.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Dashboard/components/PingForHelp.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,23 +46,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Projects/SPARK+/fullstack-frontend-master&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "develop",
+    "last_opened_file_path": "D:/SIH/Rakshak-Web/frontend/src/pages/Dashboard/TrialJSON/images",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\SIH\Rakshak-Web\frontend\src\pages\Dashboard\TrialJSON\images" />
       <recent name="D:\Rakshak-Web" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
