@@ -14,6 +14,7 @@ import cyclone from "./Images/cyclone.jpg"
 import tsunami from "./Images/tsunami.jpeg"
 import wildfire from "./Images/wildfire.jpg"
 import earthquake from "./Images/earthquake.jpg"
+import {Link} from "react-router-dom";
 
 
 export default function Landing() {
@@ -179,9 +180,9 @@ function scrollToSection(sectionId) {
 
 </div>
                     <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                        <button
+                        <Link to={"/login"}
                             className="font-bold bg-transparent hover:bg-black hover:text-white max-md:[32px] text-lg rounded-full border-2 border-black inline-flex px-[34px] py-[12px] content-center items-center gap-[10px]">Login
-                        </button>
+                        </Link>
                     </div>
                 </nav>
                 <div
@@ -190,9 +191,9 @@ function scrollToSection(sectionId) {
                     Best Defense, Explore<br/>
                     Disaster Preparedness<br/>
                     Today.<br/>
-                    <button
+                    <Link to={"/signup"}
                         className="top-[390px] font-bold rounded-full border-5 px-14 py-6 bg-black inline-flex content-center items-center gap-3 absolute text-white text-2xl font-semibold max-md:text-lg max-md:px-12 max-md:py-4 max-md:top-52">Register
-                    </button>
+                    </Link>
                 </div>
                 <div className="flex justify-center w-full max-md:scale-50">
                 <div className="w-[1063px] h-[250px] top-[615px] absolute max-md:top-[750px]">

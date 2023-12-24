@@ -110,6 +110,7 @@ import easyocr
 from django.shortcuts import render
 from .models import DetectedText
 
+
 def detect_text(request):
     result = None
 

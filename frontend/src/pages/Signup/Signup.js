@@ -19,7 +19,7 @@
 //     };
 //
 //     const toggleInputType = () => {
-//         setInputType(inputType === 'email' ? 'aadhar' : 'email');
+//         setInputType(inputType === 'email' ? 'aadhaar' : 'email');
 //         setInputValue('');
 //     };
 //
@@ -199,10 +199,12 @@
 
 import React, {useState, useRef} from 'react';
 import './signup.css';
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import {google, HomeAffairs, loginsignin} from "../Dashboard/TrialJSON/images";
 import {BiHide, BiShow} from "react-icons/bi";
 import {MdOutlineUploadFile} from "react-icons/md";
+import {useRegisterUserMutation} from "../../services/userAuthApi";
+import {storeToken} from "../../services/LocalStorageService";
 
 const Signup = () => {
     const [name, setName] = useState('');
@@ -214,6 +216,35 @@ const Signup = () => {
     const [result, setResult] = useState('');
 
     const fileInputRef = useRef(null);
+
+    const [server_error, setServerError] = useState({})
+    const navigate = useNavigate();
+    const [registerUser, {isLoading}] = useRegisterUserMutation()
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const data = new FormData(e.currentTarget);
+        const actualData = {
+            name: data.get('name'),
+            email: data.get('email'),
+            aadhaar: data.get('aadhaar'),
+            mobile: data.get('mobile'),
+            password: data.get('password'),
+            password2: data.get('password2'),
+        }
+        const res = await registerUser(actualData)
+        if (res.error) {
+            // console.log(typeof (res.error.data.errors))
+            // console.log(res.error.data.errors)
+            setServerError(res.error.data.errors)
+        }
+        if (res.data) {
+            console.log(typeof (res.data))
+            console.log(res.data)
+            storeToken(res.data.token)
+            navigate('/dashboard')
+        }
+    }
 
     const handleFileChange = (e) => {
         const file = e.target.files[0];
@@ -253,17 +284,17 @@ const Signup = () => {
         }
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log('Form submitted:', {name, email, aadhaar, password});
-        setName('');
-        setEmail('');
-        setAadhaar('');
-        setPassword('');
-    };
+    // const handleSubmit = (e) => {
+    //     e.preventDefault();
+    //     console.log('Form submitted:', {name, email, aadhaar, password});
+    //     setName('');
+    //     setEmail('');
+    //     setAadhaar('');
+    //     setPassword('');
+    // };
 
     const toggleInputType = () => {
-        setInputType(inputType === 'email' ? 'aadhar' : 'email');
+        setInputType(inputType === 'email' ? 'aadhaar' : 'email');
     };
 
     return (
