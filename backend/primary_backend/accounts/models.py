@@ -8,7 +8,7 @@ class UserManager(BaseUserManager):
         self,
         email,
         name,
-        aadhar,
+        aadhaar,
         mobile,
         password=None,
         password2=None,
@@ -22,7 +22,7 @@ class UserManager(BaseUserManager):
         user = self.model(
             email=self.normalize_email(email),
             name=name,
-            aadhar=aadhar,
+            aadhaar=aadhaar,
             mobile=mobile,
         )
 
@@ -34,7 +34,7 @@ class UserManager(BaseUserManager):
         self,
         email,
         name,
-        aadhar,
+        aadhaar,
         mobile,
         password=None,
     ):
@@ -45,7 +45,7 @@ class UserManager(BaseUserManager):
             email,
             password=password,
             name=name,
-            aadhar=aadhar,
+            aadhaar=aadhaar,
             mobile=mobile,
         )
         user.is_admin = True
@@ -61,7 +61,7 @@ class User(AbstractBaseUser):
         unique=True,
     )
     name = models.CharField(max_length=200)
-    aadhar = models.TextField()
+    aadhaar = models.TextField()
     mobile = models.TextField()
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
@@ -73,7 +73,7 @@ class User(AbstractBaseUser):
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = [
         "name",
-        "aadhar",
+        "aadhaar",
         "mobile",
     ]
 

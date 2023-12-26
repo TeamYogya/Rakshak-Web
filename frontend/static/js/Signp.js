@@ -19,7 +19,7 @@
 // //     };
 // //
 // //     const toggleInputType = () => {
-// //         setInputType(inputType === 'email' ? 'aadhar' : 'email');
+// //         setInputType(inputType === 'email' ? 'aadhaar' : 'email');
 // //         setInputValue('');
 // //     };
 // //
@@ -263,7 +263,7 @@
 //     };
 //
 //     const toggleInputType = () => {
-//         setInputType(inputType === 'email' ? 'aadhar' : 'email');
+//         setInputType(inputType === 'email' ? 'aadhaar' : 'email');
 //     };
 //
 //     return (

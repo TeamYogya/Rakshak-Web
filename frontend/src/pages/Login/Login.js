@@ -19,7 +19,7 @@
 //     };
 //
 //     const toggleInputType = () => {
-//       setInputType(inputType === 'email' ? 'aadhar' : 'email');
+//       setInputType(inputType === 'email' ? 'aadhaar' : 'email');
 //       setInputValue('');
 //     };
 //
@@ -82,11 +82,13 @@
 // export default Login;
 
 import React, {useState} from 'react';
+import {useLoginUserMutation, useRegisterUserMutation} from "../../services/userAuthApi";
 // import './signup.css';
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import {google, HomeAffairs, loginsignin} from "../Dashboard/TrialJSON/images";
 import {BiHide, BiShow} from "react-icons/bi";
 import {MdOutlineUploadFile} from "react-icons/md";
+import {storeToken} from "../../services/LocalStorageService";
 
 const Login = () => {
     const [name, setName] = useState('');
@@ -95,7 +97,9 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const [inputType, setInputType] = useState('email');
     const [showPassword, setShowPassword] = useState(false);
-
+    const [loginUser, {isLoading}] = useLoginUserMutation()
+    const navigate = useNavigate();
+    const [server_error, setServerError] = useState({})
 
     const handleInputChange = (e) => {
         const value = e.target.value;
@@ -119,17 +123,30 @@ const Login = () => {
         }
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log('Form submitted:', {name, email, aadhaar, password});
-        setName('');
-        setEmail('');
-        setAadhaar('');
-        setPassword('');
+        const data = new FormData(e.currentTarget);
+        const actualData = {
+            email: data.get('email'),
+            password: data.get('password'),
+        }
+        const res = await loginUser(actualData)
+
+        if (res.error) {
+            console.log(typeof (res.error.data.errors))
+            console.log(res.error.data.errors)
+            setServerError(res.error.data.errors)
+        }
+        if (res.data) {
+            console.log(typeof (res.data))
+            console.log(res.data)
+            storeToken(res.data.token)
+            navigate('/dashboard')
+        }
     };
 
     const toggleInputType = () => {
-        setInputType(inputType === 'email' ? 'aadhar' : 'email');
+        setInputType(inputType === 'email' ? 'aadhaar' : 'email');
     };
 
     return (

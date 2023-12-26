@@ -11,7 +11,7 @@ class UserModelAdmin(BaseUserAdmin):
         "id",
         "email",
         "name",
-        "aadhar",
+        "aadhaar",
         "mobile",
         "is_admin",
     )
@@ -23,7 +23,7 @@ class UserModelAdmin(BaseUserAdmin):
             {
                 "fields": (
                     "name",
-                    "aadhar",
+                    "aadhaar",
                     "mobile",
                 )
             },
@@ -40,7 +40,7 @@ class UserModelAdmin(BaseUserAdmin):
                 "fields": (
                     "email",
                     "name",
-                    "aadhar",
+                    "aadhaar",
                     "mobile",
                     "password1",
                     "password2",

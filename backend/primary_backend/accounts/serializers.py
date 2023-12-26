@@ -15,7 +15,7 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
         fields = [
             "email",
             "name",
-            "aadhar",
+            "aadhaar",
             "mobile",
             "password",
             "password2",
