@@ -4,17 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3dc52eb3-4e45-43a9-aee2-6fd97161fa87" name="Changes" comment="Redux bug-fix">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+    <list default="true" id="3dc52eb3-4e45-43a9-aee2-6fd97161fa87" name="Changes" comment="Registration linking bug-fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/primary_backend/accounts/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/primary_backend/accounts/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/primary_backend/accounts/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/primary_backend/accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/primary_backend/accounts/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/primary_backend/accounts/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/primary_backend/accounts/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/primary_backend/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/primary_backend/accounts/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/primary_backend/db.sqlite3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Login/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/static/js/Signp.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/js/Signp.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +22,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -66,23 +61,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "develop",
-    "last_opened_file_path": "D:/SIH/Rakshak-Web/frontend/src/pages/Dashboard/TrialJSON/images",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "D:\\Jetbrains Toolbox\\Pycharm Professional\\PyCharm 2023.2.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/SIH/Rakshak-Web/frontend/src/pages/Dashboard/TrialJSON/images&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\Jetbrains Toolbox\\Pycharm Professional\\PyCharm 2023.2.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\SIH\Rakshak-Web\frontend\src\pages\Dashboard\TrialJSON\images" />
@@ -137,7 +132,10 @@
       <workItem from="1703414589940" duration="161000" />
       <workItem from="1703439050993" duration="659000" />
       <workItem from="1703603639942" duration="3661000" />
-      <workItem from="1703611069687" duration="1840000" />
+      <workItem from="1703611069687" duration="2295000" />
+      <workItem from="1703613408702" duration="257000" />
+      <workItem from="1703613675634" duration="1622000" />
+      <workItem from="1703681122698" duration="1268000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed Microservices Architecture">
       <option name="closed" value="true" />
@@ -179,7 +177,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703414425239</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Registration linking bug-fix">
+      <option name="closed" value="true" />
+      <created>1703612969149</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1703612969149</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,6 +215,7 @@
     <MESSAGE value="added something" />
     <MESSAGE value="ping for help routing issue solved" />
     <MESSAGE value="Redux bug-fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Redux bug-fix" />
+    <MESSAGE value="Registration linking bug-fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Registration linking bug-fix" />
   </component>
 </project>

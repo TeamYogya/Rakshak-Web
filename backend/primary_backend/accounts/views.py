@@ -14,7 +14,6 @@ from accounts.renderers import UserRenderer
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework.permissions import IsAuthenticated
 
-
 # Generate Token Manually
 def get_tokens_for_user(user):
     refresh = RefreshToken.for_user(user)
@@ -47,7 +46,6 @@ class UserLoginView(APIView):
         email = serializer.data.get("email")
         password = serializer.data.get("password")
         user = authenticate(email=email, password=password)
-        print(user)
         if user is not None:
             token = get_tokens_for_user(user)
             return Response(
