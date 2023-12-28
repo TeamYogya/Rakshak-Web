@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {useNavigate} from 'react-router-dom'
+import {Link,useNavigate} from 'react-router-dom'
 import sih from "./Video/sih.webm"
 import rakshak from "./Images/rakshak.png"
 import ashoka from "./Images/ashoka.png"
@@ -47,43 +47,32 @@ export default function Landing() {
     //   document.body.style.overflowY = 'auto';
     // }
   const navigation = [
-    { name: 'Home', id: 'home' }, // Remove href and add id
+    { name: 'Home', id: 'home' },
     { name: 'Why us', href: '#about' },
-    { name: 'Programs', id: 'cards' }, // Remove href and add id
-    { name: 'Donate', href: '/donate' }, // Change href to '/donate'
-    { name: 'Settings', onClick: toggleModal }, // Keep this for your modal
+    { name: 'Programs', id: 'cards' },
+    { name: 'Donate', href: '/donate' },
+    { name: 'Settings', onClick: toggleModal },
     { name: 'Contact us', href: '#footer' }
 ];
 
     useEffect(() => {
-        // Select the navigation bar
         const navbar = document.getElementById('navbar');
-
-        // Get the initial offset of the navigation bar
-
-        // Function to update the navigation bar's position
         function updateNavbarPosition() {
             if (window.scrollY >= 10) {
                 navbar.style.position = 'fixed';
                 navbar.style.top = '0';
                 navbar.style.left = '0';
                 navbar.style.width = '100%';
-                navbar.style.background = 'rgba(255, 255, 255, 0.2)'; // Adjust the alpha (0.2) for the desired level of frosted glass effect
+                navbar.style.background = 'rgba(255, 255, 255, 0.2)';
                 navbar.style.backdropFilter = 'blur(10px)';
             } else {
                 navbar.style.position = 'relative';
-                navbar.style.background = 'transparent'; // Change to your initial background color
+                navbar.style.background = 'transparent';
             }
         }
-
-
-        // Listen for scroll events and update the navigation bar position
         window.addEventListener('scroll', updateNavbarPosition);
-
-        // Call the function initially in case the page loads already scrolled
         updateNavbarPosition();
         }, []);
-    // Function to scroll to a section when a button is clicked
 function scrollToSection(sectionId) {
     const section = document.getElementById(sectionId);
     if (section) {
@@ -197,9 +186,9 @@ function scrollToSection(sectionId) {
 
 </div>
                     <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                        <button
+                        <Link to="/login"><button
                             className="duration-1000 font-bold bg-transparent hover:bg-black hover:text-white max-md:[32px] text-lg rounded-full border-2 border-black inline-flex px-[34px] py-[12px] content-center items-center gap-[10px]">Login
-                        </button>
+                        </button></Link>
                     </div>
                 </nav>
                 <div
@@ -261,7 +250,7 @@ function scrollToSection(sectionId) {
     </div>
                 <div id="cards" className="pt-40 pb-10 text-black text-5xl font-normal break-word"><h>Your Path to Resilience Explore What Our Site Offers</h></div>
                 <div className="justify-center w-full grid grid-rows-12 gap-4 max-md:scale-50">
-                        <div className="hover:scale-105 duration-1000 grid grid-cols-2 w-[1063px] h-[394px] bg-[#1A222C] rounded-3xl hover:scale-105 duration-1000 hover:bg-gradient-to-br from-[#07C557] via-[#1A222C] to-transparent">
+                        <Link to="/dashboard"><div className="hover:scale-105 duration-1000 grid grid-cols-2 w-[1063px] h-[394px] bg-[#1A222C] rounded-3xl hover:scale-105 duration-1000 hover:bg-gradient-to-br from-[#07C557] via-[#1A222C] to-transparent">
                             <div className="h-full w-full flex items-center justify-center">
                                 <img className="w-[469px] h-[274px] rounded-[88px]" src={mock} />
                             </div>
@@ -269,7 +258,7 @@ function scrollToSection(sectionId) {
                                 <div className="pt-10 text-white text-3xl font-bold break-word">Mock Exercises and Programs</div>
                                 <div className="text-center justify-center text-[#C9C9C9] text-3xl font-normal break-word">Practice makes perfect,<br/>especially when it<br/>comes to disaster readiness.</div>
                             </div>
-                        </div>
+                        </div></Link>
                         <div className="grid grid-col-2 gap-4 grid-flow-col">
     <div className="grid grid-row-2 gap-4">
                     <div className="grid grid-rows-4 w-[525px] h-[764px] rounded-3xl bg-[#1A222C] hover:scale-105 duration-1000 hover:bg-gradient-to-tr from-[#FEA800] via-[#1A222C] to-transparent">

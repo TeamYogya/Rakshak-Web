@@ -1,0 +1,239 @@
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_10_29_2023_1_43_PM_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_10_29_2023_1_43_PM_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_10_29_2023_1_43_PM_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_10_29_2023_1_43_PM_[Changes]/shelved.patch	(revision 10897f44e985a83842db24441aca7289492974aa)
++++ /dev/null	(revision 10897f44e985a83842db24441aca7289492974aa)
+@@ -1,100 +0,0 @@
+-Index: frontend/src/pages/Dashboard/Dashboard.js
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>import Sidebar from \"./components/Sidebar\";\r\nimport ProneAreas from \"./components/ProneAreas\";\r\nimport TopBar from \"./components/TopBar\";\r\nimport DisasterSurvivorStories from \"./components/DisasterSurvivorStories\";\r\nimport {useState} from \"react\";\r\nimport SaferExits from \"./components/SaferExits\";\r\nimport AccessFeasibility from \"./components/AccessFeasibility\";\r\nimport ObjectRecognition from \"./components/ObjectRecognition\";\r\nimport Information from \"./components/Information\";\r\nimport AlternativeRoutes from \"./components/AlternativeRoutes\";\r\nimport NaturalHazardAlerts from \"./components/NaturalHazardAlerts\";\r\nimport ContinuousAlerts from \"./components/ContinuousAlerts\";\r\nimport LocalBusinessIncentives from \"./components/LocalBusinessIncentives\";\r\nimport ReliefTokens from \"./components/ReliefTokens\";\r\nimport PingForHelp from \"./components/PingForHelp\";\r\n\r\nconst Dashboard = () => {\r\n    const [selectedSubMenu, setSelectedSubMenu] = useState(null);\r\n\r\n    const handleSubMenuClick = (selectedSubMenu) => {\r\n        setSelectedSubMenu(selectedSubMenu);\r\n    };\r\n\r\n    return (\r\n        <div className=\"flex font-sans h-screen\">\r\n            <div className=\"w-1/5 max-md:w-24\">\r\n                <Sidebar onSubMenuClick={handleSubMenuClick} />\r\n            </div>\r\n            <div className=\"w-4/5 max-md:w-full\">\r\n                <TopBar />\r\n                {/*<ProneAreas />*/}\r\n                {/*<DisasterSurvivorStories/>*/}\r\n                {selectedSubMenu === 'Prone Area Alerts' && <ProneAreas />}\r\n                {selectedSubMenu === 'Safer Exits' && <SaferExits />}\r\n                {selectedSubMenu === 'Access Feasibility' && <AccessFeasibility />}\r\n                {selectedSubMenu === 'Object Recognition' && <ObjectRecognition />}\r\n                {selectedSubMenu === 'Disaster Survivor Stories' && <DisasterSurvivorStories />}\r\n                {selectedSubMenu === 'Information' && <Information />}\r\n                {selectedSubMenu === 'Alternative Routes' && <AlternativeRoutes />}\r\n                {selectedSubMenu === 'Natural Hazard Alerts' && <NaturalHazardAlerts />}\r\n                {selectedSubMenu === 'Continuous Alerts' && <ContinuousAlerts />}\r\n                {selectedSubMenu === 'Local Business Incentives' && <LocalBusinessIncentives />}\r\n                {selectedSubMenu === 'Relief Tokens' && <ReliefTokens />}\r\n                {selectedSubMenu === 'Ping For Help' && <PingForHelp />}\r\n            </div>\r\n        </div>\r\n        );\r\n};\r\n\r\nexport default Dashboard;
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/frontend/src/pages/Dashboard/Dashboard.js b/frontend/src/pages/Dashboard/Dashboard.js
+---- a/frontend/src/pages/Dashboard/Dashboard.js	(revision 8f5d9605ac6679ed8ebf9b9a402c7583b688c017)
+-+++ b/frontend/src/pages/Dashboard/Dashboard.js	(date 1698566971288)
+-@@ -41,7 +41,7 @@
+-                 {selectedSubMenu === 'Continuous Alerts' && <ContinuousAlerts />}
+-                 {selectedSubMenu === 'Local Business Incentives' && <LocalBusinessIncentives />}
+-                 {selectedSubMenu === 'Relief Tokens' && <ReliefTokens />}
+--                {selectedSubMenu === 'Ping For Help' && <PingForHelp />}
+-+                {selectedSubMenu === 'Ping for Help' && <PingForHelp />}
+-             </div>
+-         </div>
+-         );
+-Index: frontend/src/App.js
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>import logo from './logo.svg';\r\nimport './App.css';\r\nimport {BrowserRouter as Router, Routes, Route} from \"react-router-dom\";\r\nimport Landing from \"./pages/Landing/Landing\";\r\nimport Dashboard from \"./pages/Dashboard/Dashboard\";\r\nimport Story from \"./pages/Dashboard/components/Story\";\r\nimport CategorisedStory from \"./pages/Dashboard/components/CategorisedStory\";\r\nimport Signup from \"./pages/Signup/Signup\"\r\nimport Login from \"./pages/Login/Login\"\r\n\r\nfunction App() {\r\n    return (\r\n        <div className=\"App\">\r\n            <Router>\r\n                <Routes>\r\n                    <Route exact path=\"/\" element={<Landing/>}/>\r\n                    <Route exact path=\"/dashboard\" element={<Dashboard/>}/>\r\n                    <Route exact path=\"/Story/:storyId\" element={<Story/>}/>\r\n                    <Route exact path=\"/CategorisedStory/:storyId\" element={<CategorisedStory/>}/>\r\n                    {/*<Route exact path=\"/dashboard/Help\" element={<PingForHelp/>}/>*/}\r\n                    <Route exact path=\"/CategorisedStory/:storyType\" element={<CategorisedStory/>}/>\r\n                    <Route exact path=\"/login\" element={<Login/>}></Route>\r\n                    <Route exact path=\"/signup\" element={<Signup/>}></Route>\r\n                </Routes>\r\n            </Router>\r\n        </div>\r\n    );\r\n}\r\n\r\nexport default App;\r\n
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/frontend/src/App.js b/frontend/src/App.js
+---- a/frontend/src/App.js	(revision 8f5d9605ac6679ed8ebf9b9a402c7583b688c017)
+-+++ b/frontend/src/App.js	(date 1698567062671)
+-@@ -1,4 +1,3 @@
+--import logo from './logo.svg';
+- import './App.css';
+- import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+- import Landing from "./pages/Landing/Landing";
+-@@ -17,7 +16,6 @@
+-                     <Route exact path="/dashboard" element={<Dashboard/>}/>
+-                     <Route exact path="/Story/:storyId" element={<Story/>}/>
+-                     <Route exact path="/CategorisedStory/:storyId" element={<CategorisedStory/>}/>
+--                    {/*<Route exact path="/dashboard/Help" element={<PingForHelp/>}/>*/}
+-                     <Route exact path="/CategorisedStory/:storyType" element={<CategorisedStory/>}/>
+-                     <Route exact path="/login" element={<Login/>}></Route>
+-                     <Route exact path="/signup" element={<Signup/>}></Route>
+-Index: .idea/workspace.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"3dc52eb3-4e45-43a9-aee2-6fd97161fa87\" name=\"Changes\" comment=\"Fixed Microservices Architecture\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"master\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;customColor&quot;: &quot;&quot;,\r\n  &quot;associatedIndex&quot;: 7\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2VyxA0Ayihgu6vKtSflaLcC4ISg\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;D:/SIH/dev/Repo/frontend/src&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\Rakshak-Web\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\SIH\\Rakshak-Web\\frontend\\src\\pages\\Dashboard\\components\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"3dc52eb3-4e45-43a9-aee2-6fd97161fa87\" name=\"Changes\" comment=\"Added Tailwind, Dockerfile and Jenkinsfile\" />\r\n      <created>1696780270620</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1696780270620</updated>\r\n      <workItem from=\"1696780271920\" duration=\"1006000\" />\r\n      <workItem from=\"1696821638877\" duration=\"2868000\" />\r\n      <workItem from=\"1696852533652\" duration=\"3422000\" />\r\n      <workItem from=\"1696926598968\" duration=\"23000\" />\r\n      <workItem from=\"1696937015023\" duration=\"4501000\" />\r\n      <workItem from=\"1697018709252\" duration=\"1253000\" />\r\n      <workItem from=\"1697033641635\" duration=\"5330000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Fixed Microservices Architecture\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1697043830452</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1697043830452</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"2\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"UnknownFeatures\">\r\n    <option featureType=\"com.intellij.fileTypeFactory\" implementationName=\".env\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Added Microservices setup with Amazon MQ\" />\r\n    <MESSAGE value=\"Fixed Microservices Architecture\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Fixed Microservices Architecture\" />\r\n  </component>\r\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+---- a/.idea/workspace.xml	(revision 8f5d9605ac6679ed8ebf9b9a402c7583b688c017)
+-+++ b/.idea/workspace.xml	(date 1698567062843)
+-@@ -4,8 +4,10 @@
+-     <option name="autoReloadType" value="SELECTIVE" />
+-   </component>
+-   <component name="ChangeListManager">
+--    <list default="true" id="3dc52eb3-4e45-43a9-aee2-6fd97161fa87" name="Changes" comment="Fixed Microservices Architecture">
+-+    <list default="true" id="3dc52eb3-4e45-43a9-aee2-6fd97161fa87" name="Changes" comment="Added Aadhaar text image identification code for static page">
+-       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-+      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
+-+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Dashboard/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Dashboard/Dashboard.js" afterDir="false" />
+-     </list>
+-     <option name="SHOW_DIALOG" value="false" />
+-     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+-@@ -70,6 +72,8 @@
+-       <workItem from="1696937015023" duration="4501000" />
+-       <workItem from="1697018709252" duration="1253000" />
+-       <workItem from="1697033641635" duration="5330000" />
+-+      <workItem from="1697354103447" duration="389000" />
+-+      <workItem from="1698565154306" duration="1881000" />
+-     </task>
+-     <task id="LOCAL-00001" summary="Fixed Microservices Architecture">
+-       <option name="closed" value="true" />
+-@@ -79,7 +83,15 @@
+-       <option name="project" value="LOCAL" />
+-       <updated>1697043830452</updated>
+-     </task>
+--    <option name="localTasksCounter" value="2" />
+-+    <task id="LOCAL-00002" summary="Added Aadhaar text image identification code for static page">
+-+      <option name="closed" value="true" />
+-+      <created>1697263871648</created>
+-+      <option name="number" value="00002" />
+-+      <option name="presentableId" value="LOCAL-00002" />
+-+      <option name="project" value="LOCAL" />
+-+      <updated>1697263871648</updated>
+-+    </task>
+-+    <option name="localTasksCounter" value="3" />
+-     <servers />
+-   </component>
+-   <component name="TypeScriptGeneratedFilesManager">
+-@@ -102,6 +114,7 @@
+-   <component name="VcsManagerConfiguration">
+-     <MESSAGE value="Added Microservices setup with Amazon MQ" />
+-     <MESSAGE value="Fixed Microservices Architecture" />
+--    <option name="LAST_COMMIT_MESSAGE" value="Fixed Microservices Architecture" />
+-+    <MESSAGE value="Added Aadhaar text image identification code for static page" />
+-+    <option name="LAST_COMMIT_MESSAGE" value="Added Aadhaar text image identification code for static page" />
+-   </component>
+- </project>
+-\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_10_29_2023_1_43_PM__Changes_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_10_29_2023_1_43_PM__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_10_29_2023_1_43_PM__Changes_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_10_29_2023_1_43_PM__Changes_.xml	(revision 10897f44e985a83842db24441aca7289492974aa)
++++ /dev/null	(revision 10897f44e985a83842db24441aca7289492974aa)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_10_29_2023_1_43_PM_[Changes]" date="1698567203274" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_29_2023_1_43_PM_[Changes]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 10/29/2023 1:43 PM [Changes]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"3dc52eb3-4e45-43a9-aee2-6fd97161fa87\" name=\"Changes\" comment=\"added settings\">\r\n      <change afterPath=\"$PROJECT_DIR$/frontend/src/assets/img/heart.png\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/frontend/package-lock.json\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/frontend/package-lock.json\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/frontend/package.json\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/frontend/package.json\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/frontend/src/App.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/frontend/src/App.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/frontend/src/pages/Dashboard/components/ReliefTokens.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/frontend/src/pages/Dashboard/components/ReliefTokens.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/frontend/src/pages/Landing/Landing.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/frontend/src/pages/Landing/Landing.js\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"DjangoConsoleOptions\" custom-start-script=\"import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)\">\r\n    <option name=\"myCustomStartScript\" value=\"import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"JavaScript File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"master\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;customColor&quot;: &quot;&quot;,\r\n  &quot;associatedIndex&quot;: 7\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2VyxA0Ayihgu6vKtSflaLcC4ISg\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"ASKED_ADD_EXTERNAL_FILES\": \"true\",\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"WebServerToolWindowFactoryState\": \"false\",\r\n    \"git-widget-placeholder\": \"develop\",\r\n    \"last_opened_file_path\": \"D:/SIH/Rakshak-Web/Rakshak-Web/frontend/src/assets/img\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"settings.editor.selected.configurable\": \"inlay.hints\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\SIH\\Rakshak-Web\\Rakshak-Web\\frontend\\src\\assets\\img\" />\r\n      <recent name=\"D:\\Rakshak-Web\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\SIH\\Rakshak-Web\\frontend\\src\\pages\\Dashboard\\components\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"3dc52eb3-4e45-43a9-aee2-6fd97161fa87\" name=\"Changes\" comment=\"Added Tailwind, Dockerfile and Jenkinsfile\" />\r\n      <created>1696780270620</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1696780270620</updated>\r\n      <workItem from=\"1696780271920\" duration=\"1006000\" />\r\n      <workItem from=\"1696821638877\" duration=\"2868000\" />\r\n      <workItem from=\"1696852533652\" duration=\"3422000\" />\r\n      <workItem from=\"1696926598968\" duration=\"23000\" />\r\n      <workItem from=\"1696937015023\" duration=\"4501000\" />\r\n      <workItem from=\"1697018709252\" duration=\"1253000\" />\r\n      <workItem from=\"1697033641635\" duration=\"5330000\" />\r\n      <workItem from=\"1697047258799\" duration=\"939000\" />\r\n      <workItem from=\"1697185078920\" duration=\"2960000\" />\r\n      <workItem from=\"1697373331252\" duration=\"5062000\" />\r\n      <workItem from=\"1697434257076\" duration=\"1304000\" />\r\n      <workItem from=\"1697436077619\" duration=\"2338000\" />\r\n      <workItem from=\"1697471425168\" duration=\"9722000\" />\r\n      <workItem from=\"1697538618925\" duration=\"964000\" />\r\n      <workItem from=\"1697716545897\" duration=\"1328000\" />\r\n      <workItem from=\"1697731210172\" duration=\"871000\" />\r\n      <workItem from=\"1697793917584\" duration=\"602000\" />\r\n      <workItem from=\"1697820800243\" duration=\"4870000\" />\r\n      <workItem from=\"1697884048169\" duration=\"1634000\" />\r\n      <workItem from=\"1698290648999\" duration=\"593000\" />\r\n      <workItem from=\"1698341201796\" duration=\"732000\" />\r\n      <workItem from=\"1698487907294\" duration=\"236000\" />\r\n      <workItem from=\"1698488317213\" duration=\"1083000\" />\r\n      <workItem from=\"1698558096072\" duration=\"591000\" />\r\n      <workItem from=\"1698560317130\" duration=\"1273000\" />\r\n      <workItem from=\"1698565963007\" duration=\"7742000\" />\r\n      <workItem from=\"1698723691076\" duration=\"108000\" />\r\n      <workItem from=\"1698724002255\" duration=\"3994000\" />\r\n      <workItem from=\"1698855410838\" duration=\"794000\" />\r\n      <workItem from=\"1698896547812\" duration=\"630000\" />\r\n      <workItem from=\"1698904982310\" duration=\"2810000\" />\r\n      <workItem from=\"1698945193364\" duration=\"604000\" />\r\n      <workItem from=\"1699048961095\" duration=\"1694000\" />\r\n      <workItem from=\"1699119836659\" duration=\"630000\" />\r\n      <workItem from=\"1699188020978\" duration=\"13626000\" />\r\n      <workItem from=\"1699690395983\" duration=\"408000\" />\r\n      <workItem from=\"1699691046026\" duration=\"424000\" />\r\n      <workItem from=\"1699875326464\" duration=\"635000\" />\r\n      <workItem from=\"1700133348188\" duration=\"2267000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Fixed Microservices Architecture\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1697043830452</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1697043830452</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"added something\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1697388309699</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1697388309700</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"added something\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1697388713408</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1697388713408</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"added settings\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1697826309291</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1697826309291</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"5\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"UnknownFeatures\">\r\n    <option featureType=\"dependencySupport\" implementationName=\"javascript:npm:react\" />\r\n    <option featureType=\"dependencySupport\" implementationName=\"executable:docker\" />\r\n    <option featureType=\"dependencySupport\" implementationName=\"javascript:npm:tailwindcss\" />\r\n    <option featureType=\"com.intellij.fileTypeFactory\" implementationName=\".env\" />\r\n    <option featureType=\"dependencySupport\" implementationName=\"executable:kubectl\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Added Microservices setup with Amazon MQ\" />\r\n    <MESSAGE value=\"Fixed Microservices Architecture\" />\r\n    <MESSAGE value=\"added something\" />\r\n    <MESSAGE value=\"added settings\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"added settings\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 10897f44e985a83842db24441aca7289492974aa)
++++ b/.idea/workspace.xml	(date 1702033106928)
+@@ -4,14 +4,10 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="3dc52eb3-4e45-43a9-aee2-6fd97161fa87" name="Changes" comment="added settings">
+-      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/heart.png" afterDir="false" />
++    <list default="true" id="3dc52eb3-4e45-43a9-aee2-6fd97161fa87" name="Changes" comment="donate and settings">
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_29_2023_1_43_PM_[Changes]/shelved.patch" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_29_2023_1_43_PM__Changes_.xml" beforeDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Dashboard/components/ReliefTokens.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Dashboard/components/ReliefTokens.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Landing/Landing.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Landing/Landing.js" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -48,23 +44,23 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "ASKED_ADD_EXTERNAL_FILES": "true",
+-    "RunOnceActivity.OpenProjectViewOnStart": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "WebServerToolWindowFactoryState": "false",
+-    "git-widget-placeholder": "develop",
+-    "last_opened_file_path": "D:/SIH/Rakshak-Web/Rakshak-Web/frontend/src/assets/img",
+-    "node.js.detected.package.eslint": "true",
+-    "node.js.detected.package.tslint": "true",
+-    "node.js.selected.package.eslint": "(autodetect)",
+-    "node.js.selected.package.tslint": "(autodetect)",
+-    "nodejs_package_manager_path": "npm",
+-    "settings.editor.selected.configurable": "inlay.hints",
+-    "vue.rearranger.settings.migration": "true"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
++    &quot;last_opened_file_path&quot;: &quot;D:/Projects/minor-project/Student/CSV&quot;,
++    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
++    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
++    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
++    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
++    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;,
++    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="RecentsManager">
+     <key name="CopyFile.RECENT_KEYS">
+       <recent name="D:\SIH\Rakshak-Web\Rakshak-Web\frontend\src\assets\img" />
+@@ -120,7 +116,23 @@
+       <workItem from="1699690395983" duration="408000" />
+       <workItem from="1699691046026" duration="424000" />
+       <workItem from="1699875326464" duration="635000" />
+-      <workItem from="1700133348188" duration="2267000" />
++      <workItem from="1700133348188" duration="3048000" />
++      <workItem from="1700139132172" duration="827000" />
++      <workItem from="1700205331907" duration="23000" />
++      <workItem from="1701340019045" duration="1193000" />
++      <workItem from="1701346847780" duration="595000" />
++      <workItem from="1701418695119" duration="601000" />
++      <workItem from="1701454246399" duration="660000" />
++      <workItem from="1701505046294" duration="766000" />
++      <workItem from="1701524423307" duration="418000" />
++      <workItem from="1701879949332" duration="2582000" />
++      <workItem from="1701884927872" duration="634000" />
++      <workItem from="1701946605360" duration="195000" />
++      <workItem from="1701966712727" duration="4000" />
++      <workItem from="1701967233608" duration="435000" />
++      <workItem from="1702031771821" duration="78000" />
++      <workItem from="1702032862888" duration="66000" />
++      <workItem from="1702033054155" duration="52000" />
+     </task>
+     <task id="LOCAL-00001" summary="Fixed Microservices Architecture">
+       <option name="closed" value="true" />
+@@ -154,7 +166,15 @@
+       <option name="project" value="LOCAL" />
+       <updated>1697826309291</updated>
+     </task>
+-    <option name="localTasksCounter" value="5" />
++    <task id="LOCAL-00005" summary="donate and settings">
++      <option name="closed" value="true" />
++      <created>1700136042384</created>
++      <option name="number" value="00005" />
++      <option name="presentableId" value="LOCAL-00005" />
++      <option name="project" value="LOCAL" />
++      <updated>1700136042384</updated>
++    </task>
++    <option name="localTasksCounter" value="6" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -183,6 +203,7 @@
+     <MESSAGE value="Fixed Microservices Architecture" />
+     <MESSAGE value="added something" />
+     <MESSAGE value="added settings" />
+-    <option name="LAST_COMMIT_MESSAGE" value="added settings" />
++    <MESSAGE value="donate and settings" />
++    <option name="LAST_COMMIT_MESSAGE" value="donate and settings" />
+   </component>
+ </project>
+\ No newline at end of file
