@@ -274,7 +274,7 @@ const PingForHelp = () => {
     },
   ];
   return (
-    <div className="h-screen flex">
+    <div className="overflow-y-auto h-[640px] flex">
       <div className="h-16 bg-purple_primary rounded-t-lg"></div>
 
 
@@ -284,7 +284,7 @@ const PingForHelp = () => {
 
           <div className="flex items-center">
 
-            <img src={man} alt="Emergency Image" className="w-[130px] h-[130px]  mt-[0px] mr-4" />
+            <img src={man} alt="Emergency Image" className="w-[120px] h-[120px]  mt-[0px] mr-4" />
 
             <div>
               <h2 className="text-2xl font-semibold mb-2 text-white">Don't Worry We Are Here To Help You!</h2>
@@ -353,19 +353,19 @@ const PingForHelp = () => {
           <h2 className="text-xl font-semibold mb-4">Details about your emergency situation</h2>
           <form>
             <div className="mb-4">
-              <label htmlFor="description" className="block text-sm font-medium text-gray-600">
-                Describe your situation
-              </label>
+              {/*<label htmlFor="description" className="block text-sm font-medium text-gray-600">*/}
+              {/*  Describe your situation*/}
+              {/*</label>*/}
               <textarea
                 id="description"
-                name="description" rows="4" className="w-full px-4 py-2 border rounded-lg focus:out focus:border-black-200 bg-purple-200 text-black h-[200px]"
+                name="description" rows="4" className="resize-none w-full px-4 py-2 border rounded-3xl focus:outline-0 focus:border-purple-800 text-black h-[350px]"
             placeholder="Describe your situation"
               />
             </div>
 
             <div className="mb-4">
-              <label className="block text-sm font-medium text-gray-600">Priority Level</label>
-              <div className="flex items-center">
+              <label className="block text-lg font-medium text-gray-600">Priority Level</label>
+              <div className="items-center mt-2">
                 <label className="mr-4">
                   <input
                     type="radio"
@@ -374,7 +374,7 @@ const PingForHelp = () => {
                 <label>
                   <input
                     type="radio"
-                    name="priority" value="low"checked={priority === 'low'}onChange={handlePriorityChange}/>{' '} Low</label>
+                    name="priority" value="low"checked={priority === 'low'} onChange={handlePriorityChange}/>{' '} Low</label>
               </div>
             </div>
             {showCustomTime && (

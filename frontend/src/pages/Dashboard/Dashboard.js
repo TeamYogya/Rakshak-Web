@@ -1,5 +1,6 @@
 import Sidebar from "./components/Sidebar";
 import ProneAreas from "./components/ProneAreas";
+import AwarenessSessions from "./components/Awareness Sessions";
 import TopBar from "./components/TopBar";
 import DisasterSurvivorStories from "./components/DisasterSurvivorStories";
 import {useState} from "react";
@@ -31,6 +32,7 @@ const Dashboard = () => {
                 {/*<ProneAreas />*/}
                 {/*<DisasterSurvivorStories/>*/}
                 {selectedSubMenu === 'Prone Area Alerts' && <ProneAreas />}
+                {selectedSubMenu === 'Awareness Sessions' && <AwarenessSessions />}
                 {selectedSubMenu === 'Safer Exits' && <SaferExits />}
                 {selectedSubMenu === 'Access Feasibility' && <AccessFeasibility />}
                 {selectedSubMenu === 'Object Recognition' && <ObjectRecognition />}

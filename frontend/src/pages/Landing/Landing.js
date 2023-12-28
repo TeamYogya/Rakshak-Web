@@ -196,7 +196,7 @@ function scrollToSection(sectionId) {
                     Knowledge is Your<br/>
                     Best Defense, Explore<br/>
                     Disaster Preparedness<br/>
-                    Today.<br/>
+                    Today<br/>
                     <button
                         className="top-[390px] font-bold rounded-full border-5 px-14 py-6 bg-black inline-flex content-center items-center gap-3 absolute text-white text-2xl font-semibold max-md:text-lg max-md:px-12 max-md:py-4 max-md:top-52">Register
                     </button>
