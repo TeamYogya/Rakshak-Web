@@ -4,7 +4,10 @@ import {category, cities, disasters, Story} from "../TrialJSON/Stories";
 import {Dialog, Transition} from '@headlessui/react';
 import {AiOutlineClose} from 'react-icons/ai';
 import SearchIcon from "../../../assets/img/search.svg";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
+import {storeToken} from "../../../services/LocalStorageService";
+import {useAddStoryMutation} from "../../../services/storyInputApi";
+
 
 const DisasterSurvivorStories = () => {
 
@@ -17,22 +20,23 @@ const DisasterSurvivorStories = () => {
     const [stories, setStories] = useState(Story);
     const [showAllStories, setShowAllStories] = useState(false);
 
-    const handleCityChange = (e) => {
-        setSelectedCity(e.target.value);
-        setSelectedDisaster(''); // Reset disaster type when city changes
-        setShowAllStories(true); // Reset to show all when city changes
-    };
+    // const handleCityChange = (e) => {
+    //     setSelectedCity(e.target.value);
+    //     setSelectedDisaster(''); // Reset disaster type when city changes
+    //     setShowAllStories(true); // Reset to show all when city changes
+    // };
 
-    const handleDisasterChange = (e) => {
-        setSelectedDisaster(e.target.value);
-        setSelectedCity(''); // Reset city when disaster type changes
-        setShowAllStories(true); // Reset to show all when disaster type changes
-    };
+    // const handleDisasterChange = (e) => {
+    //     setSelectedDisaster(e.target.value);
+    //     setSelectedCity(''); // Reset city when disaster type changes
+    //     setShowAllStories(true); // Reset to show all when disaster type changes
+    // };
 
     // Filter stories based on selected city and disaster type
+
     const filteredStories = stories.filter((story) => {
         const cityMatch = selectedCity === '' || story.city === selectedCity;
-        const disasterMatch = selectedDisaster === '' || story.disasterType === selectedDisaster;
+        const disasterMatch = selectedDisaster === '' || story.type === selectedDisaster;
         return cityMatch && disasterMatch;
     });
 
@@ -58,6 +62,70 @@ const DisasterSurvivorStories = () => {
 
     const toggleDropdown = () => {
         setDropdownOpen(!isDropdownOpen);
+    };
+
+    const [server_error, setServerError] = useState({})
+    const navigate = useNavigate();
+    const [addStory, {isLoading}] = useAddStoryMutation();
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const data = new FormData(e.currentTarget);
+        const actualData = {
+            title: data.get('title'),
+            // type: data.get('type'),
+            city: data.get('city'),
+            author: data.get('author'),
+            date: data.get('date'),
+            description: data.get('description'),
+        }
+        console.log(actualData)
+        const res = await addStory(actualData)
+        if (res.error) {
+            console.log(typeof (res.error.data.errors))
+            console.log(res.error.data.errors)
+            setServerError(res.error.data.errors)
+        }
+        if (res.data) {
+            console.log(typeof (res.data))
+            console.log(res.data)
+            storeToken(res.data.token)
+            // navigate('/dashboard')
+            navigate('/')
+        }
+    }
+
+    const [title, setTitle] = useState('');
+    const [city, setCity] = useState('');
+    const [type, setType] = useState('');
+    const [author, setAuthor] = useState('');
+    const [date, setDate] = useState('');
+    const [description, setDescription] = useState('');
+    const handleInputChange = (e) => {
+        const value = e.target.value;
+        const inputName = e.target.name;
+
+        switch (inputName) {
+            case 'title':
+                setTitle(value);
+                break;
+            case 'city':
+                setCity(value);
+                break;
+            // case 'type':
+            //     setType(value);
+            //     break;
+            case 'author':
+                setAuthor(value);
+                break;
+            case 'date':
+                setDate(value);
+                break;
+            case 'description':
+                setDescription(value);
+                break;
+            default:
+                break;
+        }
     };
 
     const [selectedOption, setSelectedOption] = useState('');
@@ -101,7 +169,7 @@ const DisasterSurvivorStories = () => {
                                 <select
                                     id="cityDropdown"
                                     className="p-2 border-0 rounded"
-                                    onChange={handleCityChange}
+                                    onChange={handleInputChange}
                                     value={selectedCity}>
                                     <option value="" disabled>
                                         None
@@ -121,7 +189,7 @@ const DisasterSurvivorStories = () => {
                                 <select
                                     id="disasterDropdown"
                                     className="p-2 border-0 rounded"
-                                    onChange={handleDisasterChange}
+                                    onChange={handleInputChange}
                                     value={selectedDisaster}>
                                     <option value="" disabled>
                                         None
@@ -224,110 +292,143 @@ const DisasterSurvivorStories = () => {
                                     onClick={closeAddStoryModal}>
                                 <AiOutlineClose className="text-gray-600"/>
                             </button>
-
-                            <div className="flex flex-wrap my-2">
-                                <div className="flex flex-col mr-4">
-                                    <Dialog.Title
-                                        className="text-lg mt-0 font-semibold text-left text-purple_primary my-2">
-                                        Title
-                                    </Dialog.Title>
-                                    <input
-                                        className={`p-2 flex my-1 shadow-xl w-48 bg-light-gray placeholder-dark_gray placeholder:font-black rounded-lg 'placeholder:font-black'`}
-                                        type="text"
-                                        name="title"
-                                        placeholder=""
-                                        // value={aadhaar}
-                                        // onChange={handleInputChange}
-                                    />
-                                </div>
-
-                                <div className="flex flex-col mr-4">
-                                    <Dialog.Title
-                                        className="text-lg mt-0 font-semibold text-left text-purple_primary my-2">
-                                        City
-                                    </Dialog.Title>
-                                    <div className="flex items-center">
-                                        <select
-                                            id="cityDropdown"
-                                            className="p-2 border-0 rounded"
-                                            onChange={handleCityChange}
-                                            value={selectedCity}>
-                                            <option value="" disabled>
-                                                None
-                                            </option>
-                                            {cities.map((option) => (
-                                                <option key={option} value={option}>
-                                                    {option}
-                                                </option>
-                                            ))}
-                                        </select>
+                            <form onSubmit={handleSubmit}>
+                                <div className="flex flex-wrap my-2">
+                                    <div className="flex flex-col mr-4">
+                                        <Dialog.Title
+                                            className="text-lg mt-0 font-semibold text-left text-purple_primary my-2">
+                                            Title
+                                        </Dialog.Title>
+                                        <input
+                                            className={`p-2 flex my-1 shadow-xl w-48 bg-light-gray placeholder-dark_gray placeholder:font-black rounded-lg 'placeholder:font-black'`}
+                                            type="text"
+                                            id={'title'}
+                                            name="title"
+                                            placeholder=""
+                                            // value={aadhaar}
+                                            onChange={handleInputChange}
+                                        />
                                     </div>
-                                </div>
 
-                                <div className="flex flex-col mr-4">
-                                    <Dialog.Title
-                                        className="text-lg mt-0 font-semibold text-left text-purple_primary my-2">
-                                        Disaster Type
-                                    </Dialog.Title>
-                                    <div className="flex items-center">
-                                        <select
-                                            id="disasterDropdown"
-                                            className="p-2 border-0 rounded"
-                                            onChange={handleDisasterChange}
-                                            value={selectedDisaster}>
-                                            <option value="" disabled>
-                                                None
-                                            </option>
-                                            {disasters.map((option) => (
-                                                <option className={"my-2"} key={option} value={option}>
-                                                    {option}
-                                                </option>
-                                            ))}
-                                        </select>
+                                    <div className="flex flex-col mr-4">
+                                        <Dialog.Title
+                                            className="text-lg mt-0 font-semibold text-left text-purple_primary my-2">
+                                            City
+                                        </Dialog.Title>
+                                        <div className="flex items-center">
+                                            <select
+                                                id="city"
+                                                className="p-2 border-0 rounded"
+                                                // onChange={handleCityChange}
+                                                onChange={handleInputChange}
+                                                name={'city'}
+                                            >
+                                                {/*<option value="" disabled>*/}
+                                                {/*    None*/}
+                                                {/*</option>*/}
+                                                {cities.map((option, index) => (
+                                                    <option key={`${option}-${index}`} value={option}>
+                                                        {option}
+                                                    </option>
+                                                ))}
+                                            </select>
+                                        </div>
                                     </div>
+
+                                    {/*<div className="flex flex-col mr-4">*/}
+                                    {/*    <Dialog.Title*/}
+                                    {/*        className="text-lg mt-0 font-semibold text-left text-purple_primary my-2">*/}
+                                    {/*        Disaster Type*/}
+                                    {/*    </Dialog.Title>*/}
+                                    {/*    <div className="flex items-center">*/}
+                                    {/*        <select*/}
+                                    {/*            id="disasterDropdown"*/}
+                                    {/*            className="p-2 border-0 rounded"*/}
+                                    {/*            // onChange={handleDisasterChange}*/}
+                                    {/*            onChange={handleInputChange}*/}
+                                    {/*        >*/}
+                                    {/*            name={'type'}*/}
+                                    {/*            /!*<option value="">*!/*/}
+                                    {/*            /!*    None*!/*/}
+                                    {/*            /!*</option>*!/*/}
+                                    {/*            {disasters.map((option, index) => (*/}
+                                    {/*                <option className="my-2" key={`${option}-${index}`} value={option}>*/}
+                                    {/*                    {option}*/}
+                                    {/*                </option>*/}
+                                    {/*            ))}*/}
+                                    {/*            /!*{disasters.map((option) => (*!/*/}
+                                    {/*            /!*    <option className={"my-2"} key={option} value={option}>*!/*/}
+                                    {/*            /!*        {option}*!/*/}
+                                    {/*            /!*    </option>*!/*/}
+                                    {/*            /!*))}*!/*/}
+                                    {/*        </select>*/}
+                                    {/*    </div>*/}
+                                    {/*</div>*/}
+
+                                    <div className="flex flex-col">
+                                        <Dialog.Title
+                                            className="text-lg mt-0 font-semibold text-left text-purple_primary my-2">
+                                            Author
+                                        </Dialog.Title>
+                                        <input
+                                            className={`p-2 flex my-1 shadow-xl w-48 bg-light-gray placeholder-dark_gray placeholder:font-black rounded-lg 'placeholder:font-black'`}
+                                            type="text"
+                                            name="author"
+                                            placeholder=""
+                                            id={'author'}
+                                            // value={aadhaar}
+                                            onChange={handleInputChange}
+                                        />
+                                    </div>
+
+                                    <div className="flex flex-col">
+                                        <Dialog.Title
+                                            className="text-lg mt-0 font-semibold text-left text-purple_primary my-2">
+                                            Date
+                                        </Dialog.Title>
+                                        <input
+                                            id={'date'}
+                                            className={`p-2 flex my-1 shadow-xl w-48 bg-light-gray placeholder-dark_gray placeholder:font-black rounded-lg 'placeholder:font-black'`}
+                                            type="date"
+                                            name="date"
+                                            placeholder=""
+                                            // value={aadhaar}
+                                            onChange={handleInputChange}
+                                        />
+                                    </div>
+
                                 </div>
 
-                                <div className="flex flex-col">
-                                    <Dialog.Title
-                                        className="text-lg mt-0 font-semibold text-left text-purple_primary my-2">
-                                        Author
-                                    </Dialog.Title>
-                                    <input
-                                        className={`p-2 flex my-1 shadow-xl w-48 bg-light-gray placeholder-dark_gray placeholder:font-black rounded-lg 'placeholder:font-black'`}
-                                        type="text"
-                                        name="author"
-                                        placeholder=""
-                                        // value={aadhaar}
-                                        // onChange={handleInputChange}
-                                    />
-                                </div>
-                            </div>
 
-
-                            <textarea
-                                id="description"
-                                name="description" rows="4"
-                                className="w-full px-4 py-2 border rounded-lg focus:out focus:border-black-200 text-black h-[250px]"
-                                placeholder="Give in your story"
-                            />
-
-                            <Dialog.Title className="text-lg font-semibold text-left text-purple_primary my-2">
-                                <label htmlFor="photoInput" className="cursor-pointer">
-                                    Upload pics
-                                </label>&nbsp;
-                                <label htmlFor="photoInput" className="cursor-pointer text-neutral-950 text-sm">
-                                    (The first picture chosen would be the faceof your story)
-                                </label>
-                                <input
-                                    type="file"
-                                    id="photoInput"
-                                    name="photos"
-                                    accept="image/*"
-                                    multiple
-                                    className="mt-4 bg-purple_primary hidden"
+                                <textarea
+                                    id="description"
+                                    onChange={handleInputChange}
+                                    name="description" rows="4"
+                                    className="w-full px-4 py-2 border rounded-lg focus:out focus:border-black-200 text-black h-[250px]"
+                                    placeholder="Give in your story"
                                 />
-                            </Dialog.Title>
 
+                                {/*<Dialog.Title className="text-lg font-semibold text-left text-purple_primary my-2">*/}
+                                {/*    <label htmlFor="photoInput" className="cursor-pointer">*/}
+                                {/*        Upload pics*/}
+                                {/*    </label>&nbsp;*/}
+                                {/*    <label htmlFor="photoInput" className="cursor-pointer text-neutral-950 text-sm">*/}
+                                {/*        (The first picture chosen would be the faceof your story)*/}
+                                {/*    </label>*/}
+                                {/*    <input*/}
+                                {/*        type="file"*/}
+                                {/*        id="photoInput"*/}
+                                {/*        name="photos"*/}
+                                {/*        accept="image/*"*/}
+                                {/*        multiple*/}
+                                {/*        className="mt-4 bg-purple_primary hidden"*/}
+                                {/*    />*/}
+                                {/*</Dialog.Title>*/}
+                                <button type={'submit'}
+                                        className="flex p-2 mt-2 shadow-xl w-40 text-white bg-purple_primary justify-center font-black rounded-3xl items-center">
+                                    Add
+                                </button>
+                            </form>
 
                         </div>
                     </div>
