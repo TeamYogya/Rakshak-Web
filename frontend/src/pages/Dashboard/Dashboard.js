@@ -27,7 +27,7 @@ const Dashboard = () => {
             <div className="w-1/5 max-md:w-24 fixed">
                 <Sidebar onSubMenuClick={handleSubMenuClick} />
             </div>
-            <div className="ml-[305px] w-4/5 max-md:w-full">
+            <div className="ml-[305px] w-4/5 max-md:w-full relative">
                 <TopBar />
                 {/*<ProneAreas />*/}
                 {/*<DisasterSurvivorStories/>*/}

@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3dc52eb3-4e45-43a9-aee2-6fd97161fa87" name="Changes" comment="Drive Video">
+    <list default="true" id="3dc52eb3-4e45-43a9-aee2-6fd97161fa87" name="Changes" comment="Fixed sidebar">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/Dashboard/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Dashboard/Dashboard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/Dashboard/components/Awareness Sessions.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Dashboard/components/Awareness Sessions.js" afterDir="false" />
@@ -205,7 +205,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704191964603</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Fixed sidebar">
+      <option name="closed" value="true" />
+      <created>1704193887985</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1704193887985</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -237,6 +245,7 @@
     <MESSAGE value="Redux bug-fix" />
     <MESSAGE value="Registration linking bug-fix" />
     <MESSAGE value="Drive Video" />
-    <option name="LAST_COMMIT_MESSAGE" value="Drive Video" />
+    <MESSAGE value="Fixed sidebar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed sidebar" />
   </component>
 </project>
