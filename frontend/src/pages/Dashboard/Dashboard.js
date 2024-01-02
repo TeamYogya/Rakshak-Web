@@ -24,24 +24,24 @@ const Dashboard = () => {
 
     return (
         <div className="flex font-sans h-full">
-            <div className="w-1/5 max-md:w-24 fixed">
+            <div className="w-1/5 max-md:w-24 fixed overflow-x-clip bg-[#000000]">
                 <Sidebar onSubMenuClick={handleSubMenuClick} />
             </div>
-            <div className="ml-[305px] w-4/5 max-md:w-full relative">
+            <div className="ml-[305px] w-full max-md:w-full relative">
                 <TopBar />
                 {/*<ProneAreas />*/}
                 {/*<DisasterSurvivorStories/>*/}
-                {selectedSubMenu === 'Prone Area Alerts' && <ProneAreas />}
+                {/*{selectedSubMenu === 'Prone Area Alerts' && <ProneAreas />}*/}
                 {selectedSubMenu === 'Awareness Sessions' && <AwarenessSessions />}
-                {selectedSubMenu === 'Safer Exits' && <SaferExits />}
-                {selectedSubMenu === 'Access Feasibility' && <AccessFeasibility />}
-                {selectedSubMenu === 'Object Recognition' && <ObjectRecognition />}
+                {/*{selectedSubMenu === 'Safer Exits' && <SaferExits />}*/}
+                {/*{selectedSubMenu === 'Access Feasibility' && <AccessFeasibility />}*/}
+                {/*{selectedSubMenu === 'Object Recognition' && <ObjectRecognition />}*/}
                 {selectedSubMenu === 'Disaster Survivor Stories' && <DisasterSurvivorStories />}
-                {selectedSubMenu === 'Information' && <Information />}
-                {selectedSubMenu === 'Alternative Routes' && <AlternativeRoutes />}
+                {/*{selectedSubMenu === 'Information' && <Information />}*/}
+                {/*{selectedSubMenu === 'Alternative Routes' && <AlternativeRoutes />}*/}
                 {selectedSubMenu === 'Natural Hazard Alerts' && <NaturalHazardAlerts />}
                 {selectedSubMenu === 'Continuous Alerts' && <ContinuousAlerts />}
-                {selectedSubMenu === 'Local Business Incentives' && <LocalBusinessIncentives />}
+                {/*{selectedSubMenu === 'Local Business Incentives' && <LocalBusinessIncentives />}*/}
                 {selectedSubMenu === 'Relief Tokens' && <ReliefTokens />}
                 {selectedSubMenu === 'Ping for Help' && <PingForHelp />}
             </div>
