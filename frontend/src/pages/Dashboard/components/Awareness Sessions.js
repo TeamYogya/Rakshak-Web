@@ -77,7 +77,8 @@ const AwarenessSessions = () => {
     };
     return (
         <div className="font-sans">
-            <div className="w-full h-[640px] overflow-y-auto grid grid-rows-12 gap-4">
+            {/*<div className="w-full h-[640px] overflow-y-auto grid grid-rows-12 gap-4">*/}
+            <div className="w-full h-full grid grid-rows-12 gap-4">
                 <div className="row-span-4 w-full h-full flex justify-center items-center">
                     <video onClick={handlePlayPause}
                         ref={videoRef}

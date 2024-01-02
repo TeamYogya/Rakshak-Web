@@ -16,18 +16,18 @@ import ReliefTokens from "./components/ReliefTokens";
 import PingForHelp from "./components/PingForHelp";
 
 const Dashboard = () => {
-    const [selectedSubMenu, setSelectedSubMenu] = useState(null);
+    const [selectedSubMenu, setSelectedSubMenu] = useState('Awareness Sessions');
 
     const handleSubMenuClick = (selectedSubMenu) => {
         setSelectedSubMenu(selectedSubMenu);
     };
 
     return (
-        <div className="flex font-sans h-screen">
-            <div className="w-1/5 max-md:w-24">
+        <div className="flex font-sans h-full">
+            <div className="w-1/5 max-md:w-24 fixed">
                 <Sidebar onSubMenuClick={handleSubMenuClick} />
             </div>
-            <div className="w-4/5 max-md:w-full">
+            <div className="ml-[305px] w-4/5 max-md:w-full">
                 <TopBar />
                 {/*<ProneAreas />*/}
                 {/*<DisasterSurvivorStories/>*/}
