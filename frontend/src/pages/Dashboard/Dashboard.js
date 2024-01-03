@@ -24,7 +24,7 @@ const Dashboard = () => {
 
     return (
         <div className="flex font-sans h-full">
-            <div className="w-1/5 max-md:w-24 fixed overflow-x-clip bg-[#000000]">
+            <div className="w-1/5 max-md:w-24 fixed overflow-x-clip">
                 <Sidebar onSubMenuClick={handleSubMenuClick} />
             </div>
             <div className="ml-[305px] w-full max-md:w-full relative">
