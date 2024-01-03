@@ -76,13 +76,13 @@ const AwarenessSessions = () => {
         setProgress((seekTime / videoRef.current.duration) * 100);
     };
     return (
-        <div className="font-sans bg-[#000000]">
+        <div className="font-sans">
             {/*<div className="w-full h-[640px] overflow-y-auto grid grid-rows-12 gap-4">*/}
             <div className="w-full h-full grid grid-rows-12 gap-4">
                 <div className="row-span-4 w-full h-full flex justify-center items-center pt-4">
                     <video onClick={handlePlayPause}
                         ref={videoRef}
-                        className="w-[900px] h-[400px] rounded-3xl object-cover shadow-2xl shadow-white"
+                        className="w-[900px] h-[400px] rounded-3xl object-cover shadow-2xl shadow-black"
                     >
                         <source src={currentVideo} type="video/mp4" />
                     </video>
@@ -139,13 +139,13 @@ const AwarenessSessions = () => {
                             <div className="col-span-2 w-full h-full flex items-center">
                                 <video
                                     onClick={() => changingvideos("https://drive.google.com/uc?export=view&id=10eY2J7RHlpqlJ5CPIgPCsboxkSUz3vHh")}
-                                    className="w-[200px] h-[100px] rounded-3xl object-cover duration-1000 hover:shadow-2xl hover:shadow-white hover:scale-105 shadow-lg shadow-purple-800"
+                                    className="w-[200px] h-[100px] rounded-3xl object-cover duration-1000 hover:shadow-2xl hover:shadow-black hover:scale-105 shadow-lg shadow-purple-800"
                                 >
                                     <source src="https://drive.google.com/uc?export=view&id=10eY2J7RHlpqlJ5CPIgPCsboxkSUz3vHh" type="video/mp4" />
                                 </video>
                             </div>
                             <div className="col-span-6 w-full h-full flex items-center justify-center">
-                                <h onClick={() => changingvideos("https://drive.google.com/uc?export=view&id=10eY2J7RHlpqlJ5CPIgPCsboxkSUz3vHh")} className="text-lg text-white">Disaster Management Mock Drill Conducted at Arihant Hospital</h>
+                                <h onClick={() => changingvideos("https://drive.google.com/uc?export=view&id=10eY2J7RHlpqlJ5CPIgPCsboxkSUz3vHh")} className="text-lg text-black cursor-pointer">Disaster Management Mock Drill Conducted at Arihant Hospital</h>
                             </div>
                         </div>
                         <div className="w-full h-full grid grid-cols-9">
@@ -154,13 +154,13 @@ const AwarenessSessions = () => {
                             </div>
                             <div className="col-span-2 w-full h-full flex items-center">
                                 <video onClick={() => changingvideos("https://drive.google.com/uc?export=view&id=1t-phsRDkc8c3mX2E0V2AvENkfHhm9J-y")}
-                                    className="w-[200px] h-[100px] rounded-3xl object-cover duration-1000 hover:shadow-2xl hover:shadow-white hover:scale-105 shadow-lg shadow-purple-800"
+                                    className="w-[200px] h-[100px] rounded-3xl object-cover duration-1000 hover:shadow-2xl hover:shadow-black hover:scale-105 shadow-lg shadow-purple-800"
                                 >
                                     <source src="https://drive.google.com/uc?export=view&id=1t-phsRDkc8c3mX2E0V2AvENkfHhm9J-y" type="video/mp4" />
                                 </video>
                             </div>
                             <div className="col-span-6 w-full h-full flex items-center justify-center">
-                                <h onClick={() => changingvideos("https://drive.google.com/uc?export=view&id=1t-phsRDkc8c3mX2E0V2AvENkfHhm9J-y")} className="text-lg text-white">Drop, Cover, and Hold On - Protect Yourself During an Earthquakel</h>
+                                <h onClick={() => changingvideos("https://drive.google.com/uc?export=view&id=1t-phsRDkc8c3mX2E0V2AvENkfHhm9J-y")} className="text-lg text-black cursor-pointer">Drop, Cover, and Hold On - Protect Yourself During an Earthquakel</h>
                             </div>
                         </div>
                         <div className="w-full h-full grid grid-cols-9">
@@ -169,13 +169,13 @@ const AwarenessSessions = () => {
                             </div>
                             <div className="col-span-2 w-full h-full flex items-center">
                                 <video onClick={() => changingvideos("https://drive.google.com/uc?export=view&id=1rhAJ6FUs7jk6RFLZBmdfCJ6xE6svX6Cm")}
-                                    className="w-[200px] h-[100px] rounded-3xl object-cover duration-1000 hover:shadow-2xl hover:shadow-white hover:scale-105 shadow-lg shadow-purple-800"
+                                    className="w-[200px] h-[100px] rounded-3xl object-cover duration-1000 hover:shadow-2xl hover:shadow-black hover:scale-105 shadow-lg shadow-purple-800"
                                 >
                                     <source src="https://drive.google.com/uc?export=view&id=1rhAJ6FUs7jk6RFLZBmdfCJ6xE6svX6Cm" type="video/mp4" />
                                 </video>
                             </div>
                             <div className="col-span-6 w-full h-full flex items-center justify-center">
-                                <h onClick={() => changingvideos("https://drive.google.com/uc?export=view&id=1rhAJ6FUs7jk6RFLZBmdfCJ6xE6svX6Cm")} className="text-lg text-white">Simulation Drill on Flood (Disaster Preparedness)</h>
+                                <h onClick={() => changingvideos("https://drive.google.com/uc?export=view&id=1rhAJ6FUs7jk6RFLZBmdfCJ6xE6svX6Cm")} className="text-lg text-black cursor-pointer">Simulation Drill on Flood (Disaster Preparedness)</h>
                             </div>
                         </div>
                         <div className="w-full h-full grid grid-cols-9">
@@ -184,13 +184,13 @@ const AwarenessSessions = () => {
                             </div>
                             <div className="col-span-2 w-full h-full flex items-center">
                                 <video onClick={() => changingvideos("https://drive.google.com/uc?export=view&id=1NGwuLfTgzV8cFe3R-p1vK9T7NZZthF91")}
-                                    className="w-[200px] h-[100px] rounded-3xl object-cover duration-1000 hover:shadow-2xl hover:shadow-white hover:scale-105 shadow-lg shadow-purple-800"
+                                    className="w-[200px] h-[100px] rounded-3xl object-cover duration-1000 hover:shadow-2xl hover:shadow-black hover:scale-105 shadow-lg shadow-purple-800"
                                 >
                                     <source src="https://drive.google.com/uc?export=view&id=1NGwuLfTgzV8cFe3R-p1vK9T7NZZthF91" type="video/mp4" />
                                 </video>
                             </div>
                             <div className="col-span-6 w-full h-full flex items-center justify-center">
-                                <h onClick={() => changingvideos("https://drive.google.com/uc?export=view&id=1NGwuLfTgzV8cFe3R-p1vK9T7NZZthF91")} className="text-lg text-white">Fire Mock Drill | Code Red | Lisie Hospital</h>
+                                <h onClick={() => changingvideos("https://drive.google.com/uc?export=view&id=1NGwuLfTgzV8cFe3R-p1vK9T7NZZthF91")} className="text-lg text-black cursor-pointer">Fire Mock Drill | Code Red | Lisie Hospital</h>
                             </div>
                         </div>
                         <div className="w-full h-full grid grid-cols-9">
@@ -200,13 +200,13 @@ const AwarenessSessions = () => {
                             <div className="col-span-2 w-full h-full flex items-center">
                                 <video
                                     onClick={() => changingvideos("https://drive.google.com/uc?export=view&id=1YG65pQQSByKBhIMoleS_-XzPHSzxjSck")}
-                                    className="w-[200px] h-[100px] rounded-3xl object-cover duration-1000 hover:shadow-2xl hover:shadow-white hover:scale-105 shadow-lg shadow-purple-800"
+                                    className="w-[200px] h-[100px] rounded-3xl object-cover duration-1000 hover:shadow-2xl hover:shadow-black hover:scale-105 shadow-lg shadow-purple-800"
                                 >
                                     <source src="https://drive.google.com/uc?export=view&id=1YG65pQQSByKBhIMoleS_-XzPHSzxjSck" type="video/mp4" />
                                 </video>
                             </div>
                             <div className="col-span-6 w-full h-full flex items-center justify-center">
-                                <h onClick={() => changingvideos("https://drive.google.com/uc?export=view&id=1YG65pQQSByKBhIMoleS_-XzPHSzxjSck")} className="text-lg text-white">Disaster Management Mock Drill Conducted at Yashodha Hospital</h>
+                                <h onClick={() => changingvideos("https://drive.google.com/uc?export=view&id=1YG65pQQSByKBhIMoleS_-XzPHSzxjSck")} className="text-lg text-black cursor-pointer">Disaster Management Mock Drill Conducted at Yashodha Hospital</h>
                             </div>
                         </div>
                     </div>
