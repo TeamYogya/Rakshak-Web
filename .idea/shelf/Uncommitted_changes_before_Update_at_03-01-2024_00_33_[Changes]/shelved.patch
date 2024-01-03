@@ -1,0 +1,683 @@
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_25-12-2023_04_28_pm__Changes_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_25-12-2023_04_28_pm__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_25-12-2023_04_28_pm__Changes_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_25-12-2023_04_28_pm__Changes_.xml	(revision b1a4839441b407cf3f0767f009362fe207e19ddf)
++++ /dev/null	(revision b1a4839441b407cf3f0767f009362fe207e19ddf)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_25-12-2023_04_28_pm_[Changes]" date="1703502052878" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25-12-2023_04_28_pm_[Changes]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 25-12-2023 04:28 pm [Changes]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_24-12-2023_09_33_am_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_24-12-2023_09_33_am_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_24-12-2023_09_33_am_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_24-12-2023_09_33_am_[Changes]/shelved.patch	(revision b1a4839441b407cf3f0767f009362fe207e19ddf)
++++ /dev/null	(revision b1a4839441b407cf3f0767f009362fe207e19ddf)
+@@ -1,239 +0,0 @@
+-Index: .idea/shelf/Uncommitted_changes_before_Update_at_10_29_2023_1_43_PM_[Changes]/shelved.patch
+-===================================================================
+-diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_10_29_2023_1_43_PM_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_10_29_2023_1_43_PM_[Changes]/shelved.patch
+-deleted file mode 100644
+---- a/.idea/shelf/Uncommitted_changes_before_Update_at_10_29_2023_1_43_PM_[Changes]/shelved.patch	(revision 10897f44e985a83842db24441aca7289492974aa)
+-+++ /dev/null	(revision 10897f44e985a83842db24441aca7289492974aa)
+-@@ -1,100 +0,0 @@
+--Index: frontend/src/pages/Dashboard/Dashboard.js
+--IDEA additional info:
+--Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+--<+>import Sidebar from \"./components/Sidebar\";\r\nimport ProneAreas from \"./components/ProneAreas\";\r\nimport TopBar from \"./components/TopBar\";\r\nimport DisasterSurvivorStories from \"./components/DisasterSurvivorStories\";\r\nimport {useState} from \"react\";\r\nimport SaferExits from \"./components/SaferExits\";\r\nimport AccessFeasibility from \"./components/AccessFeasibility\";\r\nimport ObjectRecognition from \"./components/ObjectRecognition\";\r\nimport Information from \"./components/Information\";\r\nimport AlternativeRoutes from \"./components/AlternativeRoutes\";\r\nimport NaturalHazardAlerts from \"./components/NaturalHazardAlerts\";\r\nimport ContinuousAlerts from \"./components/ContinuousAlerts\";\r\nimport LocalBusinessIncentives from \"./components/LocalBusinessIncentives\";\r\nimport ReliefTokens from \"./components/ReliefTokens\";\r\nimport PingForHelp from \"./components/PingForHelp\";\r\n\r\nconst Dashboard = () => {\r\n    const [selectedSubMenu, setSelectedSubMenu] = useState(null);\r\n\r\n    const handleSubMenuClick = (selectedSubMenu) => {\r\n        setSelectedSubMenu(selectedSubMenu);\r\n    };\r\n\r\n    return (\r\n        <div className=\"flex font-sans h-screen\">\r\n            <div className=\"w-1/5 max-md:w-24\">\r\n                <Sidebar onSubMenuClick={handleSubMenuClick} />\r\n            </div>\r\n            <div className=\"w-4/5 max-md:w-full\">\r\n                <TopBar />\r\n                {/*<ProneAreas />*/}\r\n                {/*<DisasterSurvivorStories/>*/}\r\n                {selectedSubMenu === 'Prone Area Alerts' && <ProneAreas />}\r\n                {selectedSubMenu === 'Safer Exits' && <SaferExits />}\r\n                {selectedSubMenu === 'Access Feasibility' && <AccessFeasibility />}\r\n                {selectedSubMenu === 'Object Recognition' && <ObjectRecognition />}\r\n                {selectedSubMenu === 'Disaster Survivor Stories' && <DisasterSurvivorStories />}\r\n                {selectedSubMenu === 'Information' && <Information />}\r\n                {selectedSubMenu === 'Alternative Routes' && <AlternativeRoutes />}\r\n                {selectedSubMenu === 'Natural Hazard Alerts' && <NaturalHazardAlerts />}\r\n                {selectedSubMenu === 'Continuous Alerts' && <ContinuousAlerts />}\r\n                {selectedSubMenu === 'Local Business Incentives' && <LocalBusinessIncentives />}\r\n                {selectedSubMenu === 'Relief Tokens' && <ReliefTokens />}\r\n                {selectedSubMenu === 'Ping For Help' && <PingForHelp />}\r\n            </div>\r\n        </div>\r\n        );\r\n};\r\n\r\nexport default Dashboard;
+--Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+--<+>UTF-8
+--===================================================================
+--diff --git a/frontend/src/pages/Dashboard/Dashboard.js b/frontend/src/pages/Dashboard/Dashboard.js
+----- a/frontend/src/pages/Dashboard/Dashboard.js	(revision 8f5d9605ac6679ed8ebf9b9a402c7583b688c017)
+--+++ b/frontend/src/pages/Dashboard/Dashboard.js	(date 1698566971288)
+--@@ -41,7 +41,7 @@
+--                 {selectedSubMenu === 'Continuous Alerts' && <ContinuousAlerts />}
+--                 {selectedSubMenu === 'Local Business Incentives' && <LocalBusinessIncentives />}
+--                 {selectedSubMenu === 'Relief Tokens' && <ReliefTokens />}
+---                {selectedSubMenu === 'Ping For Help' && <PingForHelp />}
+--+                {selectedSubMenu === 'Ping for Help' && <PingForHelp />}
+--             </div>
+--         </div>
+--         );
+--Index: frontend/src/App.js
+--IDEA additional info:
+--Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+--<+>import logo from './logo.svg';\r\nimport './App.css';\r\nimport {BrowserRouter as Router, Routes, Route} from \"react-router-dom\";\r\nimport Landing from \"./pages/Landing/Landing\";\r\nimport Dashboard from \"./pages/Dashboard/Dashboard\";\r\nimport Story from \"./pages/Dashboard/components/Story\";\r\nimport CategorisedStory from \"./pages/Dashboard/components/CategorisedStory\";\r\nimport Signup from \"./pages/Signup/Signup\"\r\nimport Login from \"./pages/Login/Login\"\r\n\r\nfunction App() {\r\n    return (\r\n        <div className=\"App\">\r\n            <Router>\r\n                <Routes>\r\n                    <Route exact path=\"/\" element={<Landing/>}/>\r\n                    <Route exact path=\"/dashboard\" element={<Dashboard/>}/>\r\n                    <Route exact path=\"/Story/:storyId\" element={<Story/>}/>\r\n                    <Route exact path=\"/CategorisedStory/:storyId\" element={<CategorisedStory/>}/>\r\n                    {/*<Route exact path=\"/dashboard/Help\" element={<PingForHelp/>}/>*/}\r\n                    <Route exact path=\"/CategorisedStory/:storyType\" element={<CategorisedStory/>}/>\r\n                    <Route exact path=\"/login\" element={<Login/>}></Route>\r\n                    <Route exact path=\"/signup\" element={<Signup/>}></Route>\r\n                </Routes>\r\n            </Router>\r\n        </div>\r\n    );\r\n}\r\n\r\nexport default App;\r\n
+--Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+--<+>UTF-8
+--===================================================================
+--diff --git a/frontend/src/App.js b/frontend/src/App.js
+----- a/frontend/src/App.js	(revision 8f5d9605ac6679ed8ebf9b9a402c7583b688c017)
+--+++ b/frontend/src/App.js	(date 1698567062671)
+--@@ -1,4 +1,3 @@
+---import logo from './logo.svg';
+-- import './App.css';
+-- import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+-- import Landing from "./pages/Landing/Landing";
+--@@ -17,7 +16,6 @@
+--                     <Route exact path="/dashboard" element={<Dashboard/>}/>
+--                     <Route exact path="/Story/:storyId" element={<Story/>}/>
+--                     <Route exact path="/CategorisedStory/:storyId" element={<CategorisedStory/>}/>
+---                    {/*<Route exact path="/dashboard/Help" element={<PingForHelp/>}/>*/}
+--                     <Route exact path="/CategorisedStory/:storyType" element={<CategorisedStory/>}/>
+--                     <Route exact path="/login" element={<Login/>}></Route>
+--                     <Route exact path="/signup" element={<Signup/>}></Route>
+--Index: .idea/workspace.xml
+--IDEA additional info:
+--Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+--<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"3dc52eb3-4e45-43a9-aee2-6fd97161fa87\" name=\"Changes\" comment=\"Fixed Microservices Architecture\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"master\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;customColor&quot;: &quot;&quot;,\r\n  &quot;associatedIndex&quot;: 7\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2VyxA0Ayihgu6vKtSflaLcC4ISg\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;D:/SIH/dev/Repo/frontend/src&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\Rakshak-Web\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\SIH\\Rakshak-Web\\frontend\\src\\pages\\Dashboard\\components\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"3dc52eb3-4e45-43a9-aee2-6fd97161fa87\" name=\"Changes\" comment=\"Added Tailwind, Dockerfile and Jenkinsfile\" />\r\n      <created>1696780270620</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1696780270620</updated>\r\n      <workItem from=\"1696780271920\" duration=\"1006000\" />\r\n      <workItem from=\"1696821638877\" duration=\"2868000\" />\r\n      <workItem from=\"1696852533652\" duration=\"3422000\" />\r\n      <workItem from=\"1696926598968\" duration=\"23000\" />\r\n      <workItem from=\"1696937015023\" duration=\"4501000\" />\r\n      <workItem from=\"1697018709252\" duration=\"1253000\" />\r\n      <workItem from=\"1697033641635\" duration=\"5330000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Fixed Microservices Architecture\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1697043830452</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1697043830452</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"2\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"UnknownFeatures\">\r\n    <option featureType=\"com.intellij.fileTypeFactory\" implementationName=\".env\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Added Microservices setup with Amazon MQ\" />\r\n    <MESSAGE value=\"Fixed Microservices Architecture\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Fixed Microservices Architecture\" />\r\n  </component>\r\n</project>
+--Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+--<+>UTF-8
+--===================================================================
+--diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+----- a/.idea/workspace.xml	(revision 8f5d9605ac6679ed8ebf9b9a402c7583b688c017)
+--+++ b/.idea/workspace.xml	(date 1698567062843)
+--@@ -4,8 +4,10 @@
+--     <option name="autoReloadType" value="SELECTIVE" />
+--   </component>
+--   <component name="ChangeListManager">
+---    <list default="true" id="3dc52eb3-4e45-43a9-aee2-6fd97161fa87" name="Changes" comment="Fixed Microservices Architecture">
+--+    <list default="true" id="3dc52eb3-4e45-43a9-aee2-6fd97161fa87" name="Changes" comment="Added Aadhaar text image identification code for static page">
+--       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+--+      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
+--+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Dashboard/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Dashboard/Dashboard.js" afterDir="false" />
+--     </list>
+--     <option name="SHOW_DIALOG" value="false" />
+--     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+--@@ -70,6 +72,8 @@
+--       <workItem from="1696937015023" duration="4501000" />
+--       <workItem from="1697018709252" duration="1253000" />
+--       <workItem from="1697033641635" duration="5330000" />
+--+      <workItem from="1697354103447" duration="389000" />
+--+      <workItem from="1698565154306" duration="1881000" />
+--     </task>
+--     <task id="LOCAL-00001" summary="Fixed Microservices Architecture">
+--       <option name="closed" value="true" />
+--@@ -79,7 +83,15 @@
+--       <option name="project" value="LOCAL" />
+--       <updated>1697043830452</updated>
+--     </task>
+---    <option name="localTasksCounter" value="2" />
+--+    <task id="LOCAL-00002" summary="Added Aadhaar text image identification code for static page">
+--+      <option name="closed" value="true" />
+--+      <created>1697263871648</created>
+--+      <option name="number" value="00002" />
+--+      <option name="presentableId" value="LOCAL-00002" />
+--+      <option name="project" value="LOCAL" />
+--+      <updated>1697263871648</updated>
+--+    </task>
+--+    <option name="localTasksCounter" value="3" />
+--     <servers />
+--   </component>
+--   <component name="TypeScriptGeneratedFilesManager">
+--@@ -102,6 +114,7 @@
+--   <component name="VcsManagerConfiguration">
+--     <MESSAGE value="Added Microservices setup with Amazon MQ" />
+--     <MESSAGE value="Fixed Microservices Architecture" />
+---    <option name="LAST_COMMIT_MESSAGE" value="Fixed Microservices Architecture" />
+--+    <MESSAGE value="Added Aadhaar text image identification code for static page" />
+--+    <option name="LAST_COMMIT_MESSAGE" value="Added Aadhaar text image identification code for static page" />
+--   </component>
+-- </project>
+--\ No newline at end of file
+-Index: .idea/shelf/Uncommitted_changes_before_Update_at_10_29_2023_1_43_PM__Changes_.xml
+-===================================================================
+-diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_10_29_2023_1_43_PM__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_10_29_2023_1_43_PM__Changes_.xml
+-deleted file mode 100644
+---- a/.idea/shelf/Uncommitted_changes_before_Update_at_10_29_2023_1_43_PM__Changes_.xml	(revision 10897f44e985a83842db24441aca7289492974aa)
+-+++ /dev/null	(revision 10897f44e985a83842db24441aca7289492974aa)
+-@@ -1,4 +0,0 @@
+--<changelist name="Uncommitted_changes_before_Update_at_10_29_2023_1_43_PM_[Changes]" date="1698567203274" recycled="true" deleted="true">
+--  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_29_2023_1_43_PM_[Changes]/shelved.patch" />
+--  <option name="DESCRIPTION" value="Uncommitted changes before Update at 10/29/2023 1:43 PM [Changes]" />
+--</changelist>
+-\ No newline at end of file
+-Index: .idea/workspace.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"3dc52eb3-4e45-43a9-aee2-6fd97161fa87\" name=\"Changes\" comment=\"added settings\">\r\n      <change afterPath=\"$PROJECT_DIR$/frontend/src/assets/img/heart.png\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/frontend/package-lock.json\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/frontend/package-lock.json\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/frontend/package.json\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/frontend/package.json\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/frontend/src/App.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/frontend/src/App.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/frontend/src/pages/Dashboard/components/ReliefTokens.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/frontend/src/pages/Dashboard/components/ReliefTokens.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/frontend/src/pages/Landing/Landing.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/frontend/src/pages/Landing/Landing.js\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"DjangoConsoleOptions\" custom-start-script=\"import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)\">\r\n    <option name=\"myCustomStartScript\" value=\"import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"JavaScript File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"master\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;customColor&quot;: &quot;&quot;,\r\n  &quot;associatedIndex&quot;: 7\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2VyxA0Ayihgu6vKtSflaLcC4ISg\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"ASKED_ADD_EXTERNAL_FILES\": \"true\",\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"WebServerToolWindowFactoryState\": \"false\",\r\n    \"git-widget-placeholder\": \"develop\",\r\n    \"last_opened_file_path\": \"D:/SIH/Rakshak-Web/Rakshak-Web/frontend/src/assets/img\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"settings.editor.selected.configurable\": \"inlay.hints\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\SIH\\Rakshak-Web\\Rakshak-Web\\frontend\\src\\assets\\img\" />\r\n      <recent name=\"D:\\Rakshak-Web\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\SIH\\Rakshak-Web\\frontend\\src\\pages\\Dashboard\\components\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"3dc52eb3-4e45-43a9-aee2-6fd97161fa87\" name=\"Changes\" comment=\"Added Tailwind, Dockerfile and Jenkinsfile\" />\r\n      <created>1696780270620</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1696780270620</updated>\r\n      <workItem from=\"1696780271920\" duration=\"1006000\" />\r\n      <workItem from=\"1696821638877\" duration=\"2868000\" />\r\n      <workItem from=\"1696852533652\" duration=\"3422000\" />\r\n      <workItem from=\"1696926598968\" duration=\"23000\" />\r\n      <workItem from=\"1696937015023\" duration=\"4501000\" />\r\n      <workItem from=\"1697018709252\" duration=\"1253000\" />\r\n      <workItem from=\"1697033641635\" duration=\"5330000\" />\r\n      <workItem from=\"1697047258799\" duration=\"939000\" />\r\n      <workItem from=\"1697185078920\" duration=\"2960000\" />\r\n      <workItem from=\"1697373331252\" duration=\"5062000\" />\r\n      <workItem from=\"1697434257076\" duration=\"1304000\" />\r\n      <workItem from=\"1697436077619\" duration=\"2338000\" />\r\n      <workItem from=\"1697471425168\" duration=\"9722000\" />\r\n      <workItem from=\"1697538618925\" duration=\"964000\" />\r\n      <workItem from=\"1697716545897\" duration=\"1328000\" />\r\n      <workItem from=\"1697731210172\" duration=\"871000\" />\r\n      <workItem from=\"1697793917584\" duration=\"602000\" />\r\n      <workItem from=\"1697820800243\" duration=\"4870000\" />\r\n      <workItem from=\"1697884048169\" duration=\"1634000\" />\r\n      <workItem from=\"1698290648999\" duration=\"593000\" />\r\n      <workItem from=\"1698341201796\" duration=\"732000\" />\r\n      <workItem from=\"1698487907294\" duration=\"236000\" />\r\n      <workItem from=\"1698488317213\" duration=\"1083000\" />\r\n      <workItem from=\"1698558096072\" duration=\"591000\" />\r\n      <workItem from=\"1698560317130\" duration=\"1273000\" />\r\n      <workItem from=\"1698565963007\" duration=\"7742000\" />\r\n      <workItem from=\"1698723691076\" duration=\"108000\" />\r\n      <workItem from=\"1698724002255\" duration=\"3994000\" />\r\n      <workItem from=\"1698855410838\" duration=\"794000\" />\r\n      <workItem from=\"1698896547812\" duration=\"630000\" />\r\n      <workItem from=\"1698904982310\" duration=\"2810000\" />\r\n      <workItem from=\"1698945193364\" duration=\"604000\" />\r\n      <workItem from=\"1699048961095\" duration=\"1694000\" />\r\n      <workItem from=\"1699119836659\" duration=\"630000\" />\r\n      <workItem from=\"1699188020978\" duration=\"13626000\" />\r\n      <workItem from=\"1699690395983\" duration=\"408000\" />\r\n      <workItem from=\"1699691046026\" duration=\"424000\" />\r\n      <workItem from=\"1699875326464\" duration=\"635000\" />\r\n      <workItem from=\"1700133348188\" duration=\"2267000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Fixed Microservices Architecture\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1697043830452</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1697043830452</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"added something\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1697388309699</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1697388309700</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"added something\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1697388713408</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1697388713408</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"added settings\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1697826309291</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1697826309291</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"5\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"UnknownFeatures\">\r\n    <option featureType=\"dependencySupport\" implementationName=\"javascript:npm:react\" />\r\n    <option featureType=\"dependencySupport\" implementationName=\"executable:docker\" />\r\n    <option featureType=\"dependencySupport\" implementationName=\"javascript:npm:tailwindcss\" />\r\n    <option featureType=\"com.intellij.fileTypeFactory\" implementationName=\".env\" />\r\n    <option featureType=\"dependencySupport\" implementationName=\"executable:kubectl\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Added Microservices setup with Amazon MQ\" />\r\n    <MESSAGE value=\"Fixed Microservices Architecture\" />\r\n    <MESSAGE value=\"added something\" />\r\n    <MESSAGE value=\"added settings\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"added settings\" />\r\n  </component>\r\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+---- a/.idea/workspace.xml	(revision 10897f44e985a83842db24441aca7289492974aa)
+-+++ b/.idea/workspace.xml	(date 1702033106928)
+-@@ -4,14 +4,10 @@
+-     <option name="autoReloadType" value="SELECTIVE" />
+-   </component>
+-   <component name="ChangeListManager">
+--    <list default="true" id="3dc52eb3-4e45-43a9-aee2-6fd97161fa87" name="Changes" comment="added settings">
+--      <change afterPath="$PROJECT_DIR$/frontend/src/assets/img/heart.png" afterDir="false" />
+-+    <list default="true" id="3dc52eb3-4e45-43a9-aee2-6fd97161fa87" name="Changes" comment="donate and settings">
+-+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_29_2023_1_43_PM_[Changes]/shelved.patch" beforeDir="false" />
+-+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_29_2023_1_43_PM__Changes_.xml" beforeDir="false" />
+-       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Dashboard/components/ReliefTokens.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Dashboard/components/ReliefTokens.js" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Landing/Landing.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Landing/Landing.js" afterDir="false" />
+-     </list>
+-     <option name="SHOW_DIALOG" value="false" />
+-     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+-@@ -48,23 +44,23 @@
+-     <option name="hideEmptyMiddlePackages" value="true" />
+-     <option name="showLibraryContents" value="true" />
+-   </component>
+--  <component name="PropertiesComponent"><![CDATA[{
+--  "keyToString": {
+--    "ASKED_ADD_EXTERNAL_FILES": "true",
+--    "RunOnceActivity.OpenProjectViewOnStart": "true",
+--    "RunOnceActivity.ShowReadmeOnStart": "true",
+--    "WebServerToolWindowFactoryState": "false",
+--    "git-widget-placeholder": "develop",
+--    "last_opened_file_path": "D:/SIH/Rakshak-Web/Rakshak-Web/frontend/src/assets/img",
+--    "node.js.detected.package.eslint": "true",
+--    "node.js.detected.package.tslint": "true",
+--    "node.js.selected.package.eslint": "(autodetect)",
+--    "node.js.selected.package.tslint": "(autodetect)",
+--    "nodejs_package_manager_path": "npm",
+--    "settings.editor.selected.configurable": "inlay.hints",
+--    "vue.rearranger.settings.migration": "true"
+-+  <component name="PropertiesComponent">{
+-+  &quot;keyToString&quot;: {
+-+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+-+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+-+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+-+    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
+-+    &quot;last_opened_file_path&quot;: &quot;D:/Projects/minor-project/Student/CSV&quot;,
+-+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+-+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+-+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+-+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+-+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+-+    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;,
+-+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+-   }
+--}]]></component>
+-+}</component>
+-   <component name="RecentsManager">
+-     <key name="CopyFile.RECENT_KEYS">
+-       <recent name="D:\SIH\Rakshak-Web\Rakshak-Web\frontend\src\assets\img" />
+-@@ -120,7 +116,23 @@
+-       <workItem from="1699690395983" duration="408000" />
+-       <workItem from="1699691046026" duration="424000" />
+-       <workItem from="1699875326464" duration="635000" />
+--      <workItem from="1700133348188" duration="2267000" />
+-+      <workItem from="1700133348188" duration="3048000" />
+-+      <workItem from="1700139132172" duration="827000" />
+-+      <workItem from="1700205331907" duration="23000" />
+-+      <workItem from="1701340019045" duration="1193000" />
+-+      <workItem from="1701346847780" duration="595000" />
+-+      <workItem from="1701418695119" duration="601000" />
+-+      <workItem from="1701454246399" duration="660000" />
+-+      <workItem from="1701505046294" duration="766000" />
+-+      <workItem from="1701524423307" duration="418000" />
+-+      <workItem from="1701879949332" duration="2582000" />
+-+      <workItem from="1701884927872" duration="634000" />
+-+      <workItem from="1701946605360" duration="195000" />
+-+      <workItem from="1701966712727" duration="4000" />
+-+      <workItem from="1701967233608" duration="435000" />
+-+      <workItem from="1702031771821" duration="78000" />
+-+      <workItem from="1702032862888" duration="66000" />
+-+      <workItem from="1702033054155" duration="52000" />
+-     </task>
+-     <task id="LOCAL-00001" summary="Fixed Microservices Architecture">
+-       <option name="closed" value="true" />
+-@@ -154,7 +166,15 @@
+-       <option name="project" value="LOCAL" />
+-       <updated>1697826309291</updated>
+-     </task>
+--    <option name="localTasksCounter" value="5" />
+-+    <task id="LOCAL-00005" summary="donate and settings">
+-+      <option name="closed" value="true" />
+-+      <created>1700136042384</created>
+-+      <option name="number" value="00005" />
+-+      <option name="presentableId" value="LOCAL-00005" />
+-+      <option name="project" value="LOCAL" />
+-+      <updated>1700136042384</updated>
+-+    </task>
+-+    <option name="localTasksCounter" value="6" />
+-     <servers />
+-   </component>
+-   <component name="TypeScriptGeneratedFilesManager">
+-@@ -183,6 +203,7 @@
+-     <MESSAGE value="Fixed Microservices Architecture" />
+-     <MESSAGE value="added something" />
+-     <MESSAGE value="added settings" />
+--    <option name="LAST_COMMIT_MESSAGE" value="added settings" />
+-+    <MESSAGE value="donate and settings" />
+-+    <option name="LAST_COMMIT_MESSAGE" value="donate and settings" />
+-   </component>
+- </project>
+-\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_24-12-2023_09_33_am__Changes_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_24-12-2023_09_33_am__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_24-12-2023_09_33_am__Changes_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_24-12-2023_09_33_am__Changes_.xml	(revision b1a4839441b407cf3f0767f009362fe207e19ddf)
++++ /dev/null	(revision b1a4839441b407cf3f0767f009362fe207e19ddf)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_24-12-2023_09_33_am_[Changes]" date="1703390638104" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24-12-2023_09_33_am_[Changes]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 24-12-2023 09:33 am [Changes]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_25-12-2023_04_28_pm_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_25-12-2023_04_28_pm_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_25-12-2023_04_28_pm_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_25-12-2023_04_28_pm_[Changes]/shelved.patch	(revision b1a4839441b407cf3f0767f009362fe207e19ddf)
++++ /dev/null	(revision b1a4839441b407cf3f0767f009362fe207e19ddf)
+@@ -1,187 +0,0 @@
+-Index: .idea/workspace.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"3dc52eb3-4e45-43a9-aee2-6fd97161fa87\" name=\"Changes\" comment=\"ping for help routing issue solved\">\r\n      <change afterPath=\"$PROJECT_DIR$/frontend/src/pages/Dashboard/TrialJSON/images/fire.png\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/frontend/src/pages/Dashboard/TrialJSON/images/health.png\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/frontend/src/pages/Dashboard/TrialJSON/images/security-officer.png\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/frontend/src/pages/Dashboard/TrialJSON/images/soldier.png\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/frontend/src/pages/Dashboard/TrialJSON/images/solidarity.png\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/dataSources.local.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/dataSources.local.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/frontend/src/pages/Dashboard/components/PingForHelp.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/frontend/src/pages/Dashboard/components/PingForHelp.js\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"JavaScript File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"master\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;customColor&quot;: &quot;&quot;,\r\n  &quot;associatedIndex&quot;: 7\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2VyxA0Ayihgu6vKtSflaLcC4ISg\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"WebServerToolWindowFactoryState\": \"false\",\r\n    \"git-widget-placeholder\": \"develop\",\r\n    \"last_opened_file_path\": \"D:/SIH/Rakshak-Web/frontend/src/pages/Dashboard/TrialJSON/images\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\SIH\\Rakshak-Web\\frontend\\src\\pages\\Dashboard\\TrialJSON\\images\" />\r\n      <recent name=\"D:\\Rakshak-Web\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\SIH\\Rakshak-Web\\frontend\\src\\pages\\Dashboard\\components\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"3dc52eb3-4e45-43a9-aee2-6fd97161fa87\" name=\"Changes\" comment=\"Added Tailwind, Dockerfile and Jenkinsfile\" />\r\n      <created>1696780270620</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1696780270620</updated>\r\n      <workItem from=\"1696780271920\" duration=\"1006000\" />\r\n      <workItem from=\"1696821638877\" duration=\"2868000\" />\r\n      <workItem from=\"1696852533652\" duration=\"3422000\" />\r\n      <workItem from=\"1696926598968\" duration=\"23000\" />\r\n      <workItem from=\"1696937015023\" duration=\"4501000\" />\r\n      <workItem from=\"1697018709252\" duration=\"1253000\" />\r\n      <workItem from=\"1697033641635\" duration=\"5330000\" />\r\n      <workItem from=\"1697047258799\" duration=\"939000\" />\r\n      <workItem from=\"1697185078920\" duration=\"2960000\" />\r\n      <workItem from=\"1697373331252\" duration=\"5062000\" />\r\n      <workItem from=\"1697434257076\" duration=\"1304000\" />\r\n      <workItem from=\"1697436077619\" duration=\"2338000\" />\r\n      <workItem from=\"1697471425168\" duration=\"9722000\" />\r\n      <workItem from=\"1697538618925\" duration=\"964000\" />\r\n      <workItem from=\"1697716545897\" duration=\"1328000\" />\r\n      <workItem from=\"1697731210172\" duration=\"871000\" />\r\n      <workItem from=\"1697793917584\" duration=\"602000\" />\r\n      <workItem from=\"1697820800243\" duration=\"4754000\" />\r\n      <workItem from=\"1698597414098\" duration=\"1631000\" />\r\n      <workItem from=\"1698984372605\" duration=\"465000\" />\r\n      <workItem from=\"1698988580589\" duration=\"972000\" />\r\n      <workItem from=\"1699014203777\" duration=\"581000\" />\r\n      <workItem from=\"1699188766448\" duration=\"85000\" />\r\n      <workItem from=\"1699188878183\" duration=\"704000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Fixed Microservices Architecture\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1697043830452</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1697043830452</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"added something\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1697388309699</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1697388309700</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"added something\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1697388713408</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1697388713408</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"ping for help routing issue solved\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1698567290028</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1698567290028</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"5\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"UnknownFeatures\">\r\n    <option featureType=\"dependencySupport\" implementationName=\"javascript:npm:react\" />\r\n    <option featureType=\"dependencySupport\" implementationName=\"executable:docker\" />\r\n    <option featureType=\"dependencySupport\" implementationName=\"javascript:npm:tailwindcss\" />\r\n    <option featureType=\"com.intellij.fileTypeFactory\" implementationName=\".env\" />\r\n    <option featureType=\"dependencySupport\" implementationName=\"executable:kubectl\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Added Microservices setup with Amazon MQ\" />\r\n    <MESSAGE value=\"Fixed Microservices Architecture\" />\r\n    <MESSAGE value=\"added something\" />\r\n    <MESSAGE value=\"ping for help routing issue solved\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"ping for help routing issue solved\" />\r\n  </component>\r\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+---- a/.idea/workspace.xml	(revision d2bf80c74c15a7eb06cd5372030b30f4eeda1a07)
+-+++ b/.idea/workspace.xml	(date 1703414920263)
+-@@ -4,15 +4,10 @@
+-     <option name="autoReloadType" value="SELECTIVE" />
+-   </component>
+-   <component name="ChangeListManager">
+--    <list default="true" id="3dc52eb3-4e45-43a9-aee2-6fd97161fa87" name="Changes" comment="ping for help routing issue solved">
+--      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Dashboard/TrialJSON/images/fire.png" afterDir="false" />
+--      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Dashboard/TrialJSON/images/health.png" afterDir="false" />
+--      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Dashboard/TrialJSON/images/security-officer.png" afterDir="false" />
+--      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Dashboard/TrialJSON/images/soldier.png" afterDir="false" />
+--      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Dashboard/TrialJSON/images/solidarity.png" afterDir="false" />
+-+    <list default="true" id="3dc52eb3-4e45-43a9-aee2-6fd97161fa87" name="Changes" comment="donate and settings">
+-       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+-       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Dashboard/components/PingForHelp.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Dashboard/components/PingForHelp.js" afterDir="false" />
+-+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Landing/Landing.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Landing/Landing.js" afterDir="false" />
+-     </list>
+-     <option name="SHOW_DIALOG" value="false" />
+-     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+-@@ -46,21 +41,21 @@
+-     <option name="hideEmptyMiddlePackages" value="true" />
+-     <option name="showLibraryContents" value="true" />
+-   </component>
+--  <component name="PropertiesComponent"><![CDATA[{
+--  "keyToString": {
+--    "RunOnceActivity.OpenProjectViewOnStart": "true",
+--    "RunOnceActivity.ShowReadmeOnStart": "true",
+--    "WebServerToolWindowFactoryState": "false",
+--    "git-widget-placeholder": "develop",
+--    "last_opened_file_path": "D:/SIH/Rakshak-Web/frontend/src/pages/Dashboard/TrialJSON/images",
+--    "node.js.detected.package.eslint": "true",
+--    "node.js.detected.package.tslint": "true",
+--    "node.js.selected.package.eslint": "(autodetect)",
+--    "node.js.selected.package.tslint": "(autodetect)",
+--    "nodejs_package_manager_path": "npm",
+--    "vue.rearranger.settings.migration": "true"
+-+  <component name="PropertiesComponent">{
+-+  &quot;keyToString&quot;: {
+-+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+-+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+-+    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
+-+    &quot;last_opened_file_path&quot;: &quot;D:/SIH/Rakshak-Web/frontend/src/pages/Dashboard/TrialJSON/images&quot;,
+-+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+-+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+-+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+-+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+-+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+-+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+-   }
+--}]]></component>
+-+}</component>
+-   <component name="RecentsManager">
+-     <key name="CopyFile.RECENT_KEYS">
+-       <recent name="D:\SIH\Rakshak-Web\frontend\src\pages\Dashboard\TrialJSON\images" />
+-@@ -102,6 +97,7 @@
+-       <workItem from="1699014203777" duration="581000" />
+-       <workItem from="1699188766448" duration="85000" />
+-       <workItem from="1699188878183" duration="704000" />
+-+      <workItem from="1703405085779" duration="5280000" />
+-     </task>
+-     <task id="LOCAL-00001" summary="Fixed Microservices Architecture">
+-       <option name="closed" value="true" />
+-Index: .idea/dataSources.local.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"dataSourceStorageLocal\" created-in=\"PY-232.9559.58\">\r\n    <data-source name=\"db\" uuid=\"6470ed81-a9b5-4c95-887b-5d9b1ece3a46\">\r\n      <database-info product=\"\" version=\"\" jdbc-version=\"\" driver-name=\"\" driver-version=\"\" dbms=\"SQLITE\" exact-version=\"0\" />\r\n      <auth-provider>no-auth</auth-provider>\r\n      <schema-mapping />\r\n    </data-source>\r\n  </component>\r\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/dataSources.local.xml b/.idea/dataSources.local.xml
+---- a/.idea/dataSources.local.xml	(revision d2bf80c74c15a7eb06cd5372030b30f4eeda1a07)
+-+++ b/.idea/dataSources.local.xml	(date 1703391475299)
+-@@ -1,6 +1,6 @@
+- <?xml version="1.0" encoding="UTF-8"?>
+- <project version="4">
+--  <component name="dataSourceStorageLocal" created-in="PY-232.9559.58">
+-+  <component name="dataSourceStorageLocal" created-in="PY-232.10203.26">
+-     <data-source name="db" uuid="6470ed81-a9b5-4c95-887b-5d9b1ece3a46">
+-       <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="SQLITE" exact-version="0" />
+-       <auth-provider>no-auth</auth-provider>
+-Index: frontend/src/pages/Landing/Landing.js
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>import React, { useState, useEffect } from 'react';\r\nimport {useNavigate} from 'react-router-dom'\r\nimport sih from \"./Video/sih.webm\"\r\nimport rakshak from \"./Images/rakshak.png\"\r\nimport ashoka from \"./Images/ashoka.png\"\r\nimport geofencing from \"./Images/geofencing.jpg\"\r\nimport mock from \"./Images/mock.jpg\"\r\nimport phone1 from \"./Images/phone1.jpg\"\r\nimport phone2 from \"./Images/phone2.jpg\"\r\nimport aware from \"./Images/aware.jpg\"\r\nimport alert from \"./Images/alert.png\"\r\nimport navi from \"./Images/navi.jpg\"\r\nimport flood from \"./Images/flood.jpg\"\r\nimport cyclone from \"./Images/cyclone.jpg\"\r\nimport tsunami from \"./Images/tsunami.jpeg\"\r\nimport wildfire from \"./Images/wildfire.jpg\"\r\nimport earthquake from \"./Images/earthquake.jpg\"\r\n\r\n\r\nexport default function Landing() {\r\n    const [modal, setModal] = useState(false);\r\n    const navigate = useNavigate();\r\n    const toggleModal = () => {\r\n    setModal(!modal);\r\n  };\r\n    const [toggle, setToggle] = useState(false);\r\n\r\n  const getButtonClass = () => {\r\n    if (toggle) {\r\n        // bg-[#4A3ABA] bg-[#4A3AFF]\r\n      return 'bg-[#4A3ABA]';\r\n    } else {\r\n      return 'bg-gray';\r\n    }\r\n  };\r\n  const handleButtonClick = (e) => {\r\n    e.preventDefault();\r\n    setToggle(!toggle);\r\n  };\r\n\r\n  //I can stop scrolling when settings is toggled\r\n    // if (modal) {\r\n    //   document.documentElement.style.overflowY = 'hidden';\r\n    //   document.body.style.overflowY = 'hidden';\r\n    // } else {\r\n    //   document.documentElement.style.overflowY = 'auto';\r\n    //   document.body.style.overflowY = 'auto';\r\n    // }\r\n  const navigation = [\r\n    { name: 'Home', id: 'home' }, // Remove href and add id\r\n    { name: 'Why us', href: '#about' },\r\n    { name: 'Programs', id: 'cards' }, // Remove href and add id\r\n    { name: 'Donate', href: '/donate' }, // Change href to '/donate'\r\n    { name: 'Settings', onClick: toggleModal }, // Keep this for your modal\r\n    { name: 'Contact us', href: '#footer' }\r\n];\r\n\r\n    useEffect(() => {\r\n        // Select the navigation bar\r\n        const navbar = document.getElementById('navbar');\r\n\r\n        // Get the initial offset of the navigation bar\r\n\r\n        // Function to update the navigation bar's position\r\n        function updateNavbarPosition() {\r\n            if (window.scrollY >= 10) {\r\n                navbar.style.position = 'fixed';\r\n                navbar.style.top = '0';\r\n                navbar.style.left = '0';\r\n                navbar.style.width = '100%';\r\n                navbar.style.background = 'rgba(255, 255, 255, 0.2)'; // Adjust the alpha (0.2) for the desired level of frosted glass effect\r\n                navbar.style.backdropFilter = 'blur(10px)';\r\n            } else {\r\n                navbar.style.position = 'relative';\r\n                navbar.style.background = 'transparent'; // Change to your initial background color\r\n            }\r\n        }\r\n\r\n\r\n        // Listen for scroll events and update the navigation bar position\r\n        window.addEventListener('scroll', updateNavbarPosition);\r\n\r\n        // Call the function initially in case the page loads already scrolled\r\n        updateNavbarPosition();\r\n        }, []);\r\n    // Function to scroll to a section when a button is clicked\r\nfunction scrollToSection(sectionId) {\r\n    const section = document.getElementById(sectionId);\r\n    if (section) {\r\n        section.scrollIntoView({ behavior: 'smooth' });\r\n    }\r\n}\r\n\r\n    const [mobileMenuOpen, setMobileMenuOpen] = useState(false)\r\n    useEffect(() => {\r\n        const element1 = document.getElementById(\"phone1Id\");\r\n        element1.style.backgroundImage = `url('${phone1}')`;\r\n        const element2 = document.getElementById(\"phone2Id\");\r\n        element2.style.backgroundImage = `url('${phone2}')`;\r\n        }, []);\r\n    return (\r\n        <div className=\"font-sans\">\r\n            {modal && (\r\n        <div className=\"w-full h-full top-0 bottom-0 right-0 left-0 fixed z-50\">\r\n          <div onClick={toggleModal} className=\"bg-white bg-opacity-20 backdrop-blur-xl w-full h-full top-0 bottom-0 right-0 left-0 fixed\"></div>\r\n          <div className=\"overflow-hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 line-height-[1.4] bg-[#f1f1f1] p-[14px 28px] rounded-3xl max-w-[600px] min-w-[300px]\">\r\n            <h2 className=\"text-[#170F49] text-3xl font-dm-sans font-bold break-words py-4\">Settings</h2>\r\n              <form>\r\n                  <div className=\"grid grid-rows-6 h-[500px] w-[500px]\">\r\n                    <div className=\"w-full h-20\">\r\n                          <h2 className=\"flex items-center pl-10 text-[#170F49] text-2xl font-dm-sans font-bold break-words py-4\">Edit Profile</h2>\r\n                          <hr/>\r\n                      </div>\r\n                      <div className=\"w-full h-20\">\r\n                          <h2 className=\"flex items-center pl-10 text-[#170F49] text-2xl font-dm-sans font-bold break-words py-4\">Feedback</h2>\r\n                          <hr/>\r\n                      </div>\r\n                      <div className=\"w-full h-20\">\r\n                          <h2 className=\"flex items-center pl-10 text-[#170F49] text-2xl font-dm-sans font-bold break-words py-4\">Report</h2>\r\n                          <hr/>\r\n                      </div>\r\n                      <div className=\"w-full h-20\">\r\n                          <h2 className=\"flex items-center pl-10 text-[#170F49] text-2xl font-dm-sans font-bold break-words py-4\">Remove Account</h2>\r\n                          <hr/>\r\n                      </div>\r\n                      <div className=\"grid grid-cols-12 w-full h-20\">\r\n                          <div className=\"grid col-span-10 w-full h-full\">\r\n                              <h2 className=\"flex items-center pl-10 text-[#170F49] text-2xl font-dm-sans font-bold break-words py-4\">Notifications</h2>\r\n                          </div>\r\n                          <div className=\"flex justify-center items-center col-span-2 w-full h-full\">\r\n                              <button\r\n      className={\r\n        'transition ease-in-out duration-300 w-12 rounded-full focus:outline-none border-[#4A3ABA] border-2 border-solid ' +\r\n        getButtonClass()\r\n      }\r\n      onClick={handleButtonClick}\r\n    >\r\n      <div\r\n        className={\r\n          'transition ease-in-out duration-300 rounded-full h-6 w-6 bg-white shadow' +\r\n          (toggle ? 'transform translate-x-full' : '')\r\n        }\r\n      ></div>\r\n    </button>\r\n                          </div>\r\n                      </div>\r\n                      <div className=\"justify-center flex items-center w-full h-20\">\r\n                          <input type=\"submit\" className=\"hover:bg-[#4A3ABA] bg-[#4A3AFF] rounded-3xl text-center text-white text-16 font-dm-sans font-medium break-words py-4 px-10\" value=\"Save\"/>\r\n                      </div>\r\n                  </div>\r\n              </form>\r\n\r\n              <svg onClick={toggleModal} xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" strokeWidth=\"2\" strokeLinecap=\"round\" strokeLinejoin=\"round\" className=\"bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 rounded-bl-full pl-4 pt-2 pb-4 absolute top-0 right-0 feather feather-x w-16 h-16 stroke-gray cursor-pointer max-md:hidden\"><line x1=\"18\" y1=\"6\" x2=\"6\" y2=\"18\"></line><line x1=\"6\" y1=\"6\" x2=\"18\" y2=\"18\"></line></svg>\r\n          </div>\r\n        </div>\r\n      )}\r\n            <header id=\"home\" className=\"absolute inset-x-0 z-[2] top-0\">\r\n                <nav id=\"navbar\" className=\"z-[10] flex items-center justify-between p-6 lg:px-8\" aria-label=\"Global\">\r\n                    <div className=\"flex lg:flex-1 items-center\">\r\n                        <a href=\"#\" className=\"-m-1.5 p-1.5 flex items-center\">\r\n                            <img\r\n                                className=\"h-24 w-auto\"\r\n                                src={rakshak}\r\n                                alt=\"Rakshak\"\r\n                            />\r\n                            {/*<span className=\"text-bold ml-2 text-2xl italic max-md:text-xl\">Rakshak</span>*/}\r\n                        </a>\r\n                    </div>\r\n                    <div className=\"flex lg:hidden\">\r\n                        <button\r\n                            type=\"button\"\r\n                            className=\"-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700\"\r\n                            onClick={() => setMobileMenuOpen(true)}\r\n                        >\r\n                            <span className=\"sr-only\">Open main menu</span>\r\n                            {/*<Bars3Icon className=\"h-6 w-6\" aria-hidden=\"true\" />*/}\r\n                        </button>\r\n                    </div>\r\n                    <div className=\"hidden lg:flex lg:gap-x-12\">\r\n    {navigation.map((item) => (\r\n    <button\r\n        key={item.name}\r\n        onClick={() => {\r\n            if (item.id) {\r\n                scrollToSection(item.id);\r\n            } else if (item.href) {\r\n                navigate(item.href);\r\n            } else if (item.onClick) {\r\n                item.onClick();\r\n            }\r\n        }}\r\n        className=\"text-sm font-bold leading-6 text-gray-900\"\r\n    >\r\n        {item.name}\r\n    </button>\r\n    ))}\r\n\r\n</div>\r\n                    <div className=\"hidden lg:flex lg:flex-1 lg:justify-end\">\r\n                        <button\r\n                            className=\"duration-1000 font-bold bg-transparent hover:bg-black hover:text-white max-md:[32px] text-lg rounded-full border-2 border-black inline-flex px-[34px] py-[12px] content-center items-center gap-[10px]\">Login\r\n                        </button>\r\n                    </div>\r\n                </nav>\r\n                <div\r\n                    className={\"top-[143px] w-full pl-20 absolute text-black text-[64px] font-bold break-words text-left max-md:text-left max-md:text-[32px] max-md:pl-10\"}>\r\n                    Knowledge is Your<br/>\r\n                    Best Defense, Explore<br/>\r\n                    Disaster Preparedness<br/>\r\n                    Today.<br/>\r\n                    <button\r\n                        className=\"top-[390px] font-bold rounded-full border-5 px-14 py-6 bg-black inline-flex content-center items-center gap-3 absolute text-white text-2xl font-semibold max-md:text-lg max-md:px-12 max-md:py-4 max-md:top-52\">Register\r\n                    </button>\r\n                </div>\r\n                <div className=\"flex justify-center w-full max-md:scale-50\">\r\n                <div className=\"w-[1063px] h-[250px] top-[615px] absolute max-md:top-[750px]\">\r\n      <div className=\"bg-white bg-opacity-20 backdrop-blur-xl w-[1063px] h-[250px] absolute bg-[#afafaf]-700 bg-opacity-35 rounded-[71px] border-[5px] border-[#676767]\" ></div>\r\n      <div className=\"absolute left-[265px] top-[25px] text-white text-[64px] whitespace-normal\">Government of India</div>\r\n      <div className=\"absolute left-[206px] top-[125px] text-black text-[64px] whitespace-normal\">Ministry of Home Affairs</div>\r\n      <img src={ashoka} className=\"w-[139px] h-[187px] left-[39px] top-[32px] absolute\"></img>\r\n    </div>\r\n                    </div>\r\n            </header>\r\n            <div\r\n                className=\"absolute inset-0 z-[1] h-full bg-gradient-to-b from-opacity-50 via-opacity-50 from-[#C1BDBD]/50 to-[#C1BDBD]/50 backdrop-blur-[15px]\">\r\n            </div>\r\n            <div className=\"absolute inset-0 h-full\">\r\n                <video\r\n                    className=\"w-full h-full object-cover\"\r\n                    autoPlay\r\n                    loop\r\n                    muted\r\n                    playsInline\r\n                >\r\n                    <source src={sih} type=\"video/webm\"/>\r\n                </video>\r\n                <div className=\"h-40 w-full bg-gradient-to-b from-[#606060] to-white\"></div>\r\n\r\n                <div className=\"w-full h-[1200px] flex justify-center item-center max-md:scale-50 max-md:w-0\">\r\n        <div className=\"w-[1187px] h-[1200px] flex max-md:scale-90\">\r\n            <h className=\"flex top: 0px; text-black text-8xl font-thin break-words absolute text-left mt-[100px] ml-[40px]\">Natural<br/>Disasters</h>\r\n            <h className=\"ml-[694px] mt-[925px] flex absolute text-right text-black text-4xl font-thin break-words\">A natural disaster<br/>is the highly harmful <br/>impact on a society<br/>or community following<br/>a natural hazard event</h>\r\n            <div className=\"mt-[100px] ml-[50px]\">\r\n            <div className=\"w-[525px] h-[400px] pl-[540px] top: 0px; absolute\">\r\n                <img className=\"w-[525px] h-[400px] left: 0px; top: 0px; absolute\" src={flood} />\r\n            </div>\r\n            <div className=\"w-[525px] h-[400px] pl-[538px] pt-[415px] absolute\">\r\n                <img className=\"w-[525px] h-[400px] left: 0px; top: 0px; absolute\" src={cyclone} />\r\n            </div>\r\n            <div className=\"w-[525px] h-[400px] left: 0px; pt-[615px] absolute\">\r\n                <img className=\"w-[525px] h-[400px] left: 0px; top: 0px; absolute\" src={earthquake} />\r\n            </div>\r\n            <div className=\"w-[525px] h-[400px] left: 0px; pt-[200px] absolute\">\r\n                <img className=\"w-[525px] h-[400px] left: 0px; top: 0px; absolute\" src={tsunami} />\r\n            </div>\r\n            <div className=\"w-[345px] h-[400px] pl-[360px] pt-[319px] absolute\">\r\n                <img className=\"w-[345px] h-[400px] left: 0px; top: 0px; absolute border-[20px] border-white border-solid\" src={wildfire}/>\r\n            </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n                <div id=\"cards\" className=\"pt-40 pb-10 text-black text-5xl font-normal break-word\"><h>Your Path to Resilience Explore What Our Site Offers</h></div>\r\n                <div className=\"justify-center w-full grid grid-rows-12 gap-4 max-md:scale-50\">\r\n                        <div className=\"hover:scale-105 duration-1000 grid grid-cols-2 w-[1063px] h-[394px] bg-[#1A222C] rounded-3xl hover:scale-105 duration-1000 hover:bg-gradient-to-br from-[#07C557] via-[#1A222C] to-transparent\">\r\n                            <div className=\"h-full w-full flex items-center justify-center\">\r\n                                <img className=\"w-[469px] h-[274px] rounded-[88px]\" src={mock} />\r\n                            </div>\r\n                            <div className=\"grid grid-rows-2 h-full w-full justify-center\">\r\n                                <div className=\"pt-10 text-white text-3xl font-bold break-word\">Mock Exercises and Programs</div>\r\n                                <div className=\"text-center justify-center text-[#C9C9C9] text-3xl font-normal break-word\">Practice makes perfect,<br/>especially when it<br/>comes to disaster readiness.</div>\r\n                            </div>\r\n                        </div>\r\n                        <div className=\"grid grid-col-2 gap-4 grid-flow-col\">\r\n    <div className=\"grid grid-row-2 gap-4\">\r\n                    <div className=\"grid grid-rows-4 w-[525px] h-[764px] rounded-3xl bg-[#1A222C] hover:scale-105 duration-1000 hover:bg-gradient-to-tr from-[#FEA800] via-[#1A222C] to-transparent\">\r\n                        <div className=\"row-end-2\">\r\n                            <div className=\"pt-10 text-center text-white text-3xl font-bold break-word\"><h>Feasibility Prediction</h></div>\r\n                            <div className=\"pt-10 text-center text-[#C9C9C9] text-3xl font-normal break-word\"><h>Stay ahead of disaster risks<br/>with our feasibility prediction tool</h></div>\r\n                        </div>\r\n                        <div className=\"row-start-2 row-end-5\">\r\n                                <div id=\"phone1Id\" className=\"mt-[162px] bg-[-238.722px_-28px] w-[287px] h-[402px] absolute rounded-[40px] overflow-hidden bg-no-repeat bg-[length:766.989px_430.434px]\"></div>\r\n                                <div id=\"phone2Id\" className=\"ml-[255px] mt-[20px] bg-[-97.006px_-54.658px] w-[270px] h-[548px] absolute rounded-[40px] overflow-hidden bg-no-repeat bg-[length:464.0112px_651.298px]\"></div>\r\n                        </div>\r\n      </div>\r\n        <div className=\"grid grid-rows-2 w-[525px] h-[523px] bg-[#1A222C] rounded-3xl hover:scale-105 duration-1000 hover:bg-gradient-to-br from-[#7000FE] via-[#1A222C] to-transparent\">\r\n            <div className=\"grid grid-cols-2\">\r\n                <div className=\"flex items-center justify-center\">\r\n                    <img\r\n                        className=\"h-full w-full rounded-3xl\"\r\n                        src={navi}\r\n                    />\r\n                </div>\r\n                <div className=\"pt-20 justify-center\">\r\n                    <h className=\"w-[457px] h-[30.12px] text-white text-3xl font-bold break-word\">User<br/>Assistance<br/>and<br/>Navigation</h>\r\n                </div>\r\n            </div>\r\n            <div className=\"pt-10 justify-center\">\r\n                <h className=\"w-[464px] h-[82px] text-center text-[#C9C9C9] text-5xl font-normal break-word\">In the chaos of a disaster, finding the right information quickly is crucial</h>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div className=\"grid grid-row-2 gap-4\">\r\n        <div className=\"grid grid-rows-2 w-[525px] h-[523px] bg-[#1A222C] rounded-3xl hover:scale-105 duration-1000 hover:bg-gradient-to-bl from-[#FEA800] via-[#1A222C] to-transparent\">\r\n            <div className=\"grid grid-cols-2\">\r\n                <div className=\"pt-20 justify-center\">\r\n                    <h className=\"w-[457px] h-[30.12px] text-white text-3xl font-bold break-word\">Alerts<br/>and<br/>Notifications</h>\r\n                </div>\r\n                <div className=\"flex items-center justify-center\">\r\n                    <img\r\n                        className=\"h-full w-full\"\r\n                        src={alert}\r\n                    />\r\n                </div>\r\n            </div>\r\n            <div className=\"items-center justify-center\">\r\n                <h className=\"w-[464px] h-[82px] text-center text-[#C9C9C9] text-5xl font-normal break-word\">Timely information can make all the difference during an emergency.</h>\r\n            </div>\r\n        </div>\r\n        <div className=\"grid grid-rows-2 w-[525px] h-[764px] bg-[#1A222C] rounded-3xl hover:scale-105 duration-1000 hover:bg-gradient-to-tl from-[#7000FE] via-[#1A222C] to-transparent\">\r\n            <div className=\"flex items-center justify-center\">\r\n                <img className=\"w-full h-full rounded-3xl\" src={aware} />\r\n            </div>\r\n            <div className=\"grid grid-row-2justify-center\">\r\n                <h className=\"pt-20 text-white text-3xl font-bold break-word\">Education and Awareness</h>\r\n                <h className=\"text-center text-[#C9C9C9] text-3xl font-normal break-word\">Knowledge is power especially<br/>in disaster management</h>\r\n            </div>\r\n        </div>\r\n    </div>\r\n\r\n</div>\r\n                    <div className=\"grid grid-cols-2 w-[1063px] h-[394px] bg-[#1A222C] rounded-3xl hover:scale-105 duration-1000 hover:bg-gradient-to-bl from-[#07C557] via-[#1A222C] to-transparent\">\r\n                        <div className=\"grid grid-rows-2 h-full w-full justify-center\">\r\n                            <div className=\"pt-10 text-white text-3xl font-bold break-word\">Geofencing</div>\r\n                            <div className=\"text-center justify-center text-[#C9C9C9] text-3xl font-normal break-word\">Our geofencing feature<br/>uses cutting-edge technology<br/>to create virtual boundaries<br/>around specific geographical<br/>areas.</div>\r\n                        </div>\r\n                        <div className=\"h-full w-full flex items-center justify-center\">\r\n                            <img className=\"w-[469px] h-[274px] rounded-[88px]\" src={geofencing} />\r\n                        </div>\r\n                    </div>\r\n\r\n    </div>\r\n                <footer id=\"footer\" className=\"w-full bottom-0 mt-20 max-md:scale-50\">\r\n                    <div className=\"w-full h-0 transform rotate-180 origin-top border border-solid border-[#EFF0F6]\"></div>\r\n                    <div className=\"grid grid-cols-2\">\r\n                        <div className=\"w-full py-20 flex text-[#170F49] text-3xl font-dm-sans font-bold break-words pl-20\"><h>Rakshak</h></div>\r\n                        <div className=\"w-full py-20 text-[#6F6C90] text-2xl font-dm-sans font-normal break-words text-left\"><h>Government of India, Ministry of Home Affairs</h></div>\r\n                    </div>\r\n                    <div className=\"w-full h-0 transform rotate-180 origin-top border border-solid border-[#EFF0F6]\"></div>\r\n                    <div className=\"grid grid-cols-6 h-96\">\r\n                        <div className=\"w-full py-20 text-[#6F6C90] text-sm font-dm-sans font-bold break-words\">\r\n                            <ul className=\"list-none list-outside\">\r\n                                <li className=\"text-[#170F49] text-xl pb-5\">Products</li>\r\n                                <li className=\"pb-2\">Features</li>\r\n                                <li className=\"pb-2\">Price</li>\r\n                                <li className=\"pb-2\">Case Studies</li>\r\n                                <li className=\"pb-2\">Reviews</li>\r\n                                <li className=\"pb-2\">Updates</li>\r\n                            </ul>\r\n                        </div>\r\n                        <div className=\"w-full py-20 text-[#6F6C90] text-sm font-dm-sans font-bold break-words\">\r\n                            <ul className=\"list-none list-outside\">\r\n                                <li className=\"text-[#170F49] text-xl pb-5\">Companys</li>\r\n                                <li className=\"pb-2\">About</li>\r\n                                <li className=\"pb-2\">Contact Us</li>\r\n                                <li className=\"pb-2\">Careers</li>\r\n                                <li className=\"pb-2\">Culture</li>\r\n                                <li className=\"pb-2\">Blog</li>\r\n                            </ul>\r\n                        </div>\r\n                        <div className=\"w-full py-20 text-[#6F6C90] text-sm font-dm-sans font-bold break-words\">\r\n                            <ul className=\"list-none list-outside\">\r\n                                <li className=\"text-[#170F49] text-xl pb-5\">Support</li>\r\n                                <li className=\"pb-2\">Help Center</li>\r\n                                <li className=\"pb-2\">Getting Started</li>\r\n                                <li className=\"pb-2\">Server Status</li>\r\n                                <li className=\"pb-2\">Report a Bug</li>\r\n                                <li className=\"pb-2\">Chat Support</li>\r\n                            </ul>\r\n                        </div>\r\n                        <div className=\"w-full py-20 text-[#6F6C90] text-sm font-dm-sans font-bold break-words\">\r\n                            <ul className=\"list-none list-outside\">\r\n                                <li className=\"text-[#170F49] text-xl pb-5\">Downloads</li>\r\n                                <li className=\"pb-2\">iOS</li>\r\n                                <li className=\"pb-2\">Android</li>\r\n                                <li className=\"pb-2\">Mac</li>\r\n                                <li className=\"pb-2\">Windows</li>\r\n                                <li className=\"pb-2\">Chrome</li>\r\n                            </ul>\r\n                        </div>\r\n                        <div className=\"col-span-2 flex w-full py-20 text-[#6F6C90] text-sm font-dm-sans font-bold break-words\">\r\n                            <ul className=\"list-none list-outside\">\r\n                                <li className=\"text-[#170F49] text-xl pb-5\">Subscribe to your Newsletter</li>\r\n                                <li className=\"pb-2\">We will send updates to you.</li>\r\n                                <li className=\"pb-2\">Kindly provide us your detail</li>\r\n                                <li className=\"pb-2\"><form action=\"submit\">\r\n                                    <input className=\"pl-5 w-[359px] h-[68px] bg-white shadow-[0px 2px 12px rgba(20.11, 19.66, 42.50, 0.08)] rounded-[108px] border border-solid border-[#D9DBE9]\" placeholder=\"Enter Your Email\" type=\"email\"/>\r\n                                    <br/>\r\n                                    <input className=\"mt-5 bg-[#4A3AFF] rounded-[76px] justify-center items-center gap-4 text-center text-white text-16 font-dm-sans font-medium break-words py-[18px] px-[24px] flex\" value=\"Subscribe\" type=\"submit\"/>\r\n                                </form></li>\r\n                            </ul>\r\n                        </div>\r\n                    </div>\r\n                    <div className=\"w-full h-0 transform rotate-180 origin-top border border-solid border-[#EFF0F6]\"></div>\r\n                    <div className=\"grid grid-cols-2\">\r\n                        <div className=\"w-full pt-10 pl-20 text-[#6F6C90] text-sm font-dm-sans font-normal break-words text-left\"><h>Hope you are safe and enjoying our services</h></div>\r\n                        <div className=\"w-full pt-10 flex text-[#170F49] text-3xl font-dm-sans font-bold break-words pl-20\"><h>Rakshak</h></div>\r\n                    </div>\r\n                </footer>\r\n            </div>\r\n        </div>\r\n    )\r\n}
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/frontend/src/pages/Landing/Landing.js b/frontend/src/pages/Landing/Landing.js
+---- a/frontend/src/pages/Landing/Landing.js	(revision d2bf80c74c15a7eb06cd5372030b30f4eeda1a07)
+-+++ b/frontend/src/pages/Landing/Landing.js	(date 1703408941289)
+-@@ -1,5 +1,5 @@
+- import React, { useState, useEffect } from 'react';
+--import {useNavigate} from 'react-router-dom'
+-+import {Link,useNavigate} from 'react-router-dom'
+- import sih from "./Video/sih.webm"
+- import rakshak from "./Images/rakshak.png"
+- import ashoka from "./Images/ashoka.png"
+-@@ -47,43 +47,32 @@
+-     //   document.body.style.overflowY = 'auto';
+-     // }
+-   const navigation = [
+--    { name: 'Home', id: 'home' }, // Remove href and add id
+-+    { name: 'Home', id: 'home' },
+-     { name: 'Why us', href: '#about' },
+--    { name: 'Programs', id: 'cards' }, // Remove href and add id
+--    { name: 'Donate', href: '/donate' }, // Change href to '/donate'
+--    { name: 'Settings', onClick: toggleModal }, // Keep this for your modal
+-+    { name: 'Programs', id: 'cards' },
+-+    { name: 'Donate', href: '/donate' },
+-+    { name: 'Settings', onClick: toggleModal },
+-     { name: 'Contact us', href: '#footer' }
+- ];
+- 
+-     useEffect(() => {
+--        // Select the navigation bar
+-         const navbar = document.getElementById('navbar');
+--
+--        // Get the initial offset of the navigation bar
+--
+--        // Function to update the navigation bar's position
+-         function updateNavbarPosition() {
+-             if (window.scrollY >= 10) {
+-                 navbar.style.position = 'fixed';
+-                 navbar.style.top = '0';
+-                 navbar.style.left = '0';
+-                 navbar.style.width = '100%';
+--                navbar.style.background = 'rgba(255, 255, 255, 0.2)'; // Adjust the alpha (0.2) for the desired level of frosted glass effect
+-+                navbar.style.background = 'rgba(255, 255, 255, 0.2)';
+-                 navbar.style.backdropFilter = 'blur(10px)';
+-             } else {
+-                 navbar.style.position = 'relative';
+--                navbar.style.background = 'transparent'; // Change to your initial background color
+-+                navbar.style.background = 'transparent';
+-             }
+-         }
+--
+--
+--        // Listen for scroll events and update the navigation bar position
+-         window.addEventListener('scroll', updateNavbarPosition);
+--
+--        // Call the function initially in case the page loads already scrolled
+-         updateNavbarPosition();
+-         }, []);
+--    // Function to scroll to a section when a button is clicked
+- function scrollToSection(sectionId) {
+-     const section = document.getElementById(sectionId);
+-     if (section) {
+-@@ -197,9 +186,9 @@
+- 
+- </div>
+-                     <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+--                        <button
+-+                        <Link to="/login"><button
+-                             className="duration-1000 font-bold bg-transparent hover:bg-black hover:text-white max-md:[32px] text-lg rounded-full border-2 border-black inline-flex px-[34px] py-[12px] content-center items-center gap-[10px]">Login
+--                        </button>
+-+                        </button></Link>
+-                     </div>
+-                 </nav>
+-                 <div
+-@@ -261,7 +250,7 @@
+-     </div>
+-                 <div id="cards" className="pt-40 pb-10 text-black text-5xl font-normal break-word"><h>Your Path to Resilience Explore What Our Site Offers</h></div>
+-                 <div className="justify-center w-full grid grid-rows-12 gap-4 max-md:scale-50">
+--                        <div className="hover:scale-105 duration-1000 grid grid-cols-2 w-[1063px] h-[394px] bg-[#1A222C] rounded-3xl hover:scale-105 duration-1000 hover:bg-gradient-to-br from-[#07C557] via-[#1A222C] to-transparent">
+-+                        <Link to="/dashboard"><div className="hover:scale-105 duration-1000 grid grid-cols-2 w-[1063px] h-[394px] bg-[#1A222C] rounded-3xl hover:scale-105 duration-1000 hover:bg-gradient-to-br from-[#07C557] via-[#1A222C] to-transparent">
+-                             <div className="h-full w-full flex items-center justify-center">
+-                                 <img className="w-[469px] h-[274px] rounded-[88px]" src={mock} />
+-                             </div>
+-@@ -269,7 +258,7 @@
+-                                 <div className="pt-10 text-white text-3xl font-bold break-word">Mock Exercises and Programs</div>
+-                                 <div className="text-center justify-center text-[#C9C9C9] text-3xl font-normal break-word">Practice makes perfect,<br/>especially when it<br/>comes to disaster readiness.</div>
+-                             </div>
+--                        </div>
+-+                        </div></Link>
+-                         <div className="grid grid-col-2 gap-4 grid-flow-col">
+-     <div className="grid grid-row-2 gap-4">
+-                     <div className="grid grid-rows-4 w-[525px] h-[764px] rounded-3xl bg-[#1A222C] hover:scale-105 duration-1000 hover:bg-gradient-to-tr from-[#FEA800] via-[#1A222C] to-transparent">
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_24-12-2023_09_38_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_24-12-2023_09_38_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_24-12-2023_09_38_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_24-12-2023_09_38_[Changes]/shelved.patch	(revision b1a4839441b407cf3f0767f009362fe207e19ddf)
++++ /dev/null	(revision b1a4839441b407cf3f0767f009362fe207e19ddf)
+@@ -1,124 +0,0 @@
+-Index: .idea/workspace.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"3dc52eb3-4e45-43a9-aee2-6fd97161fa87\" name=\"Changes\" comment=\"ping for help routing issue solved\">\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/dataSources.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/backend/main_server/db.sqlite3\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/backend/main_server/test1/tasks.py\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/backend/primary_backend/primary_backend/urls.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_29_2023_1_43_PM_[Changes]/shelved.patch\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_29_2023_1_43_PM__Changes_.xml\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/backend/backend/__init__.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/backend/main_server/test1/__init__.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/backend/backend/asgi.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/backend/primary_backend/primary_backend/asgi.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/backend/backend/settings.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/backend/primary_backend/primary_backend/settings.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/backend/backend/urls.py\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/backend/backend/wsgi.py\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/backend/machine_learning/text_detector/views.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/backend/machine_learning/text_detector/views.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/backend/main/celery_tasks/__init__.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/backend/main_server/celery_tasks/__init__.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/backend/main/celery_tasks/asgi.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/backend/main_server/celery_tasks/asgi.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/backend/main/celery_tasks/celery.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/backend/main_server/celery_tasks/celery.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/backend/main/celery_tasks/settings.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/backend/main_server/celery_tasks/settings.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/backend/main/celery_tasks/urls.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/backend/main_server/celery_tasks/urls.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/backend/main/celery_tasks/wsgi.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/backend/main_server/celery_tasks/wsgi.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/backend/main/db.sqlite3\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/backend/main/manage.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/backend/main_server/manage.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/backend/main/test1/__init__.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/backend/main_server/test1/migrations/__init__.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/backend/main/test1/admin.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/backend/main_server/test1/admin.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/backend/main/test1/apps.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/backend/main_server/test1/apps.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/backend/main/test1/migrations/__init__.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/backend/primary_backend/primary_backend/__init__.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/backend/main/test1/models.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/backend/main_server/test1/models.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/backend/main/test1/tasks.py\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/backend/main/test1/tests.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/backend/main_server/test1/tests.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/backend/main/test1/urls.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/backend/main_server/test1/urls.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/backend/main/test1/views.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/backend/main_server/test1/views.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/backend/manage.py\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/backend/users/manage.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/backend/primary_backend/manage.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/backend/users/users/__init__.py\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/backend/users/users/asgi.py\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/backend/users/users/settings.py\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/backend/users/users/urls.py\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/backend/users/users/wsgi.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/backend/primary_backend/primary_backend/wsgi.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/frontend/package-lock.json\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/frontend/package-lock.json\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/frontend/package.json\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/frontend/package.json\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/frontend/public/manifest.json\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/frontend/public/manifest.json\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/frontend/src/pages/Landing/Landing.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/frontend/src/pages/Landing/Landing.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/frontend/src/pages/Signup/Signup.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/frontend/src/pages/Signup/Signup.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/frontend/src/pages/Signup/SignupScreen.js\" beforeDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"JavaScript File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"master\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;customColor&quot;: &quot;&quot;,\r\n  &quot;associatedIndex&quot;: 7\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2VyxA0Ayihgu6vKtSflaLcC4ISg\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;D:/Projects/SPARK+/fullstack-frontend-master&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\Rakshak-Web\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\SIH\\Rakshak-Web\\frontend\\src\\pages\\Dashboard\\components\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"3dc52eb3-4e45-43a9-aee2-6fd97161fa87\" name=\"Changes\" comment=\"Added Tailwind, Dockerfile and Jenkinsfile\" />\r\n      <created>1696780270620</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1696780270620</updated>\r\n      <workItem from=\"1696780271920\" duration=\"1006000\" />\r\n      <workItem from=\"1696821638877\" duration=\"2868000\" />\r\n      <workItem from=\"1696852533652\" duration=\"3422000\" />\r\n      <workItem from=\"1696926598968\" duration=\"23000\" />\r\n      <workItem from=\"1696937015023\" duration=\"4501000\" />\r\n      <workItem from=\"1697018709252\" duration=\"1253000\" />\r\n      <workItem from=\"1697033641635\" duration=\"5330000\" />\r\n      <workItem from=\"1697047258799\" duration=\"939000\" />\r\n      <workItem from=\"1697185078920\" duration=\"2960000\" />\r\n      <workItem from=\"1697373331252\" duration=\"5062000\" />\r\n      <workItem from=\"1697434257076\" duration=\"1304000\" />\r\n      <workItem from=\"1697436077619\" duration=\"2338000\" />\r\n      <workItem from=\"1697471425168\" duration=\"9722000\" />\r\n      <workItem from=\"1697538618925\" duration=\"964000\" />\r\n      <workItem from=\"1697716545897\" duration=\"1328000\" />\r\n      <workItem from=\"1697731210172\" duration=\"871000\" />\r\n      <workItem from=\"1697793917584\" duration=\"602000\" />\r\n      <workItem from=\"1697820800243\" duration=\"4754000\" />\r\n      <workItem from=\"1698597414098\" duration=\"1631000\" />\r\n      <workItem from=\"1698984372605\" duration=\"465000\" />\r\n      <workItem from=\"1698988580589\" duration=\"972000\" />\r\n      <workItem from=\"1699014203777\" duration=\"581000\" />\r\n      <workItem from=\"1699188766448\" duration=\"85000\" />\r\n      <workItem from=\"1699188878183\" duration=\"704000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Fixed Microservices Architecture\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1697043830452</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1697043830452</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"added something\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1697388309699</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1697388309700</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"added something\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1697388713408</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1697388713408</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"ping for help routing issue solved\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1698567290028</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1698567290028</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"5\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"UnknownFeatures\">\r\n    <option featureType=\"dependencySupport\" implementationName=\"javascript:npm:react\" />\r\n    <option featureType=\"dependencySupport\" implementationName=\"executable:docker\" />\r\n    <option featureType=\"dependencySupport\" implementationName=\"javascript:npm:tailwindcss\" />\r\n    <option featureType=\"com.intellij.fileTypeFactory\" implementationName=\".env\" />\r\n    <option featureType=\"dependencySupport\" implementationName=\"executable:kubectl\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Added Microservices setup with Amazon MQ\" />\r\n    <MESSAGE value=\"Fixed Microservices Architecture\" />\r\n    <MESSAGE value=\"added something\" />\r\n    <MESSAGE value=\"ping for help routing issue solved\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"ping for help routing issue solved\" />\r\n  </component>\r\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+---- a/.idea/workspace.xml	(revision 16f0929a4dda82db6d3b2ff4fe55519861e0e497)
+-+++ b/.idea/workspace.xml	(date 1703390858110)
+-@@ -4,50 +4,9 @@
+-     <option name="autoReloadType" value="SELECTIVE" />
+-   </component>
+-   <component name="ChangeListManager">
+--    <list default="true" id="3dc52eb3-4e45-43a9-aee2-6fd97161fa87" name="Changes" comment="ping for help routing issue solved">
+--      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+--      <change afterPath="$PROJECT_DIR$/backend/main_server/db.sqlite3" afterDir="false" />
+--      <change afterPath="$PROJECT_DIR$/backend/main_server/test1/tasks.py" afterDir="false" />
+--      <change afterPath="$PROJECT_DIR$/backend/primary_backend/primary_backend/urls.py" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_29_2023_1_43_PM_[Changes]/shelved.patch" beforeDir="false" />
+--      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_29_2023_1_43_PM__Changes_.xml" beforeDir="false" />
+-+    <list default="true" id="3dc52eb3-4e45-43a9-aee2-6fd97161fa87" name="Changes" comment="Sign up functionality updated">
+-+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+-       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/backend/backend/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main_server/test1/__init__.py" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/backend/backend/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/primary_backend/primary_backend/asgi.py" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/backend/backend/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/primary_backend/primary_backend/settings.py" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/backend/backend/urls.py" beforeDir="false" />
+--      <change beforePath="$PROJECT_DIR$/backend/backend/wsgi.py" beforeDir="false" />
+--      <change beforePath="$PROJECT_DIR$/backend/machine_learning/text_detector/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/machine_learning/text_detector/views.py" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/backend/main/celery_tasks/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main_server/celery_tasks/__init__.py" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/backend/main/celery_tasks/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main_server/celery_tasks/asgi.py" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/backend/main/celery_tasks/celery.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main_server/celery_tasks/celery.py" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/backend/main/celery_tasks/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main_server/celery_tasks/settings.py" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/backend/main/celery_tasks/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main_server/celery_tasks/urls.py" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/backend/main/celery_tasks/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main_server/celery_tasks/wsgi.py" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/backend/main/db.sqlite3" beforeDir="false" />
+--      <change beforePath="$PROJECT_DIR$/backend/main/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main_server/manage.py" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/backend/main/test1/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main_server/test1/migrations/__init__.py" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/backend/main/test1/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main_server/test1/admin.py" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/backend/main/test1/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main_server/test1/apps.py" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/backend/main/test1/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/primary_backend/primary_backend/__init__.py" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/backend/main/test1/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main_server/test1/models.py" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/backend/main/test1/tasks.py" beforeDir="false" />
+--      <change beforePath="$PROJECT_DIR$/backend/main/test1/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main_server/test1/tests.py" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/backend/main/test1/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main_server/test1/urls.py" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/backend/main/test1/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main_server/test1/views.py" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/backend/manage.py" beforeDir="false" />
+--      <change beforePath="$PROJECT_DIR$/backend/users/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/primary_backend/manage.py" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/backend/users/users/__init__.py" beforeDir="false" />
+--      <change beforePath="$PROJECT_DIR$/backend/users/users/asgi.py" beforeDir="false" />
+--      <change beforePath="$PROJECT_DIR$/backend/users/users/settings.py" beforeDir="false" />
+--      <change beforePath="$PROJECT_DIR$/backend/users/users/urls.py" beforeDir="false" />
+--      <change beforePath="$PROJECT_DIR$/backend/users/users/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/primary_backend/primary_backend/wsgi.py" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/frontend/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/manifest.json" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Landing/Landing.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Landing/Landing.js" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Signup/Signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Signup/Signup.js" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Signup/SignupScreen.js" beforeDir="false" />
+-     </list>
+-     <option name="SHOW_DIALOG" value="false" />
+-     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+-@@ -136,6 +95,7 @@
+-       <workItem from="1699014203777" duration="581000" />
+-       <workItem from="1699188766448" duration="85000" />
+-       <workItem from="1699188878183" duration="704000" />
+-+      <workItem from="1703388329603" duration="677000" />
+-     </task>
+-     <task id="LOCAL-00001" summary="Fixed Microservices Architecture">
+-       <option name="closed" value="true" />
+-@@ -169,7 +129,23 @@
+-       <option name="project" value="LOCAL" />
+-       <updated>1698567290028</updated>
+-     </task>
+--    <option name="localTasksCounter" value="5" />
+-+    <task id="LOCAL-00005" summary="Sign up functionality updated">
+-+      <option name="closed" value="true" />
+-+      <created>1703388381580</created>
+-+      <option name="number" value="00005" />
+-+      <option name="presentableId" value="LOCAL-00005" />
+-+      <option name="project" value="LOCAL" />
+-+      <updated>1703388381580</updated>
+-+    </task>
+-+    <task id="LOCAL-00006" summary="Sign up functionality updated">
+-+      <option name="closed" value="true" />
+-+      <created>1703388433711</created>
+-+      <option name="number" value="00006" />
+-+      <option name="presentableId" value="LOCAL-00006" />
+-+      <option name="project" value="LOCAL" />
+-+      <updated>1703388433711</updated>
+-+    </task>
+-+    <option name="localTasksCounter" value="7" />
+-     <servers />
+-   </component>
+-   <component name="TypeScriptGeneratedFilesManager">
+-@@ -198,6 +174,7 @@
+-     <MESSAGE value="Fixed Microservices Architecture" />
+-     <MESSAGE value="added something" />
+-     <MESSAGE value="ping for help routing issue solved" />
+--    <option name="LAST_COMMIT_MESSAGE" value="ping for help routing issue solved" />
+-+    <MESSAGE value="Sign up functionality updated" />
+-+    <option name="LAST_COMMIT_MESSAGE" value="Sign up functionality updated" />
+-   </component>
+- </project>
+-\ No newline at end of file
+-Index: .idea/dataSources.local.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"dataSourceStorageLocal\" created-in=\"PY-232.10072.31\">\r\n    <data-source name=\"db\" uuid=\"6470ed81-a9b5-4c95-887b-5d9b1ece3a46\">\r\n      <database-info product=\"\" version=\"\" jdbc-version=\"\" driver-name=\"\" driver-version=\"\" dbms=\"SQLITE\" exact-version=\"0\" />\r\n      <auth-provider>no-auth</auth-provider>\r\n      <schema-mapping />\r\n    </data-source>\r\n  </component>\r\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/dataSources.local.xml b/.idea/dataSources.local.xml
+---- a/.idea/dataSources.local.xml	(revision 16f0929a4dda82db6d3b2ff4fe55519861e0e497)
+-+++ b/.idea/dataSources.local.xml	(date 1703388989842)
+-@@ -1,6 +1,6 @@
+- <?xml version="1.0" encoding="UTF-8"?>
+- <project version="4">
+--  <component name="dataSourceStorageLocal" created-in="PY-232.10072.31">
+-+  <component name="dataSourceStorageLocal" created-in="PY-232.10203.26">
+-     <data-source name="db" uuid="6470ed81-a9b5-4c95-887b-5d9b1ece3a46">
+-       <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="SQLITE" exact-version="0" />
+-       <auth-provider>no-auth</auth-provider>
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_24-12-2023_09_38__Changes_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_24-12-2023_09_38__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_24-12-2023_09_38__Changes_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_24-12-2023_09_38__Changes_.xml	(revision b1a4839441b407cf3f0767f009362fe207e19ddf)
++++ /dev/null	(revision b1a4839441b407cf3f0767f009362fe207e19ddf)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_24-12-2023_09_38_[Changes]" date="1703390943901" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24-12-2023_09_38_[Changes]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 24-12-2023 09:38 [Changes]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"3dc52eb3-4e45-43a9-aee2-6fd97161fa87\" name=\"Changes\" comment=\"Fixed sidebar\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/frontend/src/pages/Dashboard/Dashboard.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/frontend/src/pages/Dashboard/Dashboard.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/frontend/src/pages/Dashboard/components/Awareness Sessions.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/frontend/src/pages/Dashboard/components/Awareness Sessions.js\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"DjangoConsoleOptions\" custom-start-script=\"import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)\">\r\n    <option name=\"myCustomStartScript\" value=\"import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Python Script\" />\r\n        <option value=\"JavaScript File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"master\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n    <option name=\"RESET_MODE\" value=\"HARD\" />\r\n  </component>\r\n  <component name=\"KubernetesApiProvider\">{\r\n  &quot;contexts&quot;: [\r\n    {\r\n      &quot;name&quot;: &quot;minikube&quot;,\r\n      &quot;originalNamespace&quot;: &quot;default&quot;\r\n    }\r\n  ],\r\n  &quot;isMigrated&quot;: true\r\n}</component>\r\n  <component name=\"KubernetesSettings\">\r\n    <option name=\"contextName\" value=\"minikube\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProblemsViewState\">\r\n    <option name=\"selectedTabId\" value=\"CurrentFile\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;customColor&quot;: &quot;&quot;,\r\n  &quot;associatedIndex&quot;: 7\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2VyxA0Ayihgu6vKtSflaLcC4ISg\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;D:/SIH/Rakshak-Web/Rakshak-Web/frontend/src/pages/Landing/Video&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;ts.external.directory.path&quot;: &quot;D:\\\\Jetbrains Toolbox\\\\Pycharm Professional\\\\PyCharm 2023.2.2\\\\plugins\\\\javascript-impl\\\\jsLanguageServicesImpl\\\\external&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\SIH\\Rakshak-Web\\Rakshak-Web\\frontend\\src\\pages\\Landing\\Video\" />\r\n      <recent name=\"D:\\SIH\\Rakshak-Web\\Rakshak-Web\\backend\\primary_backend\\donate\" />\r\n      <recent name=\"D:\\SIH\\Rakshak-Web\\frontend\\src\\pages\\Dashboard\\TrialJSON\\images\" />\r\n      <recent name=\"D:\\Rakshak-Web\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\SIH\\Rakshak-Web\\frontend\\src\\pages\\Dashboard\\components\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-python-sdk-50da183f06c8-2887949eec09-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.13135.95\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"3dc52eb3-4e45-43a9-aee2-6fd97161fa87\" name=\"Changes\" comment=\"Added Tailwind, Dockerfile and Jenkinsfile\" />\r\n      <created>1696780270620</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1696780270620</updated>\r\n      <workItem from=\"1696780271920\" duration=\"1006000\" />\r\n      <workItem from=\"1696821638877\" duration=\"2868000\" />\r\n      <workItem from=\"1696852533652\" duration=\"3422000\" />\r\n      <workItem from=\"1696926598968\" duration=\"23000\" />\r\n      <workItem from=\"1696937015023\" duration=\"4501000\" />\r\n      <workItem from=\"1697018709252\" duration=\"1253000\" />\r\n      <workItem from=\"1697033641635\" duration=\"5330000\" />\r\n      <workItem from=\"1697047258799\" duration=\"939000\" />\r\n      <workItem from=\"1697185078920\" duration=\"2960000\" />\r\n      <workItem from=\"1697373331252\" duration=\"5062000\" />\r\n      <workItem from=\"1697434257076\" duration=\"1304000\" />\r\n      <workItem from=\"1697436077619\" duration=\"2338000\" />\r\n      <workItem from=\"1697471425168\" duration=\"9722000\" />\r\n      <workItem from=\"1697538618925\" duration=\"964000\" />\r\n      <workItem from=\"1697716545897\" duration=\"1328000\" />\r\n      <workItem from=\"1697731210172\" duration=\"871000\" />\r\n      <workItem from=\"1697793917584\" duration=\"602000\" />\r\n      <workItem from=\"1697820800243\" duration=\"4754000\" />\r\n      <workItem from=\"1698597414098\" duration=\"1631000\" />\r\n      <workItem from=\"1698984372605\" duration=\"465000\" />\r\n      <workItem from=\"1698988580589\" duration=\"972000\" />\r\n      <workItem from=\"1699014203777\" duration=\"581000\" />\r\n      <workItem from=\"1699188766448\" duration=\"85000\" />\r\n      <workItem from=\"1699188878183\" duration=\"704000\" />\r\n      <workItem from=\"1703408851194\" duration=\"1689000\" />\r\n      <workItem from=\"1703410647727\" duration=\"71000\" />\r\n      <workItem from=\"1703410762047\" duration=\"3511000\" />\r\n      <workItem from=\"1703414589940\" duration=\"161000\" />\r\n      <workItem from=\"1703439050993\" duration=\"659000\" />\r\n      <workItem from=\"1703603639942\" duration=\"3661000\" />\r\n      <workItem from=\"1703611069687\" duration=\"2295000\" />\r\n      <workItem from=\"1703613408702\" duration=\"257000\" />\r\n      <workItem from=\"1703613675634\" duration=\"1622000\" />\r\n      <workItem from=\"1703681122698\" duration=\"1268000\" />\r\n      <workItem from=\"1703750424716\" duration=\"2069000\" />\r\n      <workItem from=\"1703781258215\" duration=\"15094000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Fixed Microservices Architecture\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1697043830452</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1697043830452</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"added something\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1697388309699</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1697388309700</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"added something\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1697388713408</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1697388713408</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"ping for help routing issue solved\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1698567290028</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1698567290028</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"Redux bug-fix\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1703414425239</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1703414425239</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"Registration linking bug-fix\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1703612969149</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1703612969149</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"Registration linking bug-fix\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1703750495850</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1703750495851</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"Drive Video\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1704191964603</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1704191964603</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"Fixed sidebar\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1704193887985</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1704193887985</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"10\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"UnknownFeatures\">\r\n    <option featureType=\"dependencySupport\" implementationName=\"javascript:npm:react\" />\r\n    <option featureType=\"dependencySupport\" implementationName=\"executable:docker\" />\r\n    <option featureType=\"dependencySupport\" implementationName=\"javascript:npm:tailwindcss\" />\r\n    <option featureType=\"com.intellij.fileTypeFactory\" implementationName=\".env\" />\r\n    <option featureType=\"dependencySupport\" implementationName=\"executable:kubectl\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Added Microservices setup with Amazon MQ\" />\r\n    <MESSAGE value=\"Fixed Microservices Architecture\" />\r\n    <MESSAGE value=\"added something\" />\r\n    <MESSAGE value=\"ping for help routing issue solved\" />\r\n    <MESSAGE value=\"Redux bug-fix\" />\r\n    <MESSAGE value=\"Registration linking bug-fix\" />\r\n    <MESSAGE value=\"Drive Video\" />\r\n    <MESSAGE value=\"Fixed sidebar\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Fixed sidebar\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision b1a4839441b407cf3f0767f009362fe207e19ddf)
++++ b/.idea/workspace.xml	(date 1704222130426)
+@@ -5,9 +5,14 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="3dc52eb3-4e45-43a9-aee2-6fd97161fa87" name="Changes" comment="Fixed sidebar">
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24-12-2023_09_33_am_[Changes]/shelved.patch" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24-12-2023_09_33_am__Changes_.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24-12-2023_09_38_[Changes]/shelved.patch" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24-12-2023_09_38__Changes_.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25-12-2023_04_28_pm_[Changes]/shelved.patch" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25-12-2023_04_28_pm__Changes_.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27-12-2023_10_13_pm__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27-12-2023_10_13_pm__Changes_.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Dashboard/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Dashboard/Dashboard.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Dashboard/components/Awareness Sessions.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Dashboard/components/Awareness Sessions.js" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -92,7 +97,7 @@
+   <component name="SharedIndexes">
+     <attachedChunks>
+       <set>
+-        <option value="bundled-python-sdk-50da183f06c8-2887949eec09-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.13135.95" />
++        <option value="bundled-python-sdk-50da183f06c8-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.13135.95" />
+       </set>
+     </attachedChunks>
+   </component>
+@@ -227,11 +232,38 @@
+     <option featureType="dependencySupport" implementationName="executable:kubectl" />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
++    <option name="RECENT_FILTERS">
++      <map>
++        <entry key="Branch">
++          <value>
++            <list>
++              <RecentGroup>
++                <option name="FILTER_VALUES">
++                  <option value="origin/develop" />
++                </option>
++              </RecentGroup>
++            </list>
++          </value>
++        </entry>
++      </map>
++    </option>
+     <option name="TAB_STATES">
+       <map>
+         <entry key="MAIN">
+           <value>
+-            <State />
++            <State>
++              <option name="FILTERS">
++                <map>
++                  <entry key="branch">
++                    <value>
++                      <list>
++                        <option value="origin/develop" />
++                      </list>
++                    </value>
++                  </entry>
++                </map>
++              </option>
++            </State>
+           </value>
+         </entry>
+       </map>

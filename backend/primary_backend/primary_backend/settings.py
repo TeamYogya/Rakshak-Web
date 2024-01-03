@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'accounts',
     'donate',
     'disasterstories',
+    'emergency_app'
 ]
 
 MIDDLEWARE = [
