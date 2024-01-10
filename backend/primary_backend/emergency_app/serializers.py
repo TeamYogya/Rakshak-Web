@@ -5,3 +5,4 @@ class EmergencyCardSerializer(serializers.ModelSerializer):
     class Meta:
         model = EmergencyCard
         fields = '__all__'
+        read_only_fields = ['serial_number']

@@ -1,6 +1,5 @@
-from rest_framework import generics
+from rest_framework import generics, status
 from rest_framework.response import Response
-from rest_framework import status
 from .models import EmergencyCard
 from .serializers import EmergencyCardSerializer
 
@@ -22,18 +21,22 @@ class EmergencyCardCreateView(generics.CreateAPIView):
 
     def get_location_for_emergency_type(self, emergency_type):
         location_mapping = {
-            'fire': 'Fire Station',
-            'medical': 'Hospital',
-            'police': 'Police Station',
-            'default': 'Default Location',
+            'Fire': 'Nagarparishad office,Alandi',
+            'Medical': 'Tapkir Nagar, Alandi,',
+            'Local Police': 'Pimpri Chinchwad Police,Pimpri',
+            'NGO': 'Mauli sarvajanik granthalay, Alandi,',
+            'Military': ' Alandi Road Dighi Pune '
         }
         return location_mapping.get(emergency_type, 'Default Location')
 
-class EmergencyCardDeleteView(generics.DestroyAPIView):
+class EmergencyCardDeleteView(generics.RetrieveAPIView, generics.DestroyAPIView):
+    queryset = EmergencyCard.objects.all()
+    serializer_class = EmergencyCardSerializer
+    def delete(self, request, *args, **kwargs):
+        return self.destroy(request, *args, **kwargs)
+
+class EmergencyCardListView(generics.ListAPIView):
     queryset = EmergencyCard.objects.all()
     serializer_class = EmergencyCardSerializer
 
-    def destroy(self, request, *args, **kwargs):
-        instance = self.get_object()
-        self.perform_destroy(instance)
-        return Response(status=status.HTTP_204_NO_CONTENT)
+

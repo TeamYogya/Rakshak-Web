@@ -67,6 +67,7 @@ const DisasterSurvivorStories = () => {
     const [server_error, setServerError] = useState({})
     const navigate = useNavigate();
     const [addStory, {isLoading}] = useAddStoryMutation();
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         const data = new FormData(e.currentTarget);
