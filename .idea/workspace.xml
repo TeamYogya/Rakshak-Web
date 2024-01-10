@@ -4,22 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3dc52eb3-4e45-43a9-aee2-6fd97161fa87" name="Changes" comment="Fixed sidebar">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02-01-2024_09_13_pm_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02-01-2024_09_13_pm__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03-01-2024_00_33_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03-01-2024_00_33__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/primary_backend/accounts/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/primary_backend/accounts/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/primary_backend/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/backend/primary_backend/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/primary_backend/emergency_app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/primary_backend/emergency_app/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/primary_backend/emergency_app/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/primary_backend/emergency_app/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/primary_backend/emergency_app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/primary_backend/emergency_app/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/primary_backend/emergency_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/primary_backend/emergency_app/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Dashboard/components/DisasterSurvivorStories.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Dashboard/components/DisasterSurvivorStories.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Dashboard/components/PingForHelp.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Dashboard/components/PingForHelp.js" afterDir="false" />
-    </list>
+    <list default="true" id="3dc52eb3-4e45-43a9-aee2-6fd97161fa87" name="Changes" comment="changes in emergency" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -259,7 +244,31 @@
       <option name="project" value="LOCAL" />
       <updated>1704193996570</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="changes in emergency">
+      <option name="closed" value="true" />
+      <created>1704898070334</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1704898070334</updated>
+    </task>
+    <task id="LOCAL-00012" summary="changes in emergency">
+      <option name="closed" value="true" />
+      <created>1704898084698</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1704898084698</updated>
+    </task>
+    <task id="LOCAL-00013" summary="changes in emergency">
+      <option name="closed" value="true" />
+      <created>1704898202310</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1704898202310</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -293,6 +302,7 @@
     <MESSAGE value="Drive Video" />
     <MESSAGE value="Fixed sidebar" />
     <MESSAGE value="help backend" />
-    <option name="LAST_COMMIT_MESSAGE" value="help backend" />
+    <MESSAGE value="changes in emergency" />
+    <option name="LAST_COMMIT_MESSAGE" value="changes in emergency" />
   </component>
 </project>
