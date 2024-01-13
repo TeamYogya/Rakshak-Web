@@ -13,9 +13,25 @@ import cyclone from "./Images/cyclone.jpg"
 import tsunami from "./Images/tsunami.jpeg"
 import wildfire from "./Images/wildfire.jpg"
 import earthquake from "./Images/earthquake.jpg"
-
+import sih from "./Videos/sih.webm"
+import Session from 'react-session-api';
 
 export default function Landing() {
+    const [loginstatus,setLoginStatus]=useState(false);
+    const [user, setUser] = useState(null);
+  const fetchUserData = () => {
+    const userData = Session.get('user');
+    if (userData) {
+        setUser(userData);
+        if (userData.islogin !== undefined) {
+            setLoginStatus(userData.islogin);
+        } else {
+            setLoginStatus(false);
+        }
+    } else {
+        setLoginStatus(false);
+    }
+};
     const style = {
         background: 'linear-gradient(90deg, #ff5733, #33ff57, #3357ff, #ff33a8, #a833ff, #ff5733)',
         backgroundSize: '400%',
@@ -42,7 +58,9 @@ export default function Landing() {
         e.preventDefault();
         setToggle(!toggle);
     };
-
+const demoClick = (e) => {
+        e.preventDefault();
+    };
     //I can stop scrolling when settings is toggled
     // if (modal) {
     //   document.documentElement.style.overflowY = 'hidden';
@@ -53,14 +71,15 @@ export default function Landing() {
     // }
     const navigation = [
         { name: 'Home', id: 'home' },
-        { name: 'Why us', href: '#about' },
+        { name: 'Why us', id: 'footer' },
         { name: 'Programs', id: 'cards' },
         { name: 'Donate', href: '/donate' },
         { name: 'Settings', onClick: toggleModal },
-        { name: 'Contact us', href: '#footer' }
+        { name: 'Contact us', id: 'footer' }
     ];
 
     useEffect(() => {
+        fetchUserData();
         const navbar = document.getElementById('navbar');
         function updateNavbarPosition() {
             if (window.scrollY >= 10) {
@@ -92,6 +111,10 @@ export default function Landing() {
         const element2 = document.getElementById("phone2Id");
         element2.style.backgroundImage = `url('${phone2}')`;
     }, []);
+    const handleLogout = () => {
+  Session.remove('user');
+  window.location.reload();
+};
     return (
         <div className="font-sans">
             {modal && (
@@ -191,16 +214,22 @@ export default function Landing() {
 
                     </div>
                     <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                        <Link to="/login"><button
+                        {loginstatus?(<button onClick={handleLogout}
+                            className="duration-1000 font-bold bg-transparent hover:bg-black hover:text-white max-md:[32px] text-lg rounded-full border-2 border-black inline-flex px-[34px] py-[12px] content-center items-center gap-[10px]">Logout
+                        </button>):(
+                            <Link to="/login"><button
                             className="duration-1000 font-bold bg-transparent hover:bg-black hover:text-white max-md:[32px] text-lg rounded-full border-2 border-black inline-flex px-[34px] py-[12px] content-center items-center gap-[10px]">Login
                         </button></Link>
+                        )}
                     </div>
                 </nav>
                 <div
                     className={"top-[143px] w-full pl-20 absolute text-black text-[64px] font-bold break-words text-left max-md:text-left max-md:text-[32px] max-md:pl-10"}>
                     Knowledge is Your<br />
                     Best Defense, Explore<br />
-                    <h style={style}>Disaster Preparedness
+                    Disaster Preparedness
+                    <br />
+                    <h style={style}>Rakshak
                         <style>
                             {`
           @keyframes animate {
@@ -214,11 +243,14 @@ export default function Landing() {
         `}
                         </style>
                     </h>
-                    <br />
-                    Today<br />
-                    <button
-                        className="top-[390px] font-bold rounded-full border-5 px-14 py-6 bg-black inline-flex content-center items-center gap-3 absolute text-white text-2xl font-semibold max-md:text-lg max-md:px-12 max-md:py-4 max-md:top-52">Register
-                    </button>
+                    <br/>
+                    {loginstatus?(
+                        <></>
+                    ):(
+                        <Link to='/signup'><button
+                        className="top-[390px] font-bold rounded-full border-5 px-14 py-6 bg-black inline-flex content-center items-center gap-3 absolute text-white text-2xl max-md:text-lg max-md:px-12 max-md:py-4 max-md:top-52">Register
+                    </button></Link>
+                    )}
                 </div>
                 <div className="flex justify-center w-full max-md:scale-50">
                     <div className="w-[1063px] h-[250px] top-[615px] absolute max-md:top-[750px] flex items-center justify-center">
@@ -240,7 +272,7 @@ export default function Landing() {
                     muted
                     playsInline
                 >
-                    <source src="https://drive.google.com/uc?export=view&id=1jGzp9kJx24C0-r7s2oDc-qZ6CoFQmC7v" type="video/webm" />
+                    <source src={sih} type="video/webm" />
                 </video>
                 <div className="h-40 w-full bg-gradient-to-b from-[#606060] to-white"></div>
 
@@ -269,7 +301,7 @@ export default function Landing() {
                 </div>
                 <div id="cards" className="pt-40 pb-10 text-black text-5xl font-normal break-word"><h>Your Path to Resilience Explore What Our Site Offers</h></div>
                 <div className="justify-center w-full grid grid-rows-12 gap-4 max-md:scale-50">
-                    <Link to="/dashboard"><div className="hover:scale-105 duration-1000 grid grid-cols-2 w-[1063px] h-[394px] bg-[#1A222C] rounded-3xl hover:scale-105 duration-1000 hover:bg-gradient-to-br from-[#07C557] via-[#1A222C] to-transparent">
+                    <Link to={`/dashboard/${encodeURIComponent("Awareness Sessions")}`}><div className="hover:scale-105 duration-1000 grid grid-cols-2 w-[1063px] h-[394px] bg-[#1A222C] rounded-3xl hover:scale-105 duration-1000 hover:bg-gradient-to-br from-[#07C557] via-[#1A222C] to-transparent">
                         <div className="h-full w-full flex items-center justify-center">
                             <img className="w-[469px] h-[274px] rounded-[88px]" src={mock} />
                         </div>
@@ -280,16 +312,16 @@ export default function Landing() {
                     </div></Link>
                     <div className="grid grid-col-2 gap-4 grid-flow-col">
                         <div className="grid grid-row-2 gap-4">
-                            <div className="grid grid-rows-4 w-[525px] h-[764px] rounded-3xl bg-[#1A222C] hover:scale-105 duration-1000 hover:bg-gradient-to-tr from-[#FEA800] via-[#1A222C] to-transparent">
+                           <Link to={`/dashboard/${encodeURIComponent("Ping for Help")}`}> <div className="grid grid-rows-4 w-[525px] h-[764px] rounded-3xl bg-[#1A222C] hover:scale-105 duration-1000 hover:bg-gradient-to-tr from-[#FEA800] via-[#1A222C] to-transparent">
                                 <div className="row-end-2">
-                                    <div className="pt-10 text-center text-white text-3xl font-bold break-word"><h>Feasibility Prediction</h></div>
+                                    <div className="pt-10 text-center text-white text-3xl font-bold break-word"><h>Ping For Help</h></div>
                                     <div className="pt-10 text-center text-[#C9C9C9] text-3xl font-normal break-word"><h>Stay ahead of disaster risks<br />with our feasibility prediction tool</h></div>
                                 </div>
                                 <div className="row-start-2 row-end-5">
                                     <div id="phone1Id" className="mt-[162px] bg-[-238.722px_-28px] w-[287px] h-[402px] absolute rounded-[40px] overflow-hidden bg-no-repeat bg-[length:766.989px_430.434px]"></div>
                                     <div id="phone2Id" className="ml-[255px] mt-[20px] bg-[-97.006px_-54.658px] w-[270px] h-[548px] absolute rounded-[40px] overflow-hidden bg-no-repeat bg-[length:464.0112px_651.298px]"></div>
                                 </div>
-                            </div>
+                            </div></Link>
                             <div className="grid grid-rows-2 w-[525px] h-[523px] bg-[#1A222C] rounded-3xl hover:scale-105 duration-1000 hover:bg-gradient-to-br from-[#7000FE] via-[#1A222C] to-transparent">
                                 <div className="grid grid-cols-2">
                                     <div className="flex items-center justify-center">
@@ -308,7 +340,7 @@ export default function Landing() {
                             </div>
                         </div>
                         <div className="grid grid-row-2 gap-4">
-                            <div className="grid grid-rows-2 w-[525px] h-[523px] bg-[#1A222C] rounded-3xl hover:scale-105 duration-1000 hover:bg-gradient-to-bl from-[#FEA800] via-[#1A222C] to-transparent">
+                            <Link to={`/dashboard/${encodeURIComponent("Natural Hazard Alerts")}`}><div className="grid grid-rows-2 w-[525px] h-[523px] bg-[#1A222C] rounded-3xl hover:scale-105 duration-1000 hover:bg-gradient-to-bl from-[#FEA800] via-[#1A222C] to-transparent">
                                 <div className="grid grid-cols-2">
                                     <div className="pt-20 justify-center">
                                         <h className="w-[457px] h-[30.12px] text-white text-3xl font-bold break-word">Alerts<br />and<br />Notifications</h>
@@ -323,7 +355,7 @@ export default function Landing() {
                                 <div className="items-center justify-center">
                                     <h className="w-[464px] h-[82px] text-center text-[#C9C9C9] text-5xl font-normal break-word">Timely information can make all the difference during an emergency.</h>
                                 </div>
-                            </div>
+                            </div></Link>
                             <div className="grid grid-rows-2 w-[525px] h-[764px] bg-[#1A222C] rounded-3xl hover:scale-105 duration-1000 hover:bg-gradient-to-tl from-[#7000FE] via-[#1A222C] to-transparent">
                                 <div className="flex items-center justify-center">
                                     <img className="w-full h-full rounded-3xl" src={aware} />
@@ -347,7 +379,7 @@ export default function Landing() {
                     </div>
 
                 </div>
-                <footer id="footer" className="w-full bottom-0 mt-20 max-md:scale-50">
+                <footer id="footer" className="w-full bottom-0 mt-20 max-md:scale-50" >
                     <div className="w-full h-0 transform rotate-180 origin-top border border-solid border-[#EFF0F6]"></div>
                     <div className="grid grid-cols-2">
                         <div className="w-full py-20 flex text-[#170F49] text-3xl font-dm-sans font-bold break-words pl-20"><h>Rakshak</h></div>
@@ -403,7 +435,7 @@ export default function Landing() {
                                 <li className="pb-2"><form action="submit">
                                     <input className="pl-5 w-[359px] h-[68px] bg-white shadow-[0px 2px 12px rgba(20.11, 19.66, 42.50, 0.08)] rounded-[108px] border border-solid border-[#D9DBE9]" placeholder="Enter Your Email" type="email" />
                                     <br />
-                                    <input className="mt-5 bg-[#4A3AFF] rounded-[76px] justify-center items-center gap-4 text-center text-white text-16 font-dm-sans font-medium break-words py-[18px] px-[24px] flex" value="Subscribe" type="submit" />
+                                    <input onClick={demoClick} className="mt-5 bg-[#4A3AFF] rounded-[76px] justify-center items-center gap-4 text-center text-white text-16 font-dm-sans font-medium break-words py-[18px] px-[24px] flex" value="Subscribe" type="submit" />
                                 </form></li>
                             </ul>
                         </div>

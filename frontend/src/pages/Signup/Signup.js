@@ -46,7 +46,7 @@ const Signup = () => {
             console.log(typeof (res.data))
             console.log(res.data)
             storeToken(res.data.token)
-            navigate('/dashboard')
+            navigate('/login')
         }
     }
 
@@ -100,6 +100,12 @@ const Signup = () => {
 
     return (
         <div className="flex font-sans h-screen">
+            <Link to='/'><div className="mt-4 ml-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-8 h-8">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" />
+</svg>
+                </div></Link>
+
             <div className={'fixed flex flex-row right-4 top-4'}>
                 <p className={'text-md text-dark_gray font-black'}>Already a member?&nbsp;&nbsp;</p>
                 <p className={'text-md font-black text-purple_primary'}><Link to='/login'>Login</Link></p>

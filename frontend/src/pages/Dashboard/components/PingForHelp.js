@@ -76,7 +76,7 @@ console.log('newRequest:', newRequest);
 
       if (res.data) {
         console.log(res.data);
-        navigate('/dashboard/');
+        navigate('/dashboard');
       }
 
       listEmergencyCardsQuery.refetch();
@@ -184,9 +184,9 @@ console.log('newRequest:', newRequest);
     {request.timestamp && (
       <div className="mt-1 mt-1 relative rounded-xl bg-gray-200 border-2 border-gray-300 overflow-hidden">
         <progress
-          value={calculateProgress(request.timestamp, request.time_needed)}
+          value="3"
            className= "bg-red-500"
-          max="100"
+          max="10"
         />
       </div>
     )}

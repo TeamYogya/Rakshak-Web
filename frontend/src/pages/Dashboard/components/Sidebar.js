@@ -128,8 +128,9 @@ return (
                     </Link>
 
                     {/*<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-x w-6 h-6 stroke-gray cursor-pointer max-md:hidden"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>*/}
-<div className="blur-xl bg-opacity-50 blob w-[350px] h-[350px] rounded-full absolute top-20 left-36 -z-10 bg-gradient-to-b from-indigo-200 via-purple-200 to-pink-200"></div>
-<div className="blur-xl bg-opacity-50 blob w-[270px] h-[270px] rounded-full absolute bottom-[-170px] -z-10 bg-gradient-to-b from-indigo-200 via-purple-200 to-pink-200"></div>
+<div className="blur-xl bg-opacity-50 blob w-[350px] h-[350px] rounded-full absolute top-20 left-36 -z-20 bg-gradient-to-b from-indigo-200 via-purple-200 to-pink-200"></div>
+<div className="blur-xl bg-opacity-50 blob w-[270px] h-[270px] rounded-full absolute bottom-[-170px] -z-20 bg-gradient-to-b from-indigo-200 via-purple-200 to-pink-200"></div>
+
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"

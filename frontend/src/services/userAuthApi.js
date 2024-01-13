@@ -74,8 +74,27 @@ export const userAuthApi = createApi({
           }
         }
       }
+    }),sendSMSMessageToUsers: builder.mutation({
+      query: ({ message }) => {
+        return {
+          url: 'send-sms-to-users/',
+          method: 'POST',
+          body: { message },
+          headers: {
+            'Content-type': 'application/json',
+          },
+        };
+      },
     }),
   }),
-})
+});
 
-export const { useRegisterUserMutation, useLoginUserMutation, useGetLoggedUserQuery, useChangeUserPasswordMutation, useSendPasswordResetEmailMutation, useResetPasswordMutation } = userAuthApi
+export const {
+  useRegisterUserMutation,
+  useLoginUserMutation,
+  useGetLoggedUserQuery,
+  useChangeUserPasswordMutation,
+  useSendPasswordResetEmailMutation,
+  useResetPasswordMutation,
+  useSendSMSMessageToUsersMutation,
+} = userAuthApi;

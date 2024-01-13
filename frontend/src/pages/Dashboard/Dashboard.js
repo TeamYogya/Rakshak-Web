@@ -3,7 +3,7 @@ import ProneAreas from "./components/ProneAreas";
 import AwarenessSessions from "./components/Awareness Sessions";
 import TopBar from "./components/TopBar";
 import DisasterSurvivorStories from "./components/DisasterSurvivorStories";
-import {useState} from "react";
+import React, {useState} from "react";
 import SaferExits from "./components/SaferExits";
 import AccessFeasibility from "./components/AccessFeasibility";
 import ObjectRecognition from "./components/ObjectRecognition";
@@ -14,9 +14,11 @@ import ContinuousAlerts from "./components/ContinuousAlerts";
 import LocalBusinessIncentives from "./components/LocalBusinessIncentives";
 import ReliefTokens from "./components/ReliefTokens";
 import PingForHelp from "./components/PingForHelp";
+import {useParams} from "react-router-dom";
 
 const Dashboard = () => {
-    const [selectedSubMenu, setSelectedSubMenu] = useState('Awareness Sessions');
+    const {section} = useParams();
+    const [selectedSubMenu, setSelectedSubMenu] = useState(section);
 
     const handleSubMenuClick = (selectedSubMenu) => {
         setSelectedSubMenu(selectedSubMenu);
@@ -25,6 +27,7 @@ const Dashboard = () => {
     return (
         <div className="flex font-sans h-full">
             <div className="w-1/5 max-md:w-24 fixed overflow-x-clip">
+                {/*<div className="absolute -z-10 shadow-black w-full h-44 bg-gradient-to-br from-opacity-10 to-opacity-0 backdrop-blur-md border border-opacity-18 border-white shadow-lg p-6"></div>*/}
                 <Sidebar onSubMenuClick={handleSubMenuClick} />
             </div>
             <div className="ml-[305px] w-full max-md:w-full relative">
