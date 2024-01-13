@@ -35,14 +35,42 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
     def create(self, validate_data):
         return User.objects.create_user(**validate_data)
 
+class SendMessageSerializer(serializers.Serializer):
+    message = serializers.CharField(max_length=160)
 
-class UserLoginSerializer(serializers.ModelSerializer):
-    email = serializers.EmailField(max_length=255)
 
-    class Meta:
-        model = User
-        fields = ["email", "password"]
+# class UserLoginSerializer(serializers.ModelSerializer):
+#     email = serializers.EmailField(max_length=255)
+#
+#     class Meta:
+#         model = User
+#         fields = ["email", "password"]
+class UserLoginSerializer(serializers.Serializer):
+    email = serializers.EmailField()
+    password = serializers.CharField(
+        max_length=128,
+        write_only=True,
+        style={'input_type': 'password'}
+    )
 
+    def validate(self, attrs):
+        email = attrs.get("email")
+        password = attrs.get("password")
+
+        if email and password:
+            user = User.objects.filter(email=email).first()
+            if user:
+                if user.check_password(password):
+                    if user.is_active:
+                        return attrs
+                    else:
+                        raise serializers.ValidationError("User account is inactive.")
+                else:
+                    raise serializers.ValidationError("Incorrect password.")
+            else:
+                raise serializers.ValidationError("User does not exist.")
+        else:
+            raise serializers.ValidationError("Both email and password are required fields.")
 
 class UserProfileSerializer(serializers.ModelSerializer):
     class Meta:

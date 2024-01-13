@@ -15,7 +15,7 @@ function App() {
             <Router>
                 <Routes>
                     <Route exact path="/" element={<Landing/>}/>
-                    <Route exact path="/dashboard" element={<Dashboard/>}/>
+                    <Route exact path="/dashboard/:section" element={<Dashboard/>}/>
                     <Route exact path="/Story/:storyId" element={<Story/>}/>
                     <Route exact path="/CategorisedStory/:storyId" element={<CategorisedStory/>}/>
                     <Route exact path="/CategorisedStory/:storyType" element={<CategorisedStory/>}/>
