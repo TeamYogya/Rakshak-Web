@@ -11,7 +11,7 @@ import {
   useCreateEmergencyCardMutation,
   useListEmergencyCardsQuery,
   useDeleteEmergencyCardMutation,
-} from 'C:/Users/latak/Rakshak-Web/frontend/src/services/emergencyApi.js';
+} from '../../../services/emergencyApi.js';
 
 const PingForHelp = () => {
   const [priority, setPriority] = useState('low');

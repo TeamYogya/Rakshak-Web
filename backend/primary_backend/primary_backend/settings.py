@@ -11,7 +11,11 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 from datetime import timedelta
 from pathlib import Path
-
+import os
+if os.name == 'nt':
+    VENV_BASE = os.environ['VIRTUAL_ENV']
+    os.environ['PATH'] = os.path.join(VENV_BASE, 'Lib\\site-packages\\osgeo') + ';' + os.environ['PATH']
+    os.environ['PROJ_LIB'] = os.path.join(VENV_BASE, 'Lib\\site-packages\\osgeo\\data\\proj') + ';' + os.environ['PATH']
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -40,12 +44,17 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'rest_framework_simplejwt',
+    'geofence_app',
     'accounts',
     'donate',
     'disasterstories',
-    'emergency_app'
+    'emergency_app',
+    'django.contrib.gis',
+    #install locally
+    #pip install GDAL-3.4.3-cp311-cp311-win_amd64.whl
+    #the gdal version is for python 3.11
+    #plz get your own version from https://www.lfd.uci.edu/~gohlke/pythonlibs/#gdal
 ]
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -115,11 +124,21 @@ WSGI_APPLICATION = 'primary_backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    "default": {
+        "ENGINE": "django.contrib.gis.db.backends.postgis",
+        "NAME": "postgis_34_sample",
+        "USER": "postgres",
+        "PASSWORD": "root",
+        "HOST": "127.0.0.1",
+        "PORT": "5433",
+    },
 }
 
 REST_FRAMEWORK = {
