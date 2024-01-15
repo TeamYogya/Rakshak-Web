@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3dc52eb3-4e45-43a9-aee2-6fd97161fa87" name="Changes" comment="Add abraham">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/primary_backend/geofence_app/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/primary_backend/geofence_app/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/primary_backend/geofence_app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/primary_backend/geofence_app/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/primary_backend/geofence_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/primary_backend/geofence_app/views.py" afterDir="false" />
-    </list>
+    <list default="true" id="3dc52eb3-4e45-43a9-aee2-6fd97161fa87" name="Changes" comment="Add abraham" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -186,6 +181,7 @@
       <workItem from="1705213853180" duration="11000" />
       <workItem from="1705224896647" duration="4752000" />
       <workItem from="1705310427622" duration="245000" />
+      <workItem from="1705312002156" duration="195000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed Microservices Architecture">
       <option name="closed" value="true" />
@@ -323,7 +319,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705156142875</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Add abraham">
+      <option name="closed" value="true" />
+      <created>1705312212871</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1705312212872</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
