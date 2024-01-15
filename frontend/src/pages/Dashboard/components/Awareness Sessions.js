@@ -3,6 +3,7 @@ import intro from '../../Landing/Videos/Intro.mp4'
 import clip1 from '../../Landing/Videos/Clip1.mp4'
 import clip2 from '../../Landing/Videos/Clip2.mp4'
 import clip3 from '../../Landing/Videos/Clip3.mp4'
+import clip4 from '../../Landing/Videos/Clip4.mp4'
 
 const AwarenessSessions = () => {
     const videoRef = useRef(null);
@@ -187,14 +188,14 @@ const AwarenessSessions = () => {
                                 <h className="text-2xl text-gray">04</h>
                             </div>
                             <div className="col-span-2 w-full h-full flex items-center">
-                                <video onClick={() => changingvideos("https://drive.google.com/uc?export=view&id=1NGwuLfTgzV8cFe3R-p1vK9T7NZZthF91")}
+                                <video onClick={() => changingvideos(clip4)}
                                     className="w-[200px] h-[100px] rounded-3xl object-cover duration-1000 hover:shadow-2xl hover:shadow-black hover:scale-105 shadow-lg shadow-purple-800"
                                 >
-                                    <source src="https://drive.google.com/uc?export=view&id=1NGwuLfTgzV8cFe3R-p1vK9T7NZZthF91" type="video/mp4" />
+                                    <source src={clip4} type="video/mp4" />
                                 </video>
                             </div>
                             <div className="col-span-6 w-full h-full flex items-center justify-center">
-                                <h onClick={() => changingvideos("https://drive.google.com/uc?export=view&id=1NGwuLfTgzV8cFe3R-p1vK9T7NZZthF91")} className="text-lg text-black cursor-pointer">Fire Mock Drill | Code Red | Lisie Hospital</h>
+                                <h onClick={() => changingvideos(clip4)} className="text-lg text-black cursor-pointer">Fire Mock Drill | Code Red | Lisie Hospital</h>
                             </div>
                         </div>
                         <div className="w-full h-full grid grid-cols-9">
