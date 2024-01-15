@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import intro from '../../Landing/Videos/Intro.mp4'
 import clip1 from '../../Landing/Videos/Clip1.mp4'
 import clip2 from '../../Landing/Videos/Clip2.mp4'
+import clip3 from '../../Landing/Videos/Clip3.mp4'
 
 const AwarenessSessions = () => {
     const videoRef = useRef(null);
@@ -171,14 +172,14 @@ const AwarenessSessions = () => {
                                 <h className="text-2xl text-gray">03</h>
                             </div>
                             <div className="col-span-2 w-full h-full flex items-center">
-                                <video onClick={() => changingvideos("https://drive.google.com/uc?export=view&id=1rhAJ6FUs7jk6RFLZBmdfCJ6xE6svX6Cm")}
+                                <video onClick={() => changingvideos(clip3)}
                                     className="w-[200px] h-[100px] rounded-3xl object-cover duration-1000 hover:shadow-2xl hover:shadow-black hover:scale-105 shadow-lg shadow-purple-800"
                                 >
-                                    <source src="https://drive.google.com/uc?export=view&id=1rhAJ6FUs7jk6RFLZBmdfCJ6xE6svX6Cm" type="video/mp4" />
+                                    <source src={clip3} type="video/mp4" />
                                 </video>
                             </div>
                             <div className="col-span-6 w-full h-full flex items-center justify-center">
-                                <h onClick={() => changingvideos("https://drive.google.com/uc?export=view&id=1rhAJ6FUs7jk6RFLZBmdfCJ6xE6svX6Cm")} className="text-lg text-black cursor-pointer">Simulation Drill on Flood (Disaster Preparedness)</h>
+                                <h onClick={() => changingvideos(clip3)} className="text-lg text-black cursor-pointer">Simulation Drill on Flood (Disaster Preparedness)</h>
                             </div>
                         </div>
                         <div className="w-full h-full grid grid-cols-9">

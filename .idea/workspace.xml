@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3dc52eb3-4e45-43a9-aee2-6fd97161fa87" name="Changes" comment="Add abraham">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/Dashboard/components/Awareness Sessions.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Dashboard/components/Awareness Sessions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Dashboard/components/ContinuousAlerts.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Dashboard/components/ContinuousAlerts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Dashboard/components/NaturalHazardAlerts.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Dashboard/components/NaturalHazardAlerts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/services/geofenceApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/geofenceApi.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,7 +189,7 @@
       <workItem from="1705310427622" duration="245000" />
       <workItem from="1705312002156" duration="195000" />
       <workItem from="1705324653572" duration="848000" />
-      <workItem from="1705332215113" duration="12678000" />
+      <workItem from="1705332215113" duration="13037000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed Microservices Architecture">
       <option name="closed" value="true" />
@@ -357,7 +351,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705325559630</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Add abraham">
+      <option name="closed" value="true" />
+      <created>1705345777186</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1705345777186</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
