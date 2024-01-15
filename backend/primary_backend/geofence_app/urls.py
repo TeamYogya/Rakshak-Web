@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import GeofenceListCreateAPIView
+from .views import *
 
 urlpatterns = [
-    path('geofences/', GeofenceListCreateAPIView.as_view(), name='geofence-list-create'),
+    path('geofence/', GeofenceCreateView.as_view(), name='geofence'),
 ]

@@ -1,18 +1,17 @@
+# myapp/views.py
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from .models import Geofence
 from .serializers import GeofenceSerializer
-
-
-class GeofenceListCreateAPIView(APIView):
-
-    def get(self, request):
+from rest_framework import generics
+class GeofenceCreateView(APIView):
+    def get(self, request, format=None):
         geofences = Geofence.objects.all()
         serializer = GeofenceSerializer(geofences, many=True)
         return Response(serializer.data)
 
-    def post(self, request):
+    def post(self, request, format=None):
         serializer = GeofenceSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
