@@ -6,6 +6,7 @@ import icon from 'leaflet/dist/images/marker-icon.png';
 import dangerIcon from '../../Landing/Images/danger.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 import * as turf from '@turf/turf';
+import axios from 'axios';
 
 let DefaultIcon = L.icon({
   iconUrl: icon,
@@ -15,77 +16,110 @@ let DefaultIcon = L.icon({
 L.Marker.prototype.options.icon = DefaultIcon;
 
 const MapComponent = () => {
-  const insidePosition = [51.505, -0.09];
-  const outsidePosition = [51.515, -0.085];  // Define an outside position
-
-  const dangerZoneCoords = [
-    [51.51, -0.10],
-    [51.52, -0.09],
-    [51.50, -0.08],
-    [51.51, -0.10]
-  ];
-
+  const insidePosition = [18.5204, 73.8567];
+  const [geofenceData, setGeofenceData] = useState([]);
   const [markerColor, setMarkerColor] = useState('blue');
+  const [markerIcon, setMarkerIcon] = useState(DefaultIcon);
+const style = {
+        background: 'linear-gradient(90deg, #ff5733, #33ff57, #3357ff, #ff33a8, #a833ff, #ff5733)',
+        backgroundSize: '400%',
+        WebkitTextFillColor: 'transparent',
+        animation: 'animate 25s linear infinite'
+    };
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://127.0.0.1:8000/api/geodjango/geofence/');
+        setGeofenceData(response.data);
+      } catch (error) {
+        console.error('Error fetching geofence data:', error);
+      }
+    };
 
-  const isPointInsidePolygon = (point, polygonCoords) => {
-    const pointCoords = turf.point(point);
-    const polygon = turf.polygon([polygonCoords]);
-    return turf.booleanPointInPolygon(pointCoords, polygon);
-  };
+    fetchData();
+  }, []);
 
   useEffect(() => {
-    const isInside = isPointInsidePolygon(insidePosition, dangerZoneCoords);
-    setMarkerColor(isInside ? 'red' : 'blue');
-  }, []);
+    if (geofenceData.length > 0) {
+      const insidePoint = turf.point(insidePosition);
+      const isInside = geofenceData.some((geofence) => {
+        const polygonCoords = geofence.boundary?.coordinates?.[0];
+        if (!polygonCoords) {
+          console.warn('Geofence has no coordinates:', geofence);
+          return false;
+        }
+
+        try {
+          const polygon = turf.polygon([polygonCoords]);
+          return turf.booleanPointInPolygon(insidePoint, polygon);
+        } catch (polygonError) {
+          console.error('Error creating polygon:', polygonError);
+          return false;
+        }
+      });
+
+      setMarkerColor(isInside ? 'red' : 'blue');
+      setMarkerIcon(L.icon({ iconUrl: isInside ? dangerIcon : icon }));
+    }
+  }, [geofenceData, insidePosition]);
 
   return (
     <div className="font-sans">
-      <MapContainer center={insidePosition} zoom={13} className="w-full h-screen">
+      <div className="w-full h-screen px-2 py-2" style={style}>
+        <style>
+                            {`
+          @keyframes animate {
+            0% {
+              background-position: 0%;
+            }
+            100% {
+              background-position: 400%;
+            }
+          }
+        `}
+                        </style>
+      <MapContainer center={insidePosition} zoom={13} className="w-full h-screen rounded-3xl">
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         />
-        <Polygon positions={dangerZoneCoords} color="red" fillOpacity={0.5}>
-          <Popup>
-            This is a danger zone. Stay away!
-          </Popup>
-        </Polygon>
+        {geofenceData.length > 0 && (
+          <>
+            {geofenceData.map((geofence) => {
+              const boundaryString = geofence.boundary;
+              if (!boundaryString) {
+                console.warn('Geofence has no boundary:', geofence);
+                return null;
+              }
+              try {
+                const coordinatesMatch = boundaryString.match(/\(\(([^)]+)\)\)/);
+                if (!coordinatesMatch || !coordinatesMatch[1]) {
+                  console.warn('Invalid boundary format:', boundaryString);
+                  return null;
+                }
 
-        {/* Display Marker for Inside Position */}
-        <Marker
-          position={insidePosition}
-          icon={L.icon({
-            iconUrl: markerColor === 'red' ? dangerIcon : icon,
-            shadowUrl: iconShadow,
-            iconSize: [50, 50],
-            iconAnchor: [25, 50],
-            popupAnchor: [0, -35],
-            shadowSize: [41, 41]
-          })}
-        >
-          <Popup>
-            A pretty CSS3 popup. <br /> Easily customizable.
-          </Popup>
+                const coordinates = coordinatesMatch[1].split(',').map((coord) => {
+                  const [lat, lng] = coord.trim().split(' ');
+                  return [parseFloat(lat), parseFloat(lng)];
+                });
+
+                return (
+                  <Polygon key={geofence.id} positions={coordinates} color="red" fillOpacity={0.5}>
+                    <Popup>{geofence.name}</Popup>
+                  </Polygon>
+                );
+              } catch (polygonError) {
+                console.error('Error creating polygon:', polygonError);
+                return null;
+              }
+            })}
+          </>
+        )}
+        <Marker position={insidePosition} icon={markerIcon}>
+          <Popup>A pretty CSS3 popup. <br /> Easily customizable.</Popup>
         </Marker>
-
-        {/* Display Marker for Outside Position */}
-        <Marker
-          position={outsidePosition}
-          icon={L.icon({
-            iconUrl: icon,
-            shadowUrl: iconShadow,
-            iconSize: [25, 41],
-            iconAnchor: [12, 41],
-            popupAnchor: [1, -34],
-            shadowSize: [41, 41],
-          })}
-        >
-          <Popup>
-            This is an outside position.
-          </Popup>
-        </Marker>
-
       </MapContainer>
+        </div>
     </div>
   );
 };

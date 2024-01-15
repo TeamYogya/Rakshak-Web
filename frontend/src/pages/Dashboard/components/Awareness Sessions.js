@@ -1,9 +1,12 @@
 import React, { useRef, useState, useEffect } from 'react';
+import intro from '../../Landing/Videos/Intro.mp4'
+import clip1 from '../../Landing/Videos/Clip1.mp4'
+import clip2 from '../../Landing/Videos/Clip2.mp4'
 
 const AwarenessSessions = () => {
     const videoRef = useRef(null);
     const [progress, setProgress] = useState(0);
-    const [currentVideo, setCurrentVideo] = useState("https://drive.google.com/uc?export=view&id=1YG65pQQSByKBhIMoleS_-XzPHSzxjSck");
+    const [currentVideo, setCurrentVideo] = useState(intro);
     useEffect(() => {
         const video = videoRef.current;
         const updateProgress = () => {
@@ -138,14 +141,14 @@ const AwarenessSessions = () => {
                             </div>
                             <div className="col-span-2 w-full h-full flex items-center">
                                 <video
-                                    onClick={() => changingvideos("https://drive.google.com/uc?export=view&id=10eY2J7RHlpqlJ5CPIgPCsboxkSUz3vHh")}
+                                    onClick={() => changingvideos(clip1)}
                                     className="w-[200px] h-[100px] rounded-3xl object-cover duration-1000 hover:shadow-2xl hover:shadow-black hover:scale-105 shadow-lg shadow-purple-800"
                                 >
-                                    <source src="https://drive.google.com/uc?export=view&id=10eY2J7RHlpqlJ5CPIgPCsboxkSUz3vHh" type="video/mp4" />
+                                    <source src={clip1} type="video/mp4" />
                                 </video>
                             </div>
                             <div className="col-span-6 w-full h-full flex items-center justify-center">
-                                <h onClick={() => changingvideos("https://drive.google.com/uc?export=view&id=10eY2J7RHlpqlJ5CPIgPCsboxkSUz3vHh")} className="text-lg text-black cursor-pointer">Disaster Management Mock Drill Conducted at Arihant Hospital</h>
+                                <h onClick={() => changingvideos(clip1)} className="text-lg text-black cursor-pointer">Disaster Management Mock Drill Conducted at Arihant Hospital</h>
                             </div>
                         </div>
                         <div className="w-full h-full grid grid-cols-9">
@@ -153,14 +156,14 @@ const AwarenessSessions = () => {
                                 <h className="text-2xl text-gray">02</h>
                             </div>
                             <div className="col-span-2 w-full h-full flex items-center">
-                                <video onClick={() => changingvideos("https://drive.google.com/uc?export=view&id=1t-phsRDkc8c3mX2E0V2AvENkfHhm9J-y")}
+                                <video onClick={() => changingvideos(clip2)}
                                     className="w-[200px] h-[100px] rounded-3xl object-cover duration-1000 hover:shadow-2xl hover:shadow-black hover:scale-105 shadow-lg shadow-purple-800"
                                 >
-                                    <source src="https://drive.google.com/uc?export=view&id=1t-phsRDkc8c3mX2E0V2AvENkfHhm9J-y" type="video/mp4" />
+                                    <source src={clip2} type="video/mp4" />
                                 </video>
                             </div>
                             <div className="col-span-6 w-full h-full flex items-center justify-center">
-                                <h onClick={() => changingvideos("https://drive.google.com/uc?export=view&id=1t-phsRDkc8c3mX2E0V2AvENkfHhm9J-y")} className="text-lg text-black cursor-pointer">Drop, Cover, and Hold On - Protect Yourself During an Earthquakel</h>
+                                <h onClick={() => changingvideos(clip2)} className="text-lg text-black cursor-pointer">Drop, Cover, and Hold On - Protect Yourself During an Earthquakel</h>
                             </div>
                         </div>
                         <div className="w-full h-full grid grid-cols-9">
@@ -199,14 +202,14 @@ const AwarenessSessions = () => {
                             </div>
                             <div className="col-span-2 w-full h-full flex items-center">
                                 <video
-                                    onClick={() => changingvideos("https://drive.google.com/uc?export=view&id=1YG65pQQSByKBhIMoleS_-XzPHSzxjSck")}
+                                    onClick={() => changingvideos(intro)}
                                     className="w-[200px] h-[100px] rounded-3xl object-cover duration-1000 hover:shadow-2xl hover:shadow-black hover:scale-105 shadow-lg shadow-purple-800"
                                 >
-                                    <source src="https://drive.google.com/uc?export=view&id=1YG65pQQSByKBhIMoleS_-XzPHSzxjSck" type="video/mp4" />
+                                    <source src={intro} type="video/mp4" />
                                 </video>
                             </div>
                             <div className="col-span-6 w-full h-full flex items-center justify-center">
-                                <h onClick={() => changingvideos("https://drive.google.com/uc?export=view&id=1YG65pQQSByKBhIMoleS_-XzPHSzxjSck")} className="text-lg text-black cursor-pointer">Disaster Management Mock Drill Conducted at Yashodha Hospital</h>
+                                <h onClick={() => changingvideos(intro)} className="text-lg text-black cursor-pointer">Disaster Management Mock Drill Conducted at Yashodha Hospital</h>
                             </div>
                         </div>
                     </div>

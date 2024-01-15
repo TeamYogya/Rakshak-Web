@@ -74,9 +74,11 @@ const NaturalHazardAlerts = () => {
         <div  className="font-sans">
             {notCorrect?(
                 <div>
-                <h>ali@gmail.com<br/>pass</h>
-                <form onSubmit={handleSubmit}>
-            <input
+                <form className="flex w-full h-screen items-center justify-center" onSubmit={handleSubmit}>
+                <div className="w-full items-center justify-center flex">
+                <div className="w-96">
+                <h className="font-bold text-xl pb-20">Notification Manager</h>
+                    <input
                 className={`p-3.5 my-2 shadow-xl w-96 bg-light-gray placeholder-dark_gray placeholder:font-black rounded-3xl ${email ? 'font-black' : 'placeholder:font-black'}`}
                 type="email"
                 name="email"
@@ -84,8 +86,8 @@ const NaturalHazardAlerts = () => {
                 value={email}
                 onChange={handleInputChange}
             />
-                <div className="relative">
-                <input
+                    <div className="relative">
+                        <input
                     className={`p-3.5 my-2 shadow-xl w-96 bg-light-gray placeholder-dark_gray placeholder:font-black rounded-3xl ${password ? 'font-black' : 'placeholder:font-black'}`}
                     type={showPassword ? 'text' : 'password'}
                     name="password"
@@ -93,36 +95,43 @@ const NaturalHazardAlerts = () => {
                     value={password}
                     onChange={handleInputChange}
                 />
-
-                <button
+                        <button
                     type="button"  // Add this line to prevent form submission
-                    className="absolute bg-purple-primary text-black rounded-md cursor-pointer"
+                    className="absolute bg-purple-primary text-black rounded-md cursor-pointer top-5 right-5"
                     onClick={() => setShowPassword(!showPassword)}
                 >
                     {showPassword ? <BiShow className={'w-6 h-6 text-dark_gray'}/> :
                         <BiHide className={'w-6 h-6 text-dark_gray'}/>}
                 </button>
-            </div>
-                <div className="flex items-center align-center justify-center">
+                    </div>
+
+                    <div className="flex items-center align-center justify-center">
                             <button type={'submit'}
                                     className="flex p-3.5 my-4 shadow-xl w-56 text-white bg-purple_primary justify-center font-black rounded-3xl items-center">
                                 Get Started
                             </button>
                         </div>
+            </div>
+            </div>
             </form>
                     </div>
             ):(
-                <div>
-            <form onSubmit={handleMsgSubmit}>
-                <textarea
+            <form className="w-full h-screen flex items-center justify-center" onSubmit={handleMsgSubmit}>
+                <div className="w-full h-full grid grid-rows-3">
+                    <div className="row-span-2 w-full h-full flex items-center justify-center">
+                        <textarea
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
-                    placeholder="Enter your message"
+                    className="resize-none w-[1000px] px-4 py-4 border rounded-3xl focus:outline-0 focus:border-purple-800 text-black h-[350px]"
+                placeholder="Send Emergency Alert"
                     required
                 />
-                <button type="submit">Send Message</button>
+                    </div>
+                    <div className="w-full h-full flex items-center justify-center">
+                        <button className="px-5 py-5 bg-purple_primary rounded-full text-white w-52" type="submit">Send Alert</button>
+                    </div>
+                </div>
             </form>
-        </div>
             )}
         </div>
     );
