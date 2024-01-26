@@ -80,6 +80,9 @@ const AwarenessSessions = () => {
         videoRef.current.currentTime = seekTime;
         setProgress((seekTime / videoRef.current.duration) * 100);
     };
+    useEffect(() => {
+  window.scrollTo(0,0)
+}, []);
     return (
         <div className="font-sans">
             {/*<div className="w-full h-[640px] overflow-y-auto grid grid-rows-12 gap-4">*/}

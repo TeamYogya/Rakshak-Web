@@ -19,7 +19,8 @@ if os.name == 'nt':
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
+RAZORPAY_KEY_ID = os.environ.get("RAZORPAY_KEY_ID")
+RAZORPAY_KEY_SECRET = os.environ.get("RAZORPAY_KEY_SECRET")
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
@@ -46,7 +47,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'geofence_app',
     'accounts',
-    'donate',
+    'DonateMoney',
     'disasterstories',
     'emergency_app',
     'django.contrib.gis',

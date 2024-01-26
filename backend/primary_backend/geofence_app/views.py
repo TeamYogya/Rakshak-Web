@@ -1,4 +1,6 @@
 # myapp/views.py
+import json
+import requests
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
@@ -17,3 +19,23 @@ class GeofenceCreateView(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class GeofenceLive(APIView):
+    def get(self, request, format=None):
+        # Existing code for retrieving geofences
+
+        # Get live location data
+        ip = requests.get('https://api.ipify.org?format=json')
+        ip_data = json.loads(ip.text)
+        print(ip_data)
+        res = requests.get(f'http://ip-api.com/json/{ip_data["ip"]}')
+        location_data_one = res.text
+        location_data = json.loads(location_data_one)
+        print(location_data)
+        # Add the live location data to the response
+        response_data = {
+            'live_location': location_data,
+        }
+
+        return Response(response_data)
+

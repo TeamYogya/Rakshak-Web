@@ -3,7 +3,7 @@ import ProneAreas from "./components/ProneAreas";
 import AwarenessSessions from "./components/Awareness Sessions";
 import TopBar from "./components/TopBar";
 import DisasterSurvivorStories from "./components/DisasterSurvivorStories";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import SaferExits from "./components/SaferExits";
 import AccessFeasibility from "./components/AccessFeasibility";
 import ObjectRecognition from "./components/ObjectRecognition";
@@ -15,6 +15,7 @@ import LocalBusinessIncentives from "./components/LocalBusinessIncentives";
 import ReliefTokens from "./components/ReliefTokens";
 import PingForHelp from "./components/PingForHelp";
 import {useParams} from "react-router-dom";
+import axios from "axios";
 
 const Dashboard = () => {
     const {section} = useParams();
@@ -23,7 +24,9 @@ const Dashboard = () => {
     const handleSubMenuClick = (selectedSubMenu) => {
         setSelectedSubMenu(selectedSubMenu);
     };
-
+    useEffect(() => {
+  window.scrollTo(0,0)
+}, []);
     return (
         <div className="flex font-sans h-full">
             <div className="w-1/5 max-md:w-24 fixed overflow-x-clip">

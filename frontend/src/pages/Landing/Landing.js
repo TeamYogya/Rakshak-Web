@@ -143,7 +143,7 @@ const demoClick = (e) => {
         }
     }
 
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+    // const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
     useEffect(() => {
         const element1 = document.getElementById("phone1Id");
         element1.style.backgroundImage = `url('${phone1}')`;
@@ -222,16 +222,16 @@ const demoClick = (e) => {
                             {/*<span className="text-bold ml-2 text-2xl italic max-md:text-xl">Rakshak</span>*/}
                         </a>
                     </div>
-                    <div className="flex lg:hidden">
-                        <button
-                            type="button"
-                            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-                            onClick={() => setMobileMenuOpen(true)}
-                        >
-                            <span className="sr-only">Open main menu</span>
-                            {/*<Bars3Icon className="h-6 w-6" aria-hidden="true" />*/}
-                        </button>
-                    </div>
+                    {/*<div className="flex lg:hidden">*/}
+                    {/*    <button*/}
+                    {/*        type="button"*/}
+                    {/*        className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"*/}
+                    {/*        onClick={() => setMobileMenuOpen(true)}*/}
+                    {/*    >*/}
+                    {/*        <span className="sr-only">Open main menu</span>*/}
+                    {/*        /!*<Bars3Icon className="h-6 w-6" aria-hidden="true" />*!/*/}
+                    {/*    </button>*/}
+                    {/*</div>*/}
                     <div className="hidden lg:flex lg:gap-x-12">
                         {navigation.map((item) => (
                             <button
@@ -367,8 +367,8 @@ const demoClick = (e) => {
                     </div>
                 </div>
                 <div id="cards" className="pt-40 pb-10 text-black text-5xl font-normal break-word"><h>Your Path to Resilience Explore What Our Site Offers</h></div>
-                <div className="justify-center w-full grid grid-rows-12 gap-4 max-md:scale-50">
-                    <Link to={`/dashboard/${encodeURIComponent("Awareness Sessions")}`}><div className="hover:scale-105 duration-1000 grid grid-cols-2 w-[1063px] h-[394px] bg-[#1A222C] rounded-3xl hover:scale-105 duration-1000 hover:bg-gradient-to-br from-[#07C557] via-[#1A222C] to-transparent">
+                <div className="justify-center w-full h-full grid grid-rows-4 gap-4 max-md:scale-50">
+                    <Link to={`/dashboard/${encodeURIComponent("Awareness Sessions")}`}><div className="row-span-2 grid grid-cols-2 w-[1063px] h-[394px] bg-[#1A222C] rounded-3xl hover:scale-105 duration-1000 hover:bg-gradient-to-br from-[#07C557] via-[#1A222C] to-transparent">
                         <div className="h-full w-full flex items-center justify-center">
                             <img className="w-[469px] h-[274px] rounded-[88px]" src={mock} />
                         </div>
@@ -377,7 +377,7 @@ const demoClick = (e) => {
                             <div className="text-center justify-center text-[#C9C9C9] text-3xl font-normal break-word">Practice makes perfect,<br />especially when it<br />comes to disaster readiness.</div>
                         </div>
                     </div></Link>
-                    <div className="grid grid-col-2 gap-4 grid-flow-col">
+                    <div className="grid grid-col-2 gap-4 grid-flow-col row-span-10">
                         <div className="grid grid-row-2 gap-4">
                            <Link to={`/dashboard/${encodeURIComponent("Ping for Help")}`}> <div className="grid grid-rows-4 w-[525px] h-[764px] rounded-3xl bg-[#1A222C] hover:scale-105 duration-1000 hover:bg-gradient-to-tr from-[#FEA800] via-[#1A222C] to-transparent">
                                 <div className="row-end-2">
@@ -435,7 +435,7 @@ const demoClick = (e) => {
                         </div>
 
                     </div>
-                    <div className="grid grid-cols-2 w-[1063px] h-[394px] bg-[#1A222C] rounded-3xl hover:scale-105 duration-1000 hover:bg-gradient-to-bl from-[#07C557] via-[#1A222C] to-transparent">
+                    <Link to={`/dashboard/${encodeURIComponent("Continuous Alerts")}`}><div className="grid grid-cols-2 w-[1063px] h-[394px] bg-[#1A222C] rounded-3xl hover:scale-105 duration-1000 hover:bg-gradient-to-bl from-[#07C557] via-[#1A222C] to-transparent">
                         <div className="grid grid-rows-2 h-full w-full justify-center">
                             <div className="pt-10 text-white text-3xl font-bold break-word">Geofencing</div>
                             <div className="text-center justify-center text-[#C9C9C9] text-3xl font-normal break-word">Our geofencing feature<br />uses cutting-edge technology<br />to create virtual boundaries<br />around specific geographical<br />areas.</div>
@@ -443,7 +443,7 @@ const demoClick = (e) => {
                         <div className="h-full w-full flex items-center justify-center">
                             <img className="w-[469px] h-[274px] rounded-[88px]" src={geofencing} />
                         </div>
-                    </div>
+                    </div></Link>
 
                 </div>
                 <footer id="footer" className="w-full bottom-0 mt-20 max-md:scale-50" >

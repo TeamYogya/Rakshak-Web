@@ -16,10 +16,12 @@ let DefaultIcon = L.icon({
 L.Marker.prototype.options.icon = DefaultIcon;
 
 const MapComponent = () => {
-  const insidePosition = [18.5204, 73.8567];
   const [geofenceData, setGeofenceData] = useState([]);
+  const [userData, setUserData] = useState([]);
   const [markerColor, setMarkerColor] = useState('blue');
   const [markerIcon, setMarkerIcon] = useState(DefaultIcon);
+  const insidePosition = userData.lat && userData.lon ? [userData.lat, userData.lon] : [0, 0];
+
 const style = {
         background: 'linear-gradient(90deg, #ff5733, #33ff57, #3357ff, #ff33a8, #a833ff, #ff5733)',
         backgroundSize: '400%',
@@ -38,30 +40,42 @@ const style = {
 
     fetchData();
   }, []);
-
   useEffect(() => {
-    if (geofenceData.length > 0) {
-      const insidePoint = turf.point(insidePosition);
-      const isInside = geofenceData.some((geofence) => {
-        const polygonCoords = geofence.boundary?.coordinates?.[0];
-        if (!polygonCoords) {
-          console.warn('Geofence has no coordinates:', geofence);
-          return false;
-        }
-
-        try {
-          const polygon = turf.polygon([polygonCoords]);
-          return turf.booleanPointInPolygon(insidePoint, polygon);
-        } catch (polygonError) {
-          console.error('Error creating polygon:', polygonError);
-          return false;
-        }
-      });
-
-      setMarkerColor(isInside ? 'red' : 'blue');
-      setMarkerIcon(L.icon({ iconUrl: isInside ? dangerIcon : icon }));
+  const fetchDataUser = async () => {
+    try {
+      const response = await axios.get('http://127.0.0.1:8000/api/geodjango/live/');
+      setUserData(response.data.live_location);
+    } catch (error) {
+      console.error('Error fetching live location data:', error);
     }
-  }, [geofenceData, insidePosition]);
+  };
+
+  fetchDataUser();
+}, []);
+
+useEffect(() => {
+  if (userData.lat !== undefined && userData.lon !== undefined) {
+    const insidePoint = turf.point([userData.lat, userData.lon]);
+    const isInside = geofenceData.some((geofence) => {
+      const polygonCoords = geofence.boundary?.coordinates?.[0];
+      if (!polygonCoords) {
+        console.warn('Geofence has no coordinates:', geofence);
+        return false;
+      }
+
+      try {
+        const polygon = turf.polygon([polygonCoords]);
+        return turf.booleanPointInPolygon(insidePoint, polygon);
+      } catch (polygonError) {
+        console.error('Error creating polygon:', polygonError);
+        return false;
+      }
+    });
+
+    setMarkerColor(isInside ? 'red' : 'blue');
+    setMarkerIcon(L.icon({ iconUrl: isInside ? dangerIcon : icon }));
+  }
+}, [geofenceData, userData]);
 
   return (
     <div className="font-sans">
