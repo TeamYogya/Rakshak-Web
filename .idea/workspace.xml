@@ -4,8 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3dc52eb3-4e45-43a9-aee2-6fd97161fa87" name="Changes" comment="Add clip3">
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Dashboard/components/Awareness Sessions.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Dashboard/components/Awareness Sessions.js" afterDir="false" />
+    <list default="true" id="3dc52eb3-4e45-43a9-aee2-6fd97161fa87" name="Changes" comment="Add gsap and removed react strick mode">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Dashboard/components/Donate.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Dashboard/components/Donate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Landing/Landing.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Landing/Landing.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/services/donateAuthApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/donateAuthApi.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,10 +89,12 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "develop",
-    "last_opened_file_path": "D:/SIH/Rakshak-Web/Rakshak-Web/frontend/src/pages/Landing/Videos",
+    "last_opened_file_path": "D:/SIH/Rakshak-Web/Rakshak-Web/frontend/src",
     "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "com.database.db.setting.configurable",
@@ -96,11 +104,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\SIH\Rakshak-Web\Rakshak-Web\frontend\src" />
       <recent name="D:\SIH\Rakshak-Web\Rakshak-Web\frontend\src\pages\Landing\Videos" />
       <recent name="D:\SIH\Rakshak-Web\Rakshak-Web\frontend\src\pages\Landing\Video" />
       <recent name="D:\SIH\Rakshak-Web\Rakshak-Web\backend\primary_backend\donate" />
       <recent name="D:\SIH\Rakshak-Web\frontend\src\pages\Dashboard\TrialJSON\images" />
-      <recent name="D:\Rakshak-Web" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\SIH\Rakshak-Web\frontend\src\pages\Dashboard\components" />
@@ -189,7 +197,22 @@
       <workItem from="1705310427622" duration="245000" />
       <workItem from="1705312002156" duration="195000" />
       <workItem from="1705324653572" duration="848000" />
-      <workItem from="1705332215113" duration="13265000" />
+      <workItem from="1705332215113" duration="13331000" />
+      <workItem from="1705691043629" duration="129000" />
+      <workItem from="1705741346293" duration="864000" />
+      <workItem from="1705751759212" duration="2866000" />
+      <workItem from="1705754713242" duration="1442000" />
+      <workItem from="1705770133803" duration="15301000" />
+      <workItem from="1705841176529" duration="14325000" />
+      <workItem from="1705913790037" duration="5146000" />
+      <workItem from="1705942817092" duration="27000" />
+      <workItem from="1705949183276" duration="16000" />
+      <workItem from="1706077155580" duration="328000" />
+      <workItem from="1706083307068" duration="45000" />
+      <workItem from="1706088666708" duration="307000" />
+      <workItem from="1706210185883" duration="389000" />
+      <workItem from="1706259668947" duration="877000" />
+      <workItem from="1706260931341" duration="1092000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed Microservices Architecture">
       <option name="closed" value="true" />
@@ -367,7 +390,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705346140039</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Add clip4">
+      <option name="closed" value="true" />
+      <created>1705346259343</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1705346259343</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -404,6 +435,28 @@
     <MESSAGE value="changes in emergency" />
     <MESSAGE value="Add abraham" />
     <MESSAGE value="Add clip3" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add clip3" />
+    <MESSAGE value="Add clip4" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add clip4" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/frontend/src/pages/Landing/Landing.js</url>
+          <line>23</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/frontend/src/pages/Landing/Landing.js</url>
+          <line>212</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/frontend/src/pages/Landing/Landing.js</url>
+          <line>344</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

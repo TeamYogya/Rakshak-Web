@@ -1,26 +1,134 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useNavigate } from 'react-router-dom';
 import 'swiper/css';
+import axios from 'axios';
+import useRazorpay from "react-razorpay";
 import { Autoplay } from 'swiper/modules';
-export default function Donate() {
-    const [donationAmount, setDonationAmount] = useState(2000);
-    const navigate = useNavigate();
-    const updateAmount = (amount) => {
-        setDonationAmount(amount);
-    }
-    const increaseAmount = () => {
-        setDonationAmount(donationAmount + 500);
-    };
+//import { useCreateDonateCardMutation } from '../../../services/donateAuthApi.js';
 
-    const decreaseAmount = () => {
-        if (donationAmount > 2000) {
-            setDonationAmount(donationAmount - 500);
-        }
+export default function Donate() {
+  const [donationAmount, setDonationAmount] = useState("2000");
+  const navigate = useNavigate();
+  const Razorpay = useRazorpay();
+console.log('Razorpay object:', Razorpay);
+
+
+//  const [firstName, setFirstName] = useState('');
+//  const [lastName, setLastName] = useState('');
+//  const [email, setEmail] = useState('');
+//  const [addDonation, { isLoading }] = useCreateDonateCardMutation();
+
+  const updateAmount = (amount) => {
+    setDonationAmount(amount);
+  };
+
+  const increaseAmount = () => {
+    setDonationAmount(donationAmount + 500);
+  };
+
+  const decreaseAmount = () => {
+    if (donationAmount > 2000) {
+      setDonationAmount(donationAmount - 500);
+    }
+  };
+
+  const handleCancel = () => {
+    navigate('/');
+  };
+
+const complete_order = (payment_id, order_id, signature)=>{
+        axios({
+            method: 'post',
+            url: 'http://127.0.0.1:8000/api/donate/complete/',
+            data: {
+                "payment_id": payment_id,
+                "order_id": order_id,
+                "signature": signature,
+                "amount": donationAmount
+            }
+        })
+        .then((response)=>{
+            console.log(response.data);
+        })
+        .catch((error)=>{
+            console.log(error.response.data);
+        })
+    }
+
+const handleDonation = async (e) => {
+  e.preventDefault();
+
+  console.log("Start handleDonation");
+  const requestData = {
+    amount: donationAmount,
+    currency: "INR",
+  };
+  console.log("Request Data:", requestData);
+
+  try {
+    const response = await axios.post('http://127.0.0.1:8000/api/donate/create/', requestData);
+    console.log("Response:", response);
+
+    const order_id = response.data.data.id;
+    const options = {
+      key: process.env.REACT_APP_RAZORPAY_KEY_ID,
+      name: "Rakshak",
+      description: "Test Transaction",
+      order_id: order_id,
+      handler: function (response) {
+        console.log("Payment successful:", response);
+//        alert(response.razorpay_payment_id);
+//        alert(response.razorpay_order_id);
+//        alert(response.razorpay_signature);
+         complete_order(
+                        response.razorpay_payment_id,
+                        response.razorpay_order_id,
+                        response.razorpay_signature
+                    )
+      },
+      prefill: {
+        name: "priyanshi",
+        email: "latakotian09@example.com",
+        contact: "9321459886",
+      },
+      notes: {
+        address: "Razorpay Corporate Office",
+      },
+      theme: {
+        color: "#3399cc",
+      },
     };
-    const handleCancel = () => {
-        navigate('/');
-    };
+const rzp1 = new window.Razorpay(options);
+rzp1.open();
+
+    if (Razorpay) {
+      const rzp1 = new Razorpay(options);
+      rzp1.on("payment.failed", function (response) {
+        console.error("Payment failed:", response);
+        alert(response.error.code);
+        alert(response.error.description);
+        alert(response.error.source);
+        alert(response.error.step);
+        alert(response.error.reason);
+        alert(response.error.metadata.order_id);
+        alert(response.error.metadata.payment_id);
+      });
+
+    } else {
+      console.error("Razorpay object not available");
+    }
+
+  } catch (error) {
+    console.error("Error:", error);
+  }
+
+  console.log("End handleDonation");
+};
+useEffect(() => {
+        window.scrollTo(0, 0);
+        }, []);
+
     return (
         <div className="font-sans">
             <div className="w-full h-screen bg-black flex justify-center items-center">
@@ -68,15 +176,19 @@ export default function Donate() {
                             </div>
                         </div>
                         <h className="flex text-sm font-bold mt-4 ml-14">First Name</h>
-                        <input className="flex text-sm font-bold mt-4 ml-14 border-2 border-gray border-solid mr-16 py-1 pl-2 rounded-md" type="text" required/>
+                        <input className="flex text-sm font-bold mt-4 ml-14 border-2 border-gray border-solid mr-16 py-1 pl-2 rounded-md" type="text"
+
+  required />
                         <h className="flex text-sm font-bold mt-2 ml-14">Last Name</h>
-                        <input className="flex text-sm font-bold mt-2 ml-14 border-2 border-gray border-solid mr-16 py-1 pl-2 rounded-md" type="text" required/>
+                        <input className="flex text-sm font-bold mt-2 ml-14 border-2 border-gray border-solid mr-16 py-1 pl-2 rounded-md" type="text"
+                   required/>
                         <h className="flex text-sm font-bold mt-2 ml-14">Email</h>
-                        <input className="flex text-sm font-bold mt-2 ml-14 border-2 border-gray border-solid mr-16 py-1 pl-2 rounded-md" type="email" required/>
+                        <input className="flex text-sm font-bold mt-2 ml-14 border-2 border-gray border-solid mr-16 py-1 pl-2 rounded-md" type="email"
+                           required/>
                         <div className="flex-grow flex items-end">
                             <div className="w-full h-14 bg-light-gray rounded-br-3xl grid grid-cols-2">
                                 <div className="flex text-green-700 justify-center w-full h-full items-center"><button onClick={handleCancel} className="flex text-sm font-bold mr-14">Cancel</button></div>
-                                <div className="flex text-green-700 justify-end w-full h-full items-center"><button type="submit" className="flex text-sm font-bold mr-14">Continue</button></div>
+                                <div className="flex text-green-700 justify-end w-full h-full items-center"><button type="submit" onClick={(e) => handleDonation(e)} className="flex text-sm font-bold mr-14">Continue</button></div>
                             </div>
                         </div>
                     </form>
