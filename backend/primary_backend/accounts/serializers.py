@@ -71,7 +71,36 @@ class UserLoginSerializer(serializers.Serializer):
                 raise serializers.ValidationError("User does not exist.")
         else:
             raise serializers.ValidationError("Both email and password are required fields.")
+class AlertSerializer(serializers.Serializer):
+    email = serializers.EmailField()
+    password = serializers.CharField(
+        max_length=128,
+        write_only=True,
+        style={'input_type': 'password'}
+    )
 
+    def validate(self, attrs):
+        email = attrs.get("email")
+        password = attrs.get("password")
+
+        if email and password:
+            user = User.objects.filter(email=email).first()
+            if user:
+                if user.check_password(password):
+                    if user.is_active:
+                        # Check if the user is an admin
+                        if user.is_admin:
+                            return attrs
+                        else:
+                            raise serializers.ValidationError("User is not an admin.")
+                    else:
+                        raise serializers.ValidationError("User account is inactive.")
+                else:
+                    raise serializers.ValidationError("Incorrect password.")
+            else:
+                raise serializers.ValidationError("User does not exist.")
+        else:
+            raise serializers.ValidationError("Both email and password are required fields.")
 class UserProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = User

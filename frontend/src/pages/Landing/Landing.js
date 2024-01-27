@@ -32,7 +32,7 @@ export default function Landing() {
                 end: '+=4000px',
                 scrub: 1,
                 pin: '#home',
-                markers: true
+                // markers: true
             }
             //     ,onComplete: () => {
             //     animation2();
@@ -113,7 +113,7 @@ const demoClick = (e) => {
         { name: 'Why us', id: 'footer' },
         { name: 'Programs', id: 'cards' },
         { name: 'Donate', href: '/donate' },
-        { name: 'Settings', onClick: toggleModal },
+        // { name: 'Settings', onClick: toggleModal },
         { name: 'Contact us', id: 'footer' }
     ];
 

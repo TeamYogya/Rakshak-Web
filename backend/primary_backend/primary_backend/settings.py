@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'accounts',
     'DonateMoney',
     'disasterstories',
+    'Stories',
     'emergency_app',
     'django.contrib.gis',
     #install locally

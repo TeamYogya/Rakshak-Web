@@ -28,6 +28,18 @@ export const userAuthApi = createApi({
         }
       }
     }),
+    alertUser: builder.mutation({
+      query: (user) => {
+        return {
+          url: 'alertlogin/',
+          method: 'POST',
+          body: user,
+          headers: {
+            'Content-type': 'application/json',
+          }
+        }
+      }
+    }),
     getLoggedUser: builder.query({
       query: (access_token) => {
         return {
@@ -92,6 +104,7 @@ export const userAuthApi = createApi({
 export const {
   useRegisterUserMutation,
   useLoginUserMutation,
+  useAlertUserMutation,
   useGetLoggedUserQuery,
   useChangeUserPasswordMutation,
   useSendPasswordResetEmailMutation,

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState,useEffect} from 'react';
 import {BsFilterRight} from "react-icons/bs";
 import {category, cities, disasters, Story} from "../TrialJSON/Stories";
 import {Dialog, Transition} from '@headlessui/react';
@@ -6,7 +6,7 @@ import {AiOutlineClose} from 'react-icons/ai';
 import SearchIcon from "../../../assets/img/search.svg";
 import {Link, useNavigate} from "react-router-dom";
 import {storeToken} from "../../../services/LocalStorageService";
-import {useAddStoryMutation} from "../../../services/storyInputApi";
+import {useAddStoryMutation,useGetStoriesQuery} from "../../../services/storyInputApi";
 
 
 const DisasterSurvivorStories = () => {
@@ -33,12 +33,16 @@ const DisasterSurvivorStories = () => {
     // };
 
     // Filter stories based on selected city and disaster type
-
-    const filteredStories = stories.filter((story) => {
+const filteredStories = stories.filter((story) => {
         const cityMatch = selectedCity === '' || story.city === selectedCity;
         const disasterMatch = selectedDisaster === '' || story.type === selectedDisaster;
         return cityMatch && disasterMatch;
     });
+    // const filteredStories = stories.filter((story) => {
+    //     const cityMatch = selectedCity === '' || story.city === selectedCity;
+    //     const disasterMatch = selectedDisaster === '' || story.type === selectedDisaster;
+    //     return cityMatch && disasterMatch;
+    // });
 
     const openModal = () => {
         setIsOpen(true);
@@ -69,31 +73,37 @@ const DisasterSurvivorStories = () => {
     const [addStory, {isLoading}] = useAddStoryMutation();
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
-        const data = new FormData(e.currentTarget);
-        const actualData = {
-            title: data.get('title'),
-            // type: data.get('type'),
-            city: data.get('city'),
-            author: data.get('author'),
-            date: data.get('date'),
-            description: data.get('description'),
-        }
-        console.log(actualData)
-        const res = await addStory(actualData)
-        if (res.error) {
-            console.log(typeof (res.error.data.errors))
-            console.log(res.error.data.errors)
-            setServerError(res.error.data.errors)
-        }
-        if (res.data) {
-            console.log(typeof (res.data))
-            console.log(res.data)
-            storeToken(res.data.token)
-            // navigate('/dashboard')
-            navigate('/')
-        }
+    e.preventDefault();
+    const data = new FormData(e.currentTarget);
+    const actualData = {
+        title: data.get('title'),
+        city: data.get('city'),
+        author: data.get('author'),
+        // Format the date before sending it
+        date: formatDate(data.get('date')),
+        description: data.get('description'),
     }
+    console.log(actualData)
+    const res = await addStory(actualData)
+    if (res.error) {
+        console.log(typeof (res.error.data.errors))
+        console.log(res.error.data.errors)
+        setServerError(res.error.data.errors)
+    }
+    if (res.data) {
+        console.log(typeof (res.data))
+        console.log(res.data)
+        storeToken(res.data.token)
+        // navigate('/dashboard')
+        navigate('/')
+    }
+}
+
+// Function to format date to yyyy-mm-dd format
+const formatDate = (dateString) => {
+    const [dd, mm, yyyy] = dateString.split('-');
+    return `${yyyy}-${mm}-${dd}`;
+}
 
     const [title, setTitle] = useState('');
     const [city, setCity] = useState('');
@@ -132,7 +142,23 @@ const DisasterSurvivorStories = () => {
     const [selectedOption, setSelectedOption] = useState('');
 
     const displayStories = showAllStories ? filteredStories : filteredStories.slice(0, 4);
+    const { data: storiesData, error: storiesError, isLoading: storiesLoading } = useGetStoriesQuery();
+    useEffect(() => {
+        if (storiesData) {
+            setStories(storiesData);
+        }
+    }, [storiesData]);
 
+    // Handle loading and error states
+    if (storiesLoading) return <div>Loading...</div>;
+    if (storiesError) return <div>Error: {storiesError.message}</div>;
+
+    // Filter stories based on selected city and disaster type
+    // const filteredStories = stories.filter((story) => {
+    //     const cityMatch = selectedCity === '' || story.city === selectedCity;
+    //     const disasterMatch = selectedDisaster === '' || story.type === selectedDisaster;
+    //     return cityMatch && disasterMatch;
+    // });
     return (
         <div className={"w-full"}>
 
@@ -435,7 +461,18 @@ const DisasterSurvivorStories = () => {
                     </div>
                 </div>
             </Transition>
-
+                    <div>
+                {stories.map((story, index) => (
+                    <div key={index}>
+                        <h2>{story.title}</h2>
+                        <h2>{story.city}</h2>
+                        <h2>{story.date}</h2>
+                        <h2>{story.author}</h2>
+                        <h2>{story.description}</h2>
+                        <br/>
+                    </div>
+                ))}
+            </div>
             <div className={'flex justify-end mx-3 my-2'}>
                 <button type={'button'} onClick={openAddStoryModal}
                         className="flex p-3 my-4 drop-shadow-lg w-40 text-white bg-purple_primary justify-center font-black rounded-3xl items-center">

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {useLoginUserMutation, useSendSMSMessageToUsersMutation} from "../../../services/userAuthApi";
+import {useAlertUserMutation, useSendSMSMessageToUsersMutation} from "../../../services/userAuthApi";
 import {Link, useNavigate} from 'react-router-dom';
 import {BiHide, BiShow} from "react-icons/bi";
 import {storeToken} from "../../../services/LocalStorageService";
@@ -9,7 +9,7 @@ const NaturalHazardAlerts = () => {
     const [message, setMessage] = useState('');
     const dispatch = useDispatch();
     // const { status, error } = useSelector((state) => state.message);
-    const [loginUser, {isLoading}] = useLoginUserMutation()
+    const [alertUser, {isLoading}] = useAlertUserMutation()
     const [sendSMSMessageToUsers] = useSendSMSMessageToUsersMutation();
     const handleMsgSubmit = async (e) => {
         e.preventDefault();
@@ -55,7 +55,7 @@ const NaturalHazardAlerts = () => {
             email: data.get('email'),
             password: data.get('password'),
         }
-        const res = await loginUser(actualData)
+        const res = await alertUser(actualData)
         if (res.error) {
             console.log(typeof (res.error.data.errors))
             console.log(res.error.data.errors)
@@ -73,65 +73,55 @@ const NaturalHazardAlerts = () => {
     return (
         <div  className="font-sans">
             {notCorrect?(
-                <div>
-                <form className="flex w-full h-screen items-center justify-center" onSubmit={handleSubmit}>
-                <div className="w-full items-center justify-center flex">
-                <div className="w-96">
-                <h className="font-bold text-xl pb-20">Notification Manager</h>
-                    <input
-                className={`p-3.5 my-2 shadow-xl w-96 bg-light-gray placeholder-dark_gray placeholder:font-black rounded-3xl ${email ? 'font-black' : 'placeholder:font-black'}`}
-                type="email"
-                name="email"
-                placeholder="Email"
-                value={email}
-                onChange={handleInputChange}
-            />
-                    <div className="relative">
-                        <input
-                    className={`p-3.5 my-2 shadow-xl w-96 bg-light-gray placeholder-dark_gray placeholder:font-black rounded-3xl ${password ? 'font-black' : 'placeholder:font-black'}`}
-                    type={showPassword ? 'text' : 'password'}
-                    name="password"
-                    placeholder="Password"
-                    value={password}
-                    onChange={handleInputChange}
-                />
-                        <button
-                    type="button"  // Add this line to prevent form submission
-                    className="absolute bg-purple-primary text-black rounded-md cursor-pointer top-5 right-5"
-                    onClick={() => setShowPassword(!showPassword)}
-                >
-                    {showPassword ? <BiShow className={'w-6 h-6 text-dark_gray'}/> :
-                        <BiHide className={'w-6 h-6 text-dark_gray'}/>}
-                </button>
-                    </div>
-
-                    <div className="flex items-center align-center justify-center">
-                            <button type={'submit'}
-                                    className="flex p-3.5 my-4 shadow-xl w-56 text-white bg-purple_primary justify-center font-black rounded-3xl items-center">
-                                Get Started
-                            </button>
+                <div className="w-full h-screen flex items-center justify-center">
+                    <form className="w-96 h-[500px] rounded-3xl grid grid-rows-5 overflow-hidden centerlayer backdrop-blur-md bg-blur-md bg-opacity-30 border-solid border-purple-300 border-2" onSubmit={handleSubmit}>
+                        <div className="w-full h-full flex items-end justify-center"><h className="font-bold text-xl">Notification Manager</h></div>
+                        <div className="w-full h-full grid grid-rows-2 row-span-3">
+                            <div className="w-full h-full flex items-end justify-center px-4">
+                                            <input
+                                                className="peer-invalid:text-red-500 py-2 pl-4 w-full h-12 rounded-3xl border-solid border-b-2 border-purple-500 focus:outline-none bg-transparent"
+                                                type="email"
+                                                name="email"
+                                                placeholder="Email"
+                                                value={email}
+                                                onChange={handleInputChange}
+                                            />
+                                        </div>
+                            <div className="w-full h-full flex items-center justify-center px-4">
+                                            <input
+                                                className="py-2 pl-4 w-full h-12 rounded-3xl border-solid border-b-2 border-purple-500 focus:outline-none bg-transparent"
+                                                type="password"
+                                                name="password"
+                                                placeholder="Password"
+                                                value={password}
+                                                onChange={handleInputChange}
+                                            />
+                                        </div>
                         </div>
-            </div>
-            </div>
-            </form>
+                        <div className="w-full h-full bg-transparent rounded-b-3xl flex justify-end">
+                                    <button type="submit" className="hover:shadow-xl hover:shadow-purple-300/50 hover:bg-purple-300 duration-1000 w-24 flex items-center justify-center h-18 rounded-br-3xl">Enter<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+                                    </svg>
+</button>
+                                </div>
+                    </form>
                     </div>
             ):(
-            <form className="w-full h-screen flex items-center justify-center" onSubmit={handleMsgSubmit}>
-                <div className="w-full h-full grid grid-rows-3">
-                    <div className="row-span-2 w-full h-full flex items-center justify-center">
-                        <textarea
+                <div className="w-full h-screen flex items-start justify-center">
+                    <form onSubmit={handleMsgSubmit} className="grid grid-rows-6 w-[1000px] h-[500px] rounded-3xl bg-gradient-to-br border-solid border-l-2 border-t-2 border-purple-500 from-purple-300 to-transparent">
+            <div className="w-full h-full row-span-5 px-4 py-4">
+                <textarea
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
-                    className="resize-none w-[1000px] px-4 py-4 border rounded-3xl focus:outline-0 focus:border-purple-800 text-black h-[350px]"
+                    className="resize-none w-full px-4 py-4 border rounded-3xl focus:outline-0 focus:border-purple-800 text-black h-full"
                 placeholder="Send Emergency Alert"
-                    required
-                />
-                    </div>
-                    <div className="w-full h-full flex items-center justify-center">
-                        <button className="px-5 py-5 bg-purple_primary rounded-full text-white w-52" type="submit">Send Alert</button>
-                    </div>
+                    required/>
+            </div>
+            <div className="w-full h-full flex items-center justify-center">
+                <button type="submit" className="w-56 h-12 rounded-full bg-blue-400 text-white">Send Alert</button>
+            </div>
+                    </form>
                 </div>
-            </form>
             )}
         </div>
     );

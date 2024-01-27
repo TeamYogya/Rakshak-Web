@@ -9,6 +9,7 @@ from accounts.serializers import (
     UserProfileSerializer,
     UserRegistrationSerializer,
 SendMessageSerializer,
+AlertSerializer,
 )
 from django.contrib.auth import authenticate
 from accounts.models import User
@@ -67,6 +68,36 @@ class UserLoginView(APIView):
 
     def post(self, request, *args, **kwargs):
         serializer = UserLoginSerializer(data=request.data)
+
+        if serializer.is_valid():
+            email = serializer.validated_data['email']
+            user = User.objects.get(email=email)
+
+            # Get tokens for the user
+            tokens = get_tokens_for_user(user)
+
+            # You can customize the response data as per your requirements
+            return Response({
+                'refresh': tokens['refresh'],
+                'access': tokens['access'],
+                'message': 'Login successful',
+                'user': {
+                    'id': user.id,
+                    'email': user.email,
+                    'name': user.name,
+                    # Add other user fields as needed
+                }
+            }, status=status.HTTP_200_OK)
+
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class AlertView(APIView):
+    """
+    API View for user login.
+    """
+
+    def post(self, request, *args, **kwargs):
+        serializer = AlertSerializer(data=request.data)
 
         if serializer.is_valid():
             email = serializer.validated_data['email']

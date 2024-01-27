@@ -4,28 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3dc52eb3-4e45-43a9-aee2-6fd97161fa87" name="Changes" comment="Added DonateMoney">
+    <list default="true" id="3dc52eb3-4e45-43a9-aee2-6fd97161fa87" name="Changes" comment="Going for masters">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/primary_backend/donate/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/primary_backend/donate/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/primary_backend/donate/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/primary_backend/donate/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/primary_backend/donate/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/primary_backend/donate/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/primary_backend/donate/renderers.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/primary_backend/donate/serializers.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/primary_backend/donate/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/primary_backend/donate/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/primary_backend/donate/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/primary_backend/geofence_app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/primary_backend/geofence_app/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/primary_backend/geofence_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/primary_backend/geofence_app/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/primary_backend/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/primary_backend/manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/primary_backend/accounts/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/primary_backend/accounts/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/primary_backend/accounts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/primary_backend/accounts/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/primary_backend/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/primary_backend/accounts/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/primary_backend/disasterstories/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/primary_backend/disasterstories/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/primary_backend/disasterstories/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/primary_backend/disasterstories/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/primary_backend/disasterstories/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/primary_backend/disasterstories/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/primary_backend/disasterstories/renderers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/primary_backend/disasterstories/serializers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/primary_backend/disasterstories/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/primary_backend/disasterstories/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/primary_backend/disasterstories/views.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/primary_backend/primary_backend/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/primary_backend/primary_backend/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/primary_backend/primary_backend/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/primary_backend/primary_backend/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Dashboard/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Dashboard/Dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Dashboard/components/Awareness Sessions.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Dashboard/components/Awareness Sessions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Dashboard/components/ContinuousAlerts.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Dashboard/components/ContinuousAlerts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Dashboard/components/DisasterSurvivorStories.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Dashboard/components/DisasterSurvivorStories.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Dashboard/components/NaturalHazardAlerts.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Dashboard/components/NaturalHazardAlerts.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/Landing/Landing.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Landing/Landing.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/services/storyInputApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/storyInputApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/services/userAuthApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/userAuthApi.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,33 +97,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/SIH/Rakshak-Web/Rakshak-Web/frontend/src&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.database.db.setting.configurable&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\Jetbrains Toolbox\\Pycharm Professional\\PyCharm 2023.2.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "develop",
+    "last_opened_file_path": "D:/SIH/Rakshak-Web/Rakshak-Web/backend/primary_backend/Stories",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.database.db.setting.configurable",
+    "ts.external.directory.path": "D:\\Jetbrains Toolbox\\Pycharm Professional\\PyCharm 2023.2.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\SIH\Rakshak-Web\Rakshak-Web\backend\primary_backend\Stories" />
       <recent name="D:\SIH\Rakshak-Web\Rakshak-Web\frontend\src" />
       <recent name="D:\SIH\Rakshak-Web\Rakshak-Web\frontend\src\pages\Landing\Videos" />
       <recent name="D:\SIH\Rakshak-Web\Rakshak-Web\frontend\src\pages\Landing\Video" />
       <recent name="D:\SIH\Rakshak-Web\Rakshak-Web\backend\primary_backend\donate" />
-      <recent name="D:\SIH\Rakshak-Web\frontend\src\pages\Dashboard\TrialJSON\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\SIH\Rakshak-Web\frontend\src\pages\Dashboard\components" />
@@ -230,6 +231,8 @@
       <workItem from="1706274554758" duration="137000" />
       <workItem from="1706275182116" duration="1970000" />
       <workItem from="1706277223615" duration="4943000" />
+      <workItem from="1706288187692" duration="7383000" />
+      <workItem from="1706343797044" duration="4577000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed Microservices Architecture">
       <option name="closed" value="true" />

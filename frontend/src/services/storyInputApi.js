@@ -7,7 +7,7 @@ export const storyInputApi = createApi({
     addStory: builder.mutation({
       query: (story) => {
         return {
-            url: 'stories/',
+          url: 'create/',
           method: 'POST',
           body: story,
           headers: {
@@ -16,7 +16,10 @@ export const storyInputApi = createApi({
         };
       },
     }),
+    getStories: builder.query({
+      query: () => 'get/',
+    }),
   }),
 });
 
-export const {useAddStoryMutation} = storyInputApi
+export const { useAddStoryMutation, useGetStoriesQuery } = storyInputApi;
