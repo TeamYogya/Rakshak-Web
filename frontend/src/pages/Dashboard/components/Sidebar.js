@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 const submenu = [
     {
-        title: 'Geofencing',
-        options: ['Prone Area Alerts', 'Safer Exits'],
+        title: 'Mock Exercises',
+        options: ['Registrations', 'Awareness Sessions'],
         optionIcons: [
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7B7B7B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-bell max-md:w-6 max-md:h-6 max-md:mb-4 max-md:mt-8">
                 <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
@@ -15,6 +15,19 @@ const submenu = [
             </svg>
         ],
     },
+    // {
+    //     title: 'Geofencing',
+    //     options: ['Prone Area Alerts', 'Safer Exits'],
+    //     optionIcons: [
+    //         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7B7B7B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-bell max-md:w-6 max-md:h-6 max-md:mb-4 max-md:mt-8">
+    //             <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+    //             <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+    //         </svg>,
+    //         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7B7B7B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-shield max-md:w-6 max-md:h-6 max-md:mb-4">
+    //             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+    //         </svg>
+    //     ],
+    // },
     {
         title: 'Feasibility Prediction',
         options: ['Access Feasibility', 'Ping for Help'],
@@ -44,19 +57,19 @@ const submenu = [
             </svg>
         ],
     },
-    {
-        title: 'Assistance',
-        options: ['Information', 'Alternative Routes'],
-        optionIcons: [
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7B7B7B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-info max-md:w-6 max-md:h-6 max-md:mb-4"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>,
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7B7B7B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-git-branch max-md:w-6 max-md:h-6 max-md:mb-4">
-                <line x1="6" y1="3" x2="6" y2="15"></line>
-                <circle cx="18" cy="6" r="3"></circle>
-                <circle cx="6" cy="18" r="3"></circle>
-                <path d="M18 9a9 9 0 0 1-9 9"></path>
-            </svg>
-        ],
-    },
+    // {
+    //     title: 'Assistance',
+    //     options: ['Information', 'Alternative Routes'],
+    //     optionIcons: [
+    //         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7B7B7B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-info max-md:w-6 max-md:h-6 max-md:mb-4"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>,
+    //         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7B7B7B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-git-branch max-md:w-6 max-md:h-6 max-md:mb-4">
+    //             <line x1="6" y1="3" x2="6" y2="15"></line>
+    //             <circle cx="18" cy="6" r="3"></circle>
+    //             <circle cx="6" cy="18" r="3"></circle>
+    //             <path d="M18 9a9 9 0 0 1-9 9"></path>
+    //         </svg>
+    //     ],
+    // },
     {
         title: 'Alerts',
         options: ['Natural Hazard Alerts', 'Continuous Alerts'],
@@ -86,7 +99,7 @@ const submenu = [
     },
     ];
 
-const Sidebar = () => {
+const Sidebar = ({ onSubMenuClick } ) => {
   const [openMenu, setOpenMenu] = useState(Array(submenu.length).fill(true));
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
@@ -100,16 +113,23 @@ const Sidebar = () => {
       setIsSidebarOpen(!isSidebarOpen);
   };
 
+  const handleSubMenuItemClick = (option) => {
+        // Pass the selected submenu item to the parent component
+        onSubMenuClick(option);
+  };
+
 return (
     <div className="z-10 shadow-xl h-screen">
         <div className="h-full overflow-y-auto bg-light_gray">
             <ul>
                 <li className="flex justify-between px-4 pt-4 max-md:justify-center max-md:items-center">
                     <Link to="/" className="flex group">
-                        <span className="text-2xl font-bold max-md:hidden">Rakshak</span>
+                        <span className="text-2xl text-purple_primary font-bold max-md:hidden">Rakshak</span>
                     </Link>
 
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-x w-6 h-6 stroke-gray cursor-pointer max-md:hidden"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    {/*<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-x w-6 h-6 stroke-gray cursor-pointer max-md:hidden"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>*/}
+<div className="blur-xl bg-opacity-50 blob w-[350px] h-[350px] rounded-full absolute top-20 left-36 -z-20 bg-gradient-to-b from-indigo-200 via-purple-200 to-pink-200"></div>
+<div className="blur-xl bg-opacity-50 blob w-[270px] h-[270px] rounded-full absolute bottom-[-170px] -z-20 bg-gradient-to-b from-indigo-200 via-purple-200 to-pink-200"></div>
 
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -135,7 +155,7 @@ return (
                     {submenu.map((item, index) => (
                         <li key={index}>
                             <div className="flex items-center justify-between w-full px-4 pt-4 mt-4 transition duration-75 group cursor-pointer max-md:hidden" onClick={() => handleMenuClick(index)}>
-                                <span className="font-bold text-left">{item.title}</span>
+                                <span className="font-bold text-left text-black">{item.title}</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C6C6C6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={`feather max-md:hidden feather-chevron-${openMenu[index] ? 'up' : 'down'}`}>
                                     <polyline points="6 9 12 15 18 9"></polyline>
                                 </svg>
@@ -143,7 +163,8 @@ return (
                             {openMenu[index] && (
                                 <ul className="pt-4 max-md:pt-0 px-4 space-y-1">
                                     {item.options.map((option, optionIndex) => (
-                                        <li key={optionIndex} className="flex items-center text-dark_gray text-left text-sm transition duration-75 gap-2 cursor-pointer max-md:justify-center group">
+                                        <li key={optionIndex} className="flex items-center text-dark_gray text-left text-sm transition duration-75 gap-2 cursor-pointer max-md:justify-center group"
+                                        onClick={() => handleSubMenuItemClick(option)}>
                                             {item.optionIcons[optionIndex]}{/* Add optionIcons if available */}
                                             <span className="max-md:hidden">{option}</span>
                                         </li>

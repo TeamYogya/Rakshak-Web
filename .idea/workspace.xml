@@ -4,17 +4,63 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3dc52eb3-4e45-43a9-aee2-6fd97161fa87" name="Changes" comment="Added Tailwind, Dockerfile and Jenkinsfile" />
+    <list default="true" id="3dc52eb3-4e45-43a9-aee2-6fd97161fa87" name="Changes" comment="Going for masters" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;21abraham&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="b05bf453-d2a7-4058-ae7c-baaadb2982a1" />
+        <option name="url" value="https://github.com/TeamYogya/Rakshak-Web.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="KubernetesApiProvider">{
+  &quot;contexts&quot;: [
+    {
+      &quot;name&quot;: &quot;minikube&quot;,
+      &quot;originalNamespace&quot;: &quot;default&quot;
+    }
+  ],
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="KubernetesSettings">
+    <option name="contextName" value="minikube" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -27,29 +73,395 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/SIH/dev/Repo/frontend/src&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;FinalDevelop&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Mrinal Gupta/AppData/Local/Programs/Python/Python311/Scripts/pipenv.exe&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.database.db.setting.configurable&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\Jetbrains Toolbox\\Pycharm Professional\\PyCharm 2023.2.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Rakshak-Web" />
+      <recent name="D:\SIH\Rakshak-Web\Rakshak-Web\backend\primary_backend\Stories" />
+      <recent name="D:\SIH\Rakshak-Web\Rakshak-Web\frontend\src" />
+      <recent name="D:\SIH\Rakshak-Web\Rakshak-Web\frontend\src\pages\Landing\Videos" />
+      <recent name="D:\SIH\Rakshak-Web\Rakshak-Web\frontend\src\pages\Landing\Video" />
+      <recent name="D:\SIH\Rakshak-Web\Rakshak-Web\backend\primary_backend\donate" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\SIH\Rakshak-Web\frontend\src\pages\Dashboard\components" />
     </key>
   </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="ShConfigurationType" />
+      </set>
+    </option>
+    <option name="openRunningConfigInTab" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="db.sqlite3" type="ShConfigurationType">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/backend/primary_backend/db.sqlite3" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$/backend/primary_backend" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="powershell.exe" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-50da183f06c8-2887949eec09-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.13135.95" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3dc52eb3-4e45-43a9-aee2-6fd97161fa87" name="Changes" comment="Added Tailwind, Dockerfile and Jenkinsfile" />
+      <created>1696780270620</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1696780270620</updated>
+      <workItem from="1696780271920" duration="1006000" />
+      <workItem from="1696821638877" duration="2868000" />
+      <workItem from="1696852533652" duration="3422000" />
+      <workItem from="1696926598968" duration="23000" />
+      <workItem from="1696937015023" duration="4501000" />
+      <workItem from="1697018709252" duration="1253000" />
+      <workItem from="1697033641635" duration="5330000" />
+      <workItem from="1697047258799" duration="939000" />
+      <workItem from="1697185078920" duration="2960000" />
+      <workItem from="1697373331252" duration="5062000" />
+      <workItem from="1697434257076" duration="1304000" />
+      <workItem from="1697436077619" duration="2338000" />
+      <workItem from="1697471425168" duration="9722000" />
+      <workItem from="1697538618925" duration="964000" />
+      <workItem from="1697716545897" duration="1328000" />
+      <workItem from="1697731210172" duration="871000" />
+      <workItem from="1697793917584" duration="602000" />
+      <workItem from="1697820800243" duration="4754000" />
+      <workItem from="1698597414098" duration="1631000" />
+      <workItem from="1698984372605" duration="465000" />
+      <workItem from="1698988580589" duration="972000" />
+      <workItem from="1699014203777" duration="581000" />
+      <workItem from="1699188766448" duration="85000" />
+      <workItem from="1699188878183" duration="704000" />
+      <workItem from="1703408851194" duration="1689000" />
+      <workItem from="1703410647727" duration="71000" />
+      <workItem from="1703410762047" duration="3511000" />
+      <workItem from="1703414589940" duration="161000" />
+      <workItem from="1703439050993" duration="659000" />
+      <workItem from="1703603639942" duration="3661000" />
+      <workItem from="1703611069687" duration="2295000" />
+      <workItem from="1703613408702" duration="257000" />
+      <workItem from="1703613675634" duration="1622000" />
+      <workItem from="1703681122698" duration="1268000" />
+      <workItem from="1703750424716" duration="2069000" />
+      <workItem from="1703781258215" duration="15094000" />
+      <workItem from="1704209940699" duration="4353000" />
+      <workItem from="1705154306121" duration="1919000" />
+      <workItem from="1705213853180" duration="11000" />
+      <workItem from="1705224896647" duration="4752000" />
+      <workItem from="1705310427622" duration="245000" />
+      <workItem from="1705312002156" duration="195000" />
+      <workItem from="1705324653572" duration="848000" />
+      <workItem from="1705332215113" duration="13331000" />
+      <workItem from="1705691043629" duration="129000" />
+      <workItem from="1705741346293" duration="864000" />
+      <workItem from="1705751759212" duration="2866000" />
+      <workItem from="1705754713242" duration="1442000" />
+      <workItem from="1705770133803" duration="15301000" />
+      <workItem from="1705841176529" duration="14325000" />
+      <workItem from="1705913790037" duration="5146000" />
+      <workItem from="1705942817092" duration="27000" />
+      <workItem from="1705949183276" duration="16000" />
+      <workItem from="1706077155580" duration="328000" />
+      <workItem from="1706083307068" duration="45000" />
+      <workItem from="1706088666708" duration="307000" />
+      <workItem from="1706210185883" duration="389000" />
+      <workItem from="1706259668947" duration="877000" />
+      <workItem from="1706260931341" duration="1092000" />
+      <workItem from="1706274554758" duration="137000" />
+      <workItem from="1706275182116" duration="1970000" />
+      <workItem from="1706277223615" duration="4943000" />
+      <workItem from="1706288187692" duration="7383000" />
+      <workItem from="1706343797044" duration="4577000" />
+      <workItem from="1706374779098" duration="1546000" />
+      <workItem from="1706376341715" duration="1138000" />
+    </task>
+    <task id="LOCAL-00001" summary="Fixed Microservices Architecture">
+      <option name="closed" value="true" />
+      <created>1697043830452</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1697043830452</updated>
+    </task>
+    <task id="LOCAL-00002" summary="added something">
+      <option name="closed" value="true" />
+      <created>1697388309699</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1697388309700</updated>
+    </task>
+    <task id="LOCAL-00003" summary="added something">
+      <option name="closed" value="true" />
+      <created>1697388713408</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1697388713408</updated>
+    </task>
+    <task id="LOCAL-00004" summary="ping for help routing issue solved">
+      <option name="closed" value="true" />
+      <created>1698567290028</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1698567290028</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Redux bug-fix">
+      <option name="closed" value="true" />
+      <created>1703414425239</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1703414425239</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Registration linking bug-fix">
+      <option name="closed" value="true" />
+      <created>1703612969149</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1703612969149</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Registration linking bug-fix">
+      <option name="closed" value="true" />
+      <created>1703750495850</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1703750495851</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Drive Video">
+      <option name="closed" value="true" />
+      <created>1704191964603</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1704191964603</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Fixed sidebar">
+      <option name="closed" value="true" />
+      <created>1704193887985</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1704193887985</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Fixed sidebar">
+      <option name="closed" value="true" />
+      <created>1704193996570</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1704193996570</updated>
+    </task>
+    <task id="LOCAL-00011" summary="changes in emergency">
+      <option name="closed" value="true" />
+      <created>1704898070334</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1704898070334</updated>
+    </task>
+    <task id="LOCAL-00012" summary="changes in emergency">
+      <option name="closed" value="true" />
+      <created>1704898084698</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1704898084698</updated>
+    </task>
+    <task id="LOCAL-00013" summary="changes in emergency">
+      <option name="closed" value="true" />
+      <created>1704898202310</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1704898202310</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Add abraham">
+      <option name="closed" value="true" />
+      <created>1705153318915</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1705153318915</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Add abraham">
+      <option name="closed" value="true" />
+      <created>1705154416226</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1705154416226</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Add abraham">
+      <option name="closed" value="true" />
+      <created>1705156024098</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1705156024098</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Add abraham">
+      <option name="closed" value="true" />
+      <created>1705156142875</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1705156142875</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Add abraham">
+      <option name="closed" value="true" />
+      <created>1705312212871</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1705312212872</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Add abraham">
+      <option name="closed" value="true" />
+      <created>1705325292273</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1705325292273</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Add abraham">
+      <option name="closed" value="true" />
+      <created>1705325559630</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1705325559630</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Add abraham">
+      <option name="closed" value="true" />
+      <created>1705345777186</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1705345777186</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Add clip3">
+      <option name="closed" value="true" />
+      <created>1705346140039</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1705346140039</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Add clip4">
+      <option name="closed" value="true" />
+      <created>1705346259343</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1705346259343</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Added DonateMoney">
+      <option name="closed" value="true" />
+      <created>1706273568761</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1706273568761</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="javascript:npm:react" />
+    <option featureType="dependencySupport" implementationName="executable:docker" />
+    <option featureType="dependencySupport" implementationName="javascript:npm:tailwindcss" />
+    <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
+    <option featureType="dependencySupport" implementationName="executable:kubectl" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added Microservices setup with Amazon MQ" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Microservices setup with Amazon MQ" />
+    <MESSAGE value="Fixed Microservices Architecture" />
+    <MESSAGE value="added something" />
+    <MESSAGE value="ping for help routing issue solved" />
+    <MESSAGE value="Redux bug-fix" />
+    <MESSAGE value="Registration linking bug-fix" />
+    <MESSAGE value="Drive Video" />
+    <MESSAGE value="Fixed sidebar" />
+    <MESSAGE value="help backend" />
+    <MESSAGE value="changes in emergency" />
+    <MESSAGE value="Add abraham" />
+    <MESSAGE value="Add clip3" />
+    <MESSAGE value="Add clip4" />
+    <MESSAGE value="Added DonateMoney" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added DonateMoney" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/frontend/src/pages/Landing/Landing.js</url>
+          <line>23</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/frontend/src/pages/Landing/Landing.js</url>
+          <line>212</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/frontend/src/pages/Landing/Landing.js</url>
+          <line>344</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

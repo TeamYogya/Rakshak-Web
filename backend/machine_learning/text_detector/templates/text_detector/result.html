@@ -1,0 +1,18 @@
+<!-- text_detector/templates/text_detector/result.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Text Detection Result</title>
+</head>
+<body>
+<!--    <img src="{{ image_path }}" alt="Detected Image">-->
+    <h2>Detected Texts:</h2>
+    <ul>
+        {% for text in detected_texts %}
+            <li>{{ text.text }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

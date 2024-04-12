@@ -1,0 +1,16 @@
+<!-- text_detector/templates/text_detector/detect_text.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Text Detection</title>
+</head>
+<body>
+    <form method="post" enctype="multipart/form-data" action="{% url 'detect_text' %}">
+        {% csrf_token %}
+        <input type="file" name="image" accept="image/*" required>
+        <button type="submit">Detect Text</button>
+    </form>
+</body>
+</html>

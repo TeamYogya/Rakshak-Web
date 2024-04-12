@@ -1,14 +1,48 @@
-import React, {useState} from 'react';
+import React, {useState,useEffect} from 'react';
 import {BsFilterRight} from "react-icons/bs";
 import {category, cities, disasters, Story} from "../TrialJSON/Stories";
 import {Dialog, Transition} from '@headlessui/react';
 import {AiOutlineClose} from 'react-icons/ai';
 import SearchIcon from "../../../assets/img/search.svg";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
+import {storeToken} from "../../../services/LocalStorageService";
+import {useAddStoryMutation,useGetStoriesQuery} from "../../../services/storyInputApi";
+
 
 const DisasterSurvivorStories = () => {
 
     const [isOpen, setIsOpen] = useState(false);
+    const [isOpen1, setIsOpen1] = useState(false);
+
+    const [selectedCity, setSelectedCity] = useState('');
+    const [selectedDisaster, setSelectedDisaster] = useState('');
+
+    const [stories, setStories] = useState(Story);
+    const [showAllStories, setShowAllStories] = useState(false);
+
+    // const handleCityChange = (e) => {
+    //     setSelectedCity(e.target.value);
+    //     setSelectedDisaster(''); // Reset disaster type when city changes
+    //     setShowAllStories(true); // Reset to show all when city changes
+    // };
+
+    // const handleDisasterChange = (e) => {
+    //     setSelectedDisaster(e.target.value);
+    //     setSelectedCity(''); // Reset city when disaster type changes
+    //     setShowAllStories(true); // Reset to show all when disaster type changes
+    // };
+
+    // Filter stories based on selected city and disaster type
+const filteredStories = stories.filter((story) => {
+        const cityMatch = selectedCity === '' || story.city === selectedCity;
+        const disasterMatch = selectedDisaster === '' || story.type === selectedDisaster;
+        return cityMatch && disasterMatch;
+    });
+    // const filteredStories = stories.filter((story) => {
+    //     const cityMatch = selectedCity === '' || story.city === selectedCity;
+    //     const disasterMatch = selectedDisaster === '' || story.type === selectedDisaster;
+    //     return cityMatch && disasterMatch;
+    // });
 
     const openModal = () => {
         setIsOpen(true);
@@ -18,20 +52,113 @@ const DisasterSurvivorStories = () => {
         setIsOpen(false);
     };
 
+    const [isOpenAddStoryModal, setIsOpenAddStoryModal] = useState(false);
+
+    const openAddStoryModal = () => {
+        setIsOpenAddStoryModal(true);
+    };
+
+    const closeAddStoryModal = () => {
+        setIsOpenAddStoryModal(false);
+    };
+
     const [isDropdownOpen, setDropdownOpen] = useState(false);
 
     const toggleDropdown = () => {
         setDropdownOpen(!isDropdownOpen);
     };
 
+    const [server_error, setServerError] = useState({})
+    const navigate = useNavigate();
+    const [addStory, {isLoading}] = useAddStoryMutation();
+
+    const handleSubmit = async (e) => {
+    e.preventDefault();
+    const data = new FormData(e.currentTarget);
+    const actualData = {
+        title: data.get('title'),
+        city: data.get('city'),
+        author: data.get('author'),
+        // Format the date before sending it
+        date: formatDate(data.get('date')),
+        description: data.get('description'),
+    }
+    console.log(actualData)
+    const res = await addStory(actualData)
+    if (res.error) {
+        console.log(typeof (res.error.data.errors))
+        console.log(res.error.data.errors)
+        setServerError(res.error.data.errors)
+    }
+    if (res.data) {
+        console.log(typeof (res.data))
+        console.log(res.data)
+        storeToken(res.data.token)
+        // navigate('/dashboard')
+        navigate('/')
+    }
+}
+
+// Function to format date to yyyy-mm-dd format
+const formatDate = (dateString) => {
+    const [dd, mm, yyyy] = dateString.split('-');
+    return `${yyyy}-${mm}-${dd}`;
+}
+
+    const [title, setTitle] = useState('');
+    const [city, setCity] = useState('');
+    const [type, setType] = useState('');
+    const [author, setAuthor] = useState('');
+    const [date, setDate] = useState('');
+    const [description, setDescription] = useState('');
+    const handleInputChange = (e) => {
+        const value = e.target.value;
+        const inputName = e.target.name;
+
+        switch (inputName) {
+            case 'title':
+                setTitle(value);
+                break;
+            case 'city':
+                setCity(value);
+                break;
+            // case 'type':
+            //     setType(value);
+            //     break;
+            case 'author':
+                setAuthor(value);
+                break;
+            case 'date':
+                setDate(value);
+                break;
+            case 'description':
+                setDescription(value);
+                break;
+            default:
+                break;
+        }
+    };
+
     const [selectedOption, setSelectedOption] = useState('');
 
+    const displayStories = showAllStories ? filteredStories : filteredStories.slice(0, 4);
+    const { data: storiesData, error: storiesError, isLoading: storiesLoading } = useGetStoriesQuery();
+    useEffect(() => {
+        if (storiesData) {
+            setStories(storiesData);
+        }
+    }, [storiesData]);
 
-    const [stories, setStories] = useState(Story);
-    const [showAllStories, setShowAllStories] = useState(false);
+    // Handle loading and error states
+    if (storiesLoading) return <div>Loading...</div>;
+    if (storiesError) return <div>Error: {storiesError.message}</div>;
 
-    const displayStories = showAllStories ? stories : stories.slice(0, 4);
-
+    // Filter stories based on selected city and disaster type
+    // const filteredStories = stories.filter((story) => {
+    //     const cityMatch = selectedCity === '' || story.city === selectedCity;
+    //     const disasterMatch = selectedDisaster === '' || story.type === selectedDisaster;
+    //     return cityMatch && disasterMatch;
+    // });
     return (
         <div className={"w-full"}>
 
@@ -65,15 +192,14 @@ const DisasterSurvivorStories = () => {
                             <Dialog.Title className="text-lg mt-0 font-semibold text-left text-purple_primary mb-4">
                                 City
                             </Dialog.Title>
-
                             <div className="flex items-center">
                                 <select
-                                    id="dropdown"
+                                    id="cityDropdown"
                                     className="p-2 border-0 rounded"
-                                    onChange={(e) => setSelectedOption(e.target.value)}
-                                    value={selectedOption}>
+                                    onChange={handleInputChange}
+                                    value={selectedCity}>
                                     <option value="" disabled>
-                                        Choose an option
+                                        None
                                     </option>
                                     {cities.map((option) => (
                                         <option key={option} value={option}>
@@ -86,15 +212,14 @@ const DisasterSurvivorStories = () => {
                             <Dialog.Title className="text-lg mt-4 font-semibold text-left text-purple_primary mb-4">
                                 Disaster type
                             </Dialog.Title>
-
                             <div className="flex items-center">
                                 <select
-                                    id="dropdown"
+                                    id="disasterDropdown"
                                     className="p-2 border-0 rounded"
-                                    onChange={(e) => setSelectedOption(e.target.value)}
-                                    value={selectedOption}>
+                                    onChange={handleInputChange}
+                                    value={selectedDisaster}>
                                     <option value="" disabled>
-                                        Choose an option
+                                        None
                                     </option>
                                     {disasters.map((option) => (
                                         <option className={"my-2"} key={option} value={option}>
@@ -107,68 +232,6 @@ const DisasterSurvivorStories = () => {
                             <button className={"mt-2 mb-0 flex w-full justify-center items-center text-center"}>
                                 <img src={SearchIcon} className="w-5 h-5" alt={"Search Icon"}/>
                             </button>
-
-
-                            {/*<div className="relative inline-block text-left">*/}
-                            {/*    <button*/}
-                            {/*        id="dropdownDefaultButton"*/}
-                            {/*        onClick={toggleDropdown}*/}
-                            {/*        className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-purple_primary dark:hover:bg-purple_primary dark:focus:ring-blue-200"*/}
-                            {/*        type="button">*/}
-                            {/*        Dropdown button{' '}*/}
-                            {/*        <svg*/}
-                            {/*            className="w-2 h-2 ml-2.5"*/}
-                            {/*            aria-hidden="true"*/}
-                            {/*            xmlns="http://www.w3.org/2000/svg"*/}
-                            {/*            fill="none"*/}
-                            {/*            viewBox="0 0 10 6">*/}
-                            {/*            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"*/}
-                            {/*                  strokeWidth="2" d="m1 1 4 4 4-4"/>*/}
-                            {/*        </svg>*/}
-                            {/*    </button>*/}
-
-                            {/*    /!* Dropdown menu *!/*/}
-                            {/*    {isDropdownOpen && (*/}
-                            {/*        <div*/}
-                            {/*            id="dropdown"*/}
-                            {/*            className="z-10 absolute mt-2 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">*/}
-                            {/*            <ul className="text-sm text-gray-700 rounded-l dark:text-gray-200"*/}
-                            {/*                aria-labelledby="dropdownDefaultButton">*/}
-                            {/*                <li>*/}
-                            {/*                    <a href="#"*/}
-                            {/*                       className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-dark_gray dark:hover:text-white">*/}
-                            {/*                        Earthquake*/}
-                            {/*                    </a>*/}
-                            {/*                </li>*/}
-                            {/*                <li>*/}
-                            {/*                    <a href="#"*/}
-                            {/*                       className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-dark_gray dark:hover:text-white">*/}
-                            {/*                        Flood*/}
-                            {/*                    </a>*/}
-                            {/*                </li>*/}
-                            {/*                <li>*/}
-                            {/*                    <a href="#"*/}
-                            {/*                       className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-dark_gray dark:hover:text-white">*/}
-                            {/*                        Drought*/}
-                            {/*                    </a>*/}
-                            {/*                </li>*/}
-                            {/*                <li>*/}
-                            {/*                    <a href="#"*/}
-                            {/*                       className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-dark_gray dark:hover:text-white">*/}
-                            {/*                        Tsunami*/}
-                            {/*                    </a>*/}
-                            {/*                </li>*/}
-                            {/*                <li>*/}
-                            {/*                    <a href="#"*/}
-                            {/*                       className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-dark_gray dark:hover:text-white">*/}
-                            {/*                        Wildfire*/}
-                            {/*                    </a>*/}
-                            {/*                </li>*/}
-                            {/*            </ul>*/}
-                            {/*        </div>*/}
-                            {/*    )}*/}
-                            {/*</div>*/}
-
                         </div>
                     </div>
                 </div>
@@ -193,20 +256,6 @@ const DisasterSurvivorStories = () => {
             <div className='md:flex-row justify-evenly my-5 mx-5'>
                 <div className='grid grid-cols-1 max-md:grid-cols-2 lg:grid-cols-4 gap-1'>
                     {displayStories.map((item, index) => (
-                        // <div key={index}
-                        //      className='flex flex-row rounded-3xl my-1 gap-2 w-[230px] h-[230px] max-md:w-[160px] max-md:h-[160px] transition-all ease-in-out hover:scale-105'
-                        //      style={{backgroundImage: `url(${item.image})`}}>
-                        //     {/*<img src={item.image} className='h-[300px] w-auto my-auto' alt='' />*/}
-                        //     <div className='flex-col justify-between text-white w-full p-4 mt-auto mb1'>
-                        //         <div className='font-bold mb-1 flex justify-between items-end mb-2'>
-                        //             <h2 className=' text-white text-start mx-2 text-m'>{item.title}</h2>
-                        //         </div>
-                        //         <h3 className='text-white text-end text-sm'>{item.date}</h3>
-                        //         <div className=''>
-                        //             <h3 className='text-xs text-slate-400'>{item.link}</h3>
-                        //         </div>
-                        //     </div>
-                        // </div>
                         <div key={index}
                              className='flex flex-col rounded-3xl my-2 mx-2 shadow-2xl transition-all ease-in-out hover:scale-105'>
                             <Link to={`/Story/${item.id}`}>
@@ -234,25 +283,6 @@ const DisasterSurvivorStories = () => {
                 <p className={"text-left mt-8 my-5 mx-8 font-sans text-neutral-950 font-black"}>Categorised Stories</p>
             </div>
 
-            {/*<div className='md:flex-row justify-evenly my-5 mx-5'>*/}
-            {/*    <div className='grid grid-cols-1 max-md:grid-cols-2 lg:grid-cols-4 gap-1'>*/}
-            {/*        {category.map((item, index) => (*/}
-            {/*          <div key={index} className='flex flex-col p-3 rounded-3xl shadow-2xl my-1 transition-all ease-in-out hover:scale-105'>*/}
-            {/*              <img src={item.image} className='rounded-lg backdrop-blur-3xl' alt='' />*/}
-            {/*              <div className='flex-col justify-between mt-2 text-white w-full mt-auto'>*/}
-            {/*                  <div className='font-bold flex justify-between items-end'>*/}
-            {/*                      <h2 className=' text-white text-start mx-2 text-m'>{item.title}</h2>*/}
-            {/*                      <h3 className='text-white text-end text-sm'>{item.number}</h3>*/}
-            {/*                  </div>*/}
-            {/*                  <div className=''>*/}
-            {/*                      <h3 className='text-xs text-slate-400'>{item.link}</h3>*/}
-            {/*                  </div>*/}
-            {/*              </div>*/}
-            {/*          </div>*/}
-            {/*        ))}*/}
-            {/*    </div>*/}
-            {/*</div>*/}
-
             <div className='md:flex-row justify-evenly my-5 mx-5'>
                 <div className='grid grid-cols-1 max-md:grid-cols-2 lg:grid-cols-4 gap-1'>
                     {category.map((item, index) => (
@@ -279,8 +309,175 @@ const DisasterSurvivorStories = () => {
                 </div>
             </div>
 
-            <div className={"border-neutral-950 border-4 max-w-full h-40"}>
-                <h3 className='text-start text-purple_primary text-sm'>Add a story</h3>
+            <Transition appear show={isOpenAddStoryModal} as={Dialog} onClose={closeAddStoryModal}>
+                <div className="fixed inset-0 z-10 overflow-y-auto">
+                    <Dialog.Overlay className="fixed inset-0 bg-black opacity-30"/>
+
+                    <div className="flex items-start justify-end mx-4 min-h-screen my-4">
+                        <div className="bg-white rounded-2xl p-4 w-[974px] relative">
+                            <button className="absolute text-xl text-dark_gray font-bold top-0 right-0 p-2"
+                                    onClick={closeAddStoryModal}>
+                                <AiOutlineClose className="text-gray-600"/>
+                            </button>
+                            <form onSubmit={handleSubmit}>
+                                <div className="flex flex-wrap my-2">
+                                    <div className="flex flex-col mr-4">
+                                        <Dialog.Title
+                                            className="text-lg mt-0 font-semibold text-left text-purple_primary my-2">
+                                            Title
+                                        </Dialog.Title>
+                                        <input
+                                            className={`p-2 flex my-1 shadow-xl w-48 bg-light-gray placeholder-dark_gray placeholder:font-black rounded-lg 'placeholder:font-black'`}
+                                            type="text"
+                                            id={'title'}
+                                            name="title"
+                                            placeholder=""
+                                            // value={aadhaar}
+                                            onChange={handleInputChange}
+                                        />
+                                    </div>
+
+                                    <div className="flex flex-col mr-4">
+                                        <Dialog.Title
+                                            className="text-lg mt-0 font-semibold text-left text-purple_primary my-2">
+                                            City
+                                        </Dialog.Title>
+                                        <div className="flex items-center">
+                                            <select
+                                                id="city"
+                                                className="p-2 border-0 rounded"
+                                                // onChange={handleCityChange}
+                                                onChange={handleInputChange}
+                                                name={'city'}
+                                            >
+                                                {/*<option value="" disabled>*/}
+                                                {/*    None*/}
+                                                {/*</option>*/}
+                                                {cities.map((option, index) => (
+                                                    <option key={`${option}-${index}`} value={option}>
+                                                        {option}
+                                                    </option>
+                                                ))}
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    {/*<div className="flex flex-col mr-4">*/}
+                                    {/*    <Dialog.Title*/}
+                                    {/*        className="text-lg mt-0 font-semibold text-left text-purple_primary my-2">*/}
+                                    {/*        Disaster Type*/}
+                                    {/*    </Dialog.Title>*/}
+                                    {/*    <div className="flex items-center">*/}
+                                    {/*        <select*/}
+                                    {/*            id="disasterDropdown"*/}
+                                    {/*            className="p-2 border-0 rounded"*/}
+                                    {/*            // onChange={handleDisasterChange}*/}
+                                    {/*            onChange={handleInputChange}*/}
+                                    {/*        >*/}
+                                    {/*            name={'type'}*/}
+                                    {/*            /!*<option value="">*!/*/}
+                                    {/*            /!*    None*!/*/}
+                                    {/*            /!*</option>*!/*/}
+                                    {/*            {disasters.map((option, index) => (*/}
+                                    {/*                <option className="my-2" key={`${option}-${index}`} value={option}>*/}
+                                    {/*                    {option}*/}
+                                    {/*                </option>*/}
+                                    {/*            ))}*/}
+                                    {/*            /!*{disasters.map((option) => (*!/*/}
+                                    {/*            /!*    <option className={"my-2"} key={option} value={option}>*!/*/}
+                                    {/*            /!*        {option}*!/*/}
+                                    {/*            /!*    </option>*!/*/}
+                                    {/*            /!*))}*!/*/}
+                                    {/*        </select>*/}
+                                    {/*    </div>*/}
+                                    {/*</div>*/}
+
+                                    <div className="flex flex-col">
+                                        <Dialog.Title
+                                            className="text-lg mt-0 font-semibold text-left text-purple_primary my-2">
+                                            Author
+                                        </Dialog.Title>
+                                        <input
+                                            className={`p-2 flex my-1 shadow-xl w-48 bg-light-gray placeholder-dark_gray placeholder:font-black rounded-lg 'placeholder:font-black'`}
+                                            type="text"
+                                            name="author"
+                                            placeholder=""
+                                            id={'author'}
+                                            // value={aadhaar}
+                                            onChange={handleInputChange}
+                                        />
+                                    </div>
+
+                                    <div className="flex flex-col">
+                                        <Dialog.Title
+                                            className="text-lg mt-0 font-semibold text-left text-purple_primary my-2">
+                                            Date
+                                        </Dialog.Title>
+                                        <input
+                                            id={'date'}
+                                            className={`p-2 flex my-1 shadow-xl w-48 bg-light-gray placeholder-dark_gray placeholder:font-black rounded-lg 'placeholder:font-black'`}
+                                            type="date"
+                                            name="date"
+                                            placeholder=""
+                                            // value={aadhaar}
+                                            onChange={handleInputChange}
+                                        />
+                                    </div>
+
+                                </div>
+
+
+                                <textarea
+                                    id="description"
+                                    onChange={handleInputChange}
+                                    name="description" rows="4"
+                                    className="w-full px-4 py-2 border rounded-lg focus:out focus:border-black-200 text-black h-[250px]"
+                                    placeholder="Give in your story"
+                                />
+
+                                {/*<Dialog.Title className="text-lg font-semibold text-left text-purple_primary my-2">*/}
+                                {/*    <label htmlFor="photoInput" className="cursor-pointer">*/}
+                                {/*        Upload pics*/}
+                                {/*    </label>&nbsp;*/}
+                                {/*    <label htmlFor="photoInput" className="cursor-pointer text-neutral-950 text-sm">*/}
+                                {/*        (The first picture chosen would be the faceof your story)*/}
+                                {/*    </label>*/}
+                                {/*    <input*/}
+                                {/*        type="file"*/}
+                                {/*        id="photoInput"*/}
+                                {/*        name="photos"*/}
+                                {/*        accept="image/*"*/}
+                                {/*        multiple*/}
+                                {/*        className="mt-4 bg-purple_primary hidden"*/}
+                                {/*    />*/}
+                                {/*</Dialog.Title>*/}
+                                <button type={'submit'}
+                                        className="flex p-2 mt-2 shadow-xl w-40 text-white bg-purple_primary justify-center font-black rounded-3xl items-center">
+                                    Add
+                                </button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </Transition>
+                    <div>
+                {stories.map((story, index) => (
+                    <div key={index}>
+                        <h2>{story.title}</h2>
+                        <h2>{story.city}</h2>
+                        <h2>{story.date}</h2>
+                        <h2>{story.author}</h2>
+                        <h2>{story.description}</h2>
+                        <br/>
+                    </div>
+                ))}
+            </div>
+            <div className={'flex justify-end mx-3 my-2'}>
+                <button type={'button'} onClick={openAddStoryModal}
+                        className="flex p-3 my-4 drop-shadow-lg w-40 text-white bg-purple_primary justify-center font-black rounded-3xl items-center">
+                    Add a story
+                </button>
             </div>
 
         </div>
